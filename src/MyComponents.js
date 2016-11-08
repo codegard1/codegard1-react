@@ -1,4 +1,5 @@
 var React = require('react');
+import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
 
 var Heading = React.createClass({
     render: function () {
@@ -17,6 +18,44 @@ var Heading = React.createClass({
                 </div>
             </div>
         );
+    }
+});
+
+var Heading1 = React.createClass({
+    getInitialState: function () {
+        return { selectedKey: 'home' };
+    },
+    handleChange: function (options) {
+        this.setState({
+            selectedKey: options.key
+        });
+    },
+    render: function () {
+        return (
+            <div className="ms-Grid-row">
+                <div className="ms-Grid-col ms-u-sm12 ms-u-md8 ms-u-lg9 ms-u-xl10 header">
+                    <span className="ms-font-xxl ms-fontColor-tealDark ms-u-fadeIn400">
+                        <strong>codegard1</strong> &nbsp;
+                        <i className="ms-Icon ms-Icon--circleCoffee"></i>
+                    </span>
+                </div>
+                <div className="ms-Grid-col ms-u-hiddenSm ms-u-md4 ms-u-lg3 ms-u-xl2 header">
+                    <Dropdown
+                        label=''
+                        options={
+                            [
+                                { key: 'home', text: 'Home' },
+                                { key: 'identity', text: 'Identity' },
+                                { key: 'projects', text: 'Projects' }
+                            ]
+                        }
+                        selectedKey={this.state.selectedKey}
+                        onChanged={this.handleChange}
+                        />
+                </div>
+            </div>
+        );
+
     }
 });
 
@@ -48,7 +87,8 @@ var Topping = React.createClass({
 });
 
 module.exports = { 
-    Heading, 
+    Heading,
+    Heading1, 
     HorizontalBar, 
     Topping 
 };
