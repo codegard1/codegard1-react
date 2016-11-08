@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+//eslint-disable-next-line
 import { HorizontalBar, Heading, Heading1 } from './MyComponents';
 import Page1 from './PageContent';
 

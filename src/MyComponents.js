@@ -75,7 +75,7 @@ var Topping = React.createClass({
         var title = this.props.title;
         return (
             <div className="ms-Grid-row ms-bgColor-tealLight">
-                <div className="ms-Grid-col ms-u-sm12 ">
+                <div className="ms-Grid-col ms-u-sm12">
                     <span className="ms-font-xxl ms-fontColor-tealDark">
                         {title} &nbsp;
                         <i className={"ms-Icon ms-Icon--" + icon}></i>
