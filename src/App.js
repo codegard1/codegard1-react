@@ -9,12 +9,11 @@ class App extends Component {
     super(props);
     this.state = { page: 'home' }
   }
-
+  
   changePage(o) {
-    //alert(JSON.stringify(o.key))
-    this.replaceState({
-      page: o.key
-    });
+    this.setState({
+      page: o
+    })
   }
 
   render() {
@@ -22,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="ms-Grid ms-u-fadeIn400">
-          <Heading1 selectedKey={page} changePage={this.changePage} />
+          <Heading1 selectedKey={page} changePage={this.changePage.bind(this)} />
           <HorizontalBar />
           <Page1 page={page} />
           <HorizontalBar />

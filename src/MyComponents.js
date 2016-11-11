@@ -22,15 +22,8 @@ var Heading = React.createClass({
 });
 
 var Heading1 = React.createClass({
-    getInitialState: function () {
-        var props = this.props;
-        return { selectedKey: props.selectedKey };
-    },
     handleChange: function (options) {
-        this.setState({
-            selectedKey: options.key
-        });
-        this.props.changePage(options.key)
+        this.props.changePage(options.key);
     },
     render: function () {
         return (
@@ -51,7 +44,7 @@ var Heading1 = React.createClass({
                                 { key: 'projects', text: 'Projects' }
                             ]
                         }
-                        selectedKey={this.state.selectedKey}
+                        selectedKey={this.props.selectedKey}
                         onChanged={this.handleChange}
                         />
                 </div>
