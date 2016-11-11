@@ -3,15 +3,15 @@ import { Topping } from './MyComponents';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 
 var Page1 = React.createClass({
-    getInitialState: function () {
-        return { page: 'home' };
-    },
+    /* getInitialState: function () {
+        return { page: this.props.page };
+    },*/
     render: function () {
         var left = "ms-Grid-col ms-u-hiddenSm ms-u-md1 ms-u-lg1 ms-u-xl1 ms-u-xxl2";
         var inner = "ms-Grid-col ms-u-sm12 ms-u-md10 ms-u-lg8 ms-u-xl7 ms-u-xxl5";
         var right = "ms-Grid-col ms-u-hiddenSm ms-u-md1 ms-u-lg3 ms-u-xl4 ms-u-xxl5";
         
-        switch (this.state.page) {
+        switch (this.props.page) {
             case 'home':
                 return (
                     <div className="ms-Grid-row">

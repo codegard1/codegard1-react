@@ -23,12 +23,14 @@ var Heading = React.createClass({
 
 var Heading1 = React.createClass({
     getInitialState: function () {
-        return { selectedKey: 'home' };
+        var props = this.props;
+        return { selectedKey: props.selectedKey };
     },
     handleChange: function (options) {
         this.setState({
             selectedKey: options.key
         });
+        this.props.changePage(options.key)
     },
     render: function () {
         return (
