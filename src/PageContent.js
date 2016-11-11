@@ -52,7 +52,7 @@ class Page1 extends Component {
                         <div className={inner}>
                             <Topping title="Identity" icon="contact" />
                             <div className="ms-font-xl">
-                                <p>Email: c.odegard[at]gmail.com</p>
+                                <p>Email: <Link href="mailto:c.odegard@gmail.com">c.odegard[at]gmail.com</Link></p>
                                 <p>
                                     Here are some links to other online internet websites where I take residence:
                                     <ul>
