@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
 import { Link } from 'office-ui-fabric-react/lib/Link';
-import { Experimental } from './PageContent';
 
 class Heading extends Component{
     handleChange (options) {
@@ -11,12 +10,12 @@ class Heading extends Component{
     render () {
         return (
             <div className="ms-Grid-row">
-                <div className="ms-Grid-col ms-u-sm12 ms-u-md8 ms-u-lg9 ms-u-xl10 header">
+                <div className="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg9 ms-u-xl10 header">
                     <span className="ms-font-xl ms-fontColor-tealDark ms-u-fadeIn400">
                         <strong>codegard1</strong>
                     </span>
                 </div>
-                <div className="ms-Grid-col ms-u-hiddenSm ms-u-md4 ms-u-lg3 ms-u-xl2 header">
+                <div className="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg3 ms-u-xl2 header">
                     <Dropdown
                         label=''
                         options={
