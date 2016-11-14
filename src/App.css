@@ -10,7 +10,7 @@
 
 .App div.ms-Grid {
   box-shadow: 0 2px 15px rgba(0, 0, 0, .4);
-  margin: 2em 4em 2em 4em;
+  margin: 2em 1em 2em 1em;
   overflow: hidden;
   background-color: ghostwhite;
   min-width: 250px;
