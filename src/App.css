@@ -20,6 +20,12 @@ div.header {
   padding: 10px;
 }
 
+div.topping {
+  padding: 0.5em;
+}
+
+
+
 /* .ms-Grid-col {
   border: 1px solid salmon;
 } */
