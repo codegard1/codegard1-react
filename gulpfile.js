@@ -1,12 +1,20 @@
 const gulp = require('gulp');
-const jshint = require('jshint');
-const jsfiles = ['*.js', 'src/**/*.js'];
+const jshint = require('gulp-jshint');
+const del = require('del');
+const jsFiles = ['*.js', 'src/**/*.js'];
+
+gulp.task('clean', () => {
+    return del([
+        'gulp-output.txt'
+    ]);
+});
 
 gulp.task('style', () => {
     gulp.src(jsFiles)
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish', {
             verbose: true
-        }))
-        .pipe(jshint.reporter('jshint-jsx'));
+        }));
 });
+
+gulp.task('default', ['style']);
