@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "codegard1", "codegard1.njsproj", "{54A68352-4C58-418C-82D7-CD5A15BEF5DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{54A68352-4C58-418C-82D7-CD5A15BEF5DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54A68352-4C58-418C-82D7-CD5A15BEF5DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54A68352-4C58-418C-82D7-CD5A15BEF5DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54A68352-4C58-418C-82D7-CD5A15BEF5DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
