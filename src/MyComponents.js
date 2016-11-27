@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
 import { Link } from 'office-ui-fabric-react/lib/Link';
+import { Callout } from 'office-ui-fabric-react/lib/Callout';
+import { Button } from 'office-ui-fabric-react/lib/Button';
 
 class Heading extends Component{
     handleChange (options) {
@@ -46,7 +48,7 @@ class HorizontalBar extends Component {
     }
 };
 
-class Topping extends Component{
+class Topping extends Component {
     render () {
         var icon = this.props.icon;
         var title = this.props.title;
@@ -63,8 +65,36 @@ class Topping extends Component{
     }
 };
 
+/*interface ICalloutState {
+    isCalloutVisible?: boolean;
+}*/
+
 class Page extends Component {
+    constructor(props) {
+        super(props);
+        this._onShowMenuClicked = this._onShowMenuClicked.bind(this);
+        this._onCalloutDismiss = this._onCalloutDismiss.bind(this);
+
+        this.state = {
+            isCalloutVisible: false
+        };
+    }
+
+    _onShowMenuClicked() {
+        this.setState({
+            isCalloutVisible: !this.state.isCalloutVisible
+        });
+    }
+
+    _onCalloutDismiss() {
+        this.setState({
+            isCalloutVisible: false
+        });
+    }
+
     render () {
+        let isCalloutVisible = this.state.isCalloutVisible;
+
         const left = "ms-Grid-col ms-u-hiddenSm ms-u-md1 ms-u-lg1 ms-u-xl1 ms-u-xxl2";
         const inner = "ms-Grid-col ms-u-sm12 ms-u-md10 ms-u-lg8 ms-u-xl7 ms-u-xxl5";
         const right = "ms-Grid-col ms-u-hiddenSm ms-u-md1 ms-u-lg3 ms-u-xl4 ms-u-xxl5";
@@ -168,7 +198,34 @@ class Page extends Component {
 
                         <div className={inner}>
                             <div className="ms-font-xl">
-                                <p>Yo World</p>
+                                <div>
+                                    <p>{JSON.stringify(isCalloutVisible)}</p>
+                                    <Button onClick={this._onShowMenuClicked}>Click me</Button>
+                                </div>
+                                { isCalloutVisible && (
+                                <Callout
+                                    gapSpace={ 0 }
+                                    targetElement={this._menuButtonElement}
+                                    onDismiss={this._onCalloutDismiss}
+                                    setInitialFocus={false}
+                                    >
+                                    <div className='ms-CalloutExample-header'>
+                                        <p className='ms-CalloutExample-title'>
+                                            All of your favorite people
+                                        </p>
+                                        </div>
+                                        <div className='ms-CalloutExample-inner'>
+                                        <div className='ms-CalloutExample-content'>
+                                            <p className='ms-CalloutExample-subText'>
+                                            Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
+                                            </p>
+                                        </div>
+                                        <div className='ms-CalloutExample-actions'>
+                                            <Link className='ms-CalloutExample-link' href='http://microsoft.com'>Go to microsoft</Link>
+                                        </div>
+                                        </div>
+                                    </Callout>
+                                ) }
                             </div>
                         </div>
 
