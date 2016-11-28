@@ -72,24 +72,13 @@ class Topping extends Component {
 class Page extends Component {
     constructor(props) {
         super(props);
+
         this._onShowMenuClicked = this._onShowMenuClicked.bind(this);
         this._onCalloutDismiss = this._onCalloutDismiss.bind(this);
 
         this.state = {
             isCalloutVisible: false
         };
-    }
-
-    _onShowMenuClicked() {
-        this.setState({
-            isCalloutVisible: !this.state.isCalloutVisible
-        });
-    }
-
-    _onCalloutDismiss() {
-        this.setState({
-            isCalloutVisible: false
-        });
     }
 
     render () {
@@ -191,6 +180,7 @@ class Page extends Component {
                 break;
 
             case 'experimental':
+                
                 return (
                     <div className="ms-u-slideRightIn40 ms-Grid-row">
                     <Topping title="Experimental" icon="circle" />
@@ -200,8 +190,14 @@ class Page extends Component {
                             <div className="ms-font-xl">
                                 <div>
                                     <p>{JSON.stringify(isCalloutVisible)}</p>
-                                    <Button onClick={this._onShowMenuClicked}>Click me</Button>
+                                    <Button 
+                                        name="menuButton"
+                                        onClick={this._onShowMenuClicked}
+                                        >
+                                        { isCalloutVisible ? 'Hide Callout' : 'Show Callout' }
+                                    </Button>
                                 </div>
+
                                 { isCalloutVisible && (
                                 <Callout
                                     gapSpace={ 0 }
@@ -211,10 +207,10 @@ class Page extends Component {
                                     >
                                     <div className='ms-CalloutExample-header'>
                                         <p className='ms-CalloutExample-title'>
-                                            All of your favorite people
+                                            Callout title
                                         </p>
-                                        </div>
-                                        <div className='ms-CalloutExample-inner'>
+                                    </div>
+                                    <div className='ms-CalloutExample-inner'>
                                         <div className='ms-CalloutExample-content'>
                                             <p className='ms-CalloutExample-subText'>
                                             Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
@@ -223,8 +219,8 @@ class Page extends Component {
                                         <div className='ms-CalloutExample-actions'>
                                             <Link className='ms-CalloutExample-link' href='http://microsoft.com'>Go to microsoft</Link>
                                         </div>
-                                        </div>
-                                    </Callout>
+                                    </div>
+                                </Callout>
                                 ) }
                             </div>
                         </div>
@@ -239,6 +235,18 @@ class Page extends Component {
             default:
                 return <div>No content</div>;
         } // end switch
+    }
+
+    _onShowMenuClicked() {
+        this.setState({
+            isCalloutVisible: !this.state.isCalloutVisible
+        });
+    }
+
+    _onCalloutDismiss() {
+        this.setState({
+            isCalloutVisible: false
+        });
     }
 }
 
