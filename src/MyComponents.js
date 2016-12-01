@@ -187,7 +187,40 @@ class Page extends Component {
 
                         <div className={inner}>
                             <div className="ms-font-xl">
-                                Yo, world
+                                <div>
+                                    <p>isCalloutVisible? : {JSON.stringify(isCalloutVisible)}</p>
+                                    <Button 
+                                        name="menuButton"
+                                        onClick={this._onShowMenuClicked}
+                                        >
+                                        { isCalloutVisible ? 'Hide Callout' : 'Show Callout' }
+                                    </Button>
+                                </div>
+
+                                { isCalloutVisible && (
+                                <Callout
+                                    gapSpace={ 0 }
+                                    targetElement={this._menuButtonElement}
+                                    onDismiss={this._onCalloutDismiss}
+                                    setInitialFocus={false}
+                                    >
+                                    <div className='ms-CalloutExample-header'>
+                                        <p className='ms-CalloutExample-title'>
+                                            Callout title
+                                        </p>
+                                    </div>
+                                    <div className='ms-CalloutExample-inner'>
+                                        <div className='ms-CalloutExample-content'>
+                                            <p className='ms-CalloutExample-subText'>
+                                            Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
+                                            </p>
+                                        </div>
+                                        <div className='ms-CalloutExample-actions'>
+                                            <Link className='ms-CalloutExample-link' href='http://microsoft.com'>Go to microsoft</Link>
+                                        </div>
+                                    </div>
+                                </Callout>
+                                ) }
                             </div>
                         </div>
 
