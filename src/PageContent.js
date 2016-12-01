@@ -56,6 +56,7 @@ class Identity extends Component {
                                         <li>I have a <Link href="https://github.com/codegard1">GitHub profile</Link></li>
                                         <li>I use <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link> and sometimes <Link href="http://plnkr.co/users/codegard1">Plunker</Link> to test ideas</li>
                                         <li>I used to make a lot of electronic music, and many of those songs can be found on my <Link href="https://soundcloud.com/ciaervo">SoundCloud profile</Link></li>
+                                        <li>As if that weren't enough, I also have a <Link href="http://twitter.com/codegard1">Twitter</Link> account that I don't use very often</li>
                                     </ul>
                                 </p>
                             </div>
