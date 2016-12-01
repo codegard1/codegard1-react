@@ -103,14 +103,14 @@ class Page extends Component {
                                     <li>I make business applications in SharePoint with a heavy emphasis on custom code and re-usable solutions</li>
                                     <li>Some of my other interests include, but are not limited to:
                                         <ul>
-                                            <li>SharePoint Framework</li>
-                                            <li>Nintex Workflows</li>
-                                            <li>jQuery</li>
-                                            <li>React</li>
-                                            <li>ECMAScript 6</li>
-                                            <li>NodeJS</li>
-                                            <li>Python</li>
-                                            <li>Fabric UI</li>
+                                            <li><Link href="">SharePoint Framework</Link></li>
+                                            <li><Link href="https://www.nintex.com/">Nintex Workflows</Link></li>
+                                            <li><Link href="http://jquery.com/">jQuery</Link></li>
+                                            <li><Link href="https://facebook.github.io/react/">React</Link></li>
+                                            <li><Link href="https://nodejs.org/en/">NodeJS</Link> &amp; <Link href="https://www.npmjs.com/">npm</Link></li>
+                                            <li><Link href="http://dev.office.com/fabric#/components">Fabric UI</Link></li>
+                                            <li><Link href="https://leanpub.com/understandinges6/read">ECMAScript 6</Link></li>
+                                            <li><Link href="https://www.python.org/">Python</Link></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -162,14 +162,14 @@ class Page extends Component {
                                 <p>
                                     Here is a sampling of what I'm doing now:</p>
                                 <ul>
-                                    <li></li>
-                                    <li>Learning how to use Gulp to automate routine dev processes</li>
-                                    <li>Using <Link href="http://datatables.net/">Datatables</Link> to display SharePoint List data in an on-premise Site Collection.</li>
-                                    <li>Developing a volunteer opportunities signup application, for internal use</li>
+                                    <li>Working with Gatekeepers and business owners to migrate sites and content from an older site collection (SP 2013) to the new one (SP 2016)</li>
+                                    <li>Learning how to use <Link href="http://gulpjs.com/">Gulp</Link> to automate routine dev processes</li>
+                                    <li>Developing a volunteer opportunities signup application for internal use</li>
+                                    <li>Using <Link href="http://datatables.net/">Datatables</Link> to display SharePoint List data in an on-premise Site Collection</li>
                                     <li>Getting used to the <Link href="https://github.com/petehunt/react-howto">React ecosystem</Link>, with the intention
                                 of using the framework to create modular forms within SharePoint pages, obviating some of our dependence on
                                 <Link href="http://www.nintex.com/">Nintex Forms</Link></li>
-                                    <li>Adding pizzazz to this site</li>
+                                    <li>Adding <Link href="http://etymonline.com/index.php?allowed_in_frame=0&search=pizzazz">pizzazz</Link> to this site</li>
                                 </ul>
                             </div>
                         </div>
@@ -229,8 +229,8 @@ class Page extends Component {
                         <div className={right}></div>
                     </div>
                 );
-            // eslint-disable-next-line
-            break;
+                // eslint-disable-next-line
+                break;
             case 'experimental1':
                 return (
                     <div className="ms-u-slideRightIn40 ms-Grid-row">
@@ -248,11 +248,11 @@ class Page extends Component {
                         <div className={right}></div>
                     </div>
                 );
-            // eslint-disable-next-line
-            break;
+                // eslint-disable-next-line
+                break;
 
             default:
-                return <div>No content</div>;
+                return <div><p>No content</p></div>;
         } // end switch
     }
 
