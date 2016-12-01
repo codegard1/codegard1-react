@@ -24,7 +24,7 @@ class Heading extends Component{
                                 { key: 'home', text: 'Home' },
                                 { key: 'identity', text: 'Identity' },
                                 { key: 'projects', text: 'Projects' },
-                                { key: 'experimental', text: 'Experimental' }
+                                { key: 'experimental1', text: 'Experimental' }
                             ]}
                         selectedKey={this.props.selectedKey}
                         onChanged={this.handleChange.bind(this)}
@@ -40,7 +40,7 @@ class HorizontalBar extends Component {
     render () {
         return (
             <div className="ms-Grid-row ms-bgColor-teal">
-                <div className="ms-Grid-col ms-u-sm12">&nbsp;</div>
+                <div className="ms-Grid-col ms-u-sm12"></div>
             </div>
         );
     }
@@ -91,7 +91,7 @@ class Page extends Component {
                 return (
                     <div className="ms-Grid-row">
                     <Topping title="Home" icon="home" />
-                        <div className={left}>&nbsp;</div>
+                        <div className={left}></div>
 
                         <div className={inner}>
                             
@@ -117,7 +117,7 @@ class Page extends Component {
                             </div>
 
                         </div>
-                        <div className={right}>&nbsp;</div>
+                        <div className={right}></div>
                     </div> /* end ms-Grid-row */
                 );
                 // eslint-disable-next-line
@@ -127,7 +127,7 @@ class Page extends Component {
                 return (
                     <div className="ms-Grid-row">
                     <Topping title="Identity" icon="contact" />
-                        <div className={left}>&nbsp;</div>
+                        <div className={left}></div>
 
                         <div className={inner}>
                             <div className="ms-font-xl">
@@ -145,7 +145,7 @@ class Page extends Component {
                             </div>
                         </div>
 
-                        <div className={right}>&nbsp;</div>
+                        <div className={right}></div>
                     </div> /* end ms-Grid-row */
                 );
                 // eslint-disable-next-line
@@ -155,24 +155,26 @@ class Page extends Component {
                 return (
                     <div className="ms-Grid-row">
                         <Topping title="Current Projects" icon="heartEmpty" />
-                        <div className={left}>&nbsp;</div>
+                        <div className={left}></div>
 
                         <div className={inner}>
                             <div className="ms-font-xl">
                                 <p>
-                                    Here is a sampling of what I am actively working on:</p>
+                                    Here is a sampling of what I'm doing now:</p>
                                 <ul>
+                                    <li></li>
+                                    <li>Learning how to use Gulp to automate routine dev processes</li>
                                     <li>Using <Link href="http://datatables.net/">Datatables</Link> to display SharePoint List data in an on-premise Site Collection.</li>
-                                    <li>Embedding a Yammer feed in an on-premise SharePoint page, using single sign-on</li>
+                                    <li>Developing a volunteer opportunities signup application, for internal use</li>
                                     <li>Getting used to the <Link href="https://github.com/petehunt/react-howto">React ecosystem</Link>, with the intention
                                 of using the framework to create modular forms within SharePoint pages, obviating some of our dependence on
                                 <Link href="http://www.nintex.com/">Nintex Forms</Link></li>
-                                    <li>Expanding this site</li>
+                                    <li>Adding pizzazz to this site</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <div className={right}>&nbsp;</div>
+                        <div className={right}></div>
                     </div> /* end ms-Grid-row */
                 );
                 // eslint-disable-next-line
@@ -183,7 +185,7 @@ class Page extends Component {
                 return (
                     <div className="ms-u-slideRightIn40 ms-Grid-row">
                     <Topping title="Experimental" icon="circle" />
-                        <div className={left}>&nbsp;</div>
+                        <div className={left}></div>
 
                         <div className={inner}>
                             <div className="ms-font-xl">
@@ -224,12 +226,30 @@ class Page extends Component {
                             </div>
                         </div>
 
-                        <div className={right}>&nbsp;</div>
+                        <div className={right}></div>
                     </div>
                 );
             // eslint-disable-next-line
             break;
+            case 'experimental1':
+                return (
+                    <div className="ms-u-slideRightIn40 ms-Grid-row">
+                    <Topping title="Experimental" icon="circle" />
+                        <div className={left}></div>
 
+                        <div className={inner}>
+                            <div className="ms-font-xl">
+                                <div>
+                                    <p>Yo, world. This stuff is hidden for now. (12/1/16)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className={right}></div>
+                    </div>
+                );
+            // eslint-disable-next-line
+            break;
 
             default:
                 return <div>No content</div>;
