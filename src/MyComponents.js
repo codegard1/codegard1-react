@@ -24,7 +24,7 @@ class Heading extends Component{
                                 { key: 'home', text: 'Home' },
                                 { key: 'identity', text: 'Identity' },
                                 { key: 'projects', text: 'Projects' },
-                                { key: 'experimental1', text: 'Experimental' }
+                                { key: 'experimental', text: 'Experimental' }
                             ]}
                         selectedKey={this.props.selectedKey}
                         onChanged={this.handleChange.bind(this)}
@@ -70,13 +70,12 @@ class Topping extends Component {
 class Page extends Component {
     constructor(props) {
         super(props);
-
-        this._onShowMenuClicked = this._onShowMenuClicked.bind(this);
-        this._onCalloutDismiss = this._onCalloutDismiss.bind(this);
-
         this.state = {
             isCalloutVisible: false
         };
+        
+        this._onShowMenuClicked = this._onShowMenuClicked.bind(this);
+        this._onCalloutDismiss = this._onCalloutDismiss.bind(this);
     }
 
     render () {
@@ -188,37 +187,37 @@ class Page extends Component {
                         <div className={left}></div>
 
                         <div className={inner}>
-                            <div className="ms-font-xl">
-                                <div>
-                                    <p>isCalloutVisible? : {JSON.stringify(isCalloutVisible)}</p>
-                                    <Button 
-                                        name="menuButton"
-                                        onClick={this._onShowMenuClicked}
-                                        >
+                            <div className="ms-font-xl" ref={ (calloutTarget) => this._menuButtonElement = calloutTarget }>
+                                <p>Fabric UI Callout Example</p>
+                                <p>isCalloutVisible? : {JSON.stringify(isCalloutVisible)}</p> 
+                                <p>
+                                    <Button onClick={this._onShowMenuClicked}>
                                         { isCalloutVisible ? 'Hide Callout' : 'Show Callout' }
-                                    </Button>
-                                </div>
+                                        </Button>
+                                    </p>
+                                
+                                                           
 
                                 { isCalloutVisible && (
                                 <Callout
-                                    gapSpace={ 0 }
-                                    targetElement={this._menuButtonElement}
-                                    onDismiss={this._onCalloutDismiss}
-                                    setInitialFocus={false}
+                                    className="chris-Callout"
+                                    targetElement={ this._menuButtonElement }
+                                    onDismiss={ this._onCalloutDismiss }
+                                    setInitialFocus={ true }
                                     >
-                                    <div className='ms-CalloutExample-header'>
-                                        <p className='ms-CalloutExample-title'>
-                                            Callout title
+                                    <div className='chris-Callout-header'>
+                                        <p className='chris-Callout-title'>
+                                            All of your favorite people
                                         </p>
                                     </div>
-                                    <div className='ms-CalloutExample-inner'>
-                                        <div className='ms-CalloutExample-content'>
-                                            <p className='ms-CalloutExample-subText'>
+                                    <div className='chris-Callout-inner'>
+                                        <div className='chris-Callout-content'>
+                                            <p className='chris-Callout-subText'>
                                             Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
                                             </p>
                                         </div>
-                                        <div className='ms-CalloutExample-actions'>
-                                            <Link className='ms-CalloutExample-link' href='http://microsoft.com'>Go to microsoft</Link>
+                                        <div className='chris-Callout-actions'>
+                                            <Link className='chris-Callout-link' href='http://microsoft.com'>Go to microsoft</Link>
                                         </div>
                                     </div>
                                 </Callout>
@@ -257,12 +256,14 @@ class Page extends Component {
     }
 
     _onShowMenuClicked() {
+        console.log('_onShowMenuClicked called');
         this.setState({
             isCalloutVisible: !this.state.isCalloutVisible
         });
     }
 
     _onCalloutDismiss() {
+        console.log('_onCalloutDismiss called');
         this.setState({
             isCalloutVisible: false
         });
