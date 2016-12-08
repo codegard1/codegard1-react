@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Page } from './MyComponents';
+import { Page } from './components/Page';
 import { Heading } from './components/Heading';
 import { HorizontalBar } from './components/HorizontalBar';
 

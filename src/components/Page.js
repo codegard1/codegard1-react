@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Callout } from 'office-ui-fabric-react/lib/Callout';
 import { Button } from 'office-ui-fabric-react/lib/Button';
-import { Topping } from './components/Topping';
+import { Topping } from './Topping';
 
-class Page extends Component {
+export class Page extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -203,5 +203,3 @@ class Page extends Component {
         });
     }
 }
-
-module.exports = { Page };
