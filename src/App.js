@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import { HorizontalBar, Heading, Page } from './MyComponents';
+import { HorizontalBar, Page } from './MyComponents';
+import { Heading } from './components/Heading';
 
 class App extends Component {
   constructor(props) {
