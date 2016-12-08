@@ -4,6 +4,8 @@ import { Callout } from 'office-ui-fabric-react/lib/Callout';
 import { Button } from 'office-ui-fabric-react/lib/Button';
 import { Topping } from './Topping';
 import { Home } from './pages/Home';
+import { Identity } from './pages/Identity';
+import { Projects } from './pages/Projects';
 
 export class Page extends Component {
     constructor(props) {
@@ -30,59 +32,12 @@ export class Page extends Component {
                 break;
 
             case 'identity':
-                return (
-                    <div className="ms-Grid-row">
-                    <Topping title="Identity" icon="contact" />
-                        <div className={left}></div>
-
-                        <div className={inner}>
-                            <div className="ms-font-xl">
-                                <p>Email: <Link href="mailto:c.odegard@gmail.com">c.odegard[at]gmail.com</Link></p>
-                                <p>
-                                    Here are some links to other internet-based websites where I take residence:
-                                    <ul>
-                                        <li>I have a <Link href="https://www.linkedin.com/in/codegard1">LinkedIn profile</Link></li>
-                                        <li>I have a <Link href="https://github.com/codegard1">GitHub profile</Link></li>
-                                        <li>I use <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link> and sometimes <Link href="http://plnkr.co/users/codegard1">Plunker</Link>              to test ideas</li>
-                                        <li>I used to make a lot of electronic music in college, and many of those songs can be found on my <Link href="https://soundcloud.com/ciaervo">SoundCloud profile</Link></li>
-                                        <li>As if that weren't enough, I also have a <Link href="http://twitter.com/codegard1">Twitter</Link> account that I don't use very often</li>
-                                    </ul>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div className={right}></div>
-                    </div> /* end ms-Grid-row */
-                );
+                return <Identity />;
                 // eslint-disable-next-line
                 break;
 
             case 'projects':
-                return (
-                    <div className="ms-Grid-row">
-                        <Topping title="Current Projects" icon="heartEmpty" />
-                        <div className={left}></div>
-
-                        <div className={inner}>
-                            <div className="ms-font-xl">
-                                <p>
-                                    Here is a sampling of what I'm doing now:</p>
-                                <ul>
-                                    <li>Working with Gatekeepers and business owners to migrate sites and content from an older site collection (SP 2013) to the new one (SP 2016)</li>
-                                    <li>Learning how to use <Link href="http://gulpjs.com/">Gulp</Link> to automate routine dev processes</li>
-                                    <li>Developing a volunteer opportunities signup application for internal use</li>
-                                    <li>Using <Link href="http://datatables.net/">Datatables</Link> to display SharePoint List data in an on-premise Site Collection</li>
-                                    <li>Getting used to the <Link href="https://github.com/petehunt/react-howto">React ecosystem</Link>, with the intention
-                                of using the framework to create modular forms within SharePoint pages, obviating some of our dependence on
-                                <Link href="http://www.nintex.com/">Nintex Forms</Link></li>
-                                    <li>Adding <Link href="http://etymonline.com/index.php?allowed_in_frame=0&search=pizzazz">pizzazz</Link> to this site</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div className={right}></div>
-                    </div> /* end ms-Grid-row */
-                );
+                return <Projects />;
                 // eslint-disable-next-line
                 break;
 
