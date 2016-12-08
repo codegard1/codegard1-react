@@ -3,16 +3,6 @@ import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Callout } from 'office-ui-fabric-react/lib/Callout';
 import { Button } from 'office-ui-fabric-react/lib/Button';
 
-class HorizontalBar extends Component {
-    render () {
-        return (
-            <div className="ms-Grid-row ms-bgColor-teal">
-                <div className="ms-Grid-col ms-u-sm12"></div>
-            </div>
-        );
-    }
-};
-
 class Topping extends Component {
     render () {
         var icon = this.props.icon;
@@ -234,8 +224,7 @@ class Page extends Component {
     }
 }
 
-module.exports = { 
-    HorizontalBar, 
+module.exports = {  
     Topping, 
     Page
 };
