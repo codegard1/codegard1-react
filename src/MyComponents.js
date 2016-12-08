@@ -207,17 +207,14 @@ class Page extends Component {
                                     >
                                     <div className='chris-Callout-header'>
                                         <p className='chris-Callout-title'>
-                                            All of your favorite people
+                                            My name is Craig Callout
                                         </p>
                                     </div>
                                     <div className='chris-Callout-inner'>
                                         <div className='chris-Callout-content'>
                                             <p className='chris-Callout-subText'>
-                                            Message body is optional. If help documentation is available, consider adding a link to learn more at the bottom.
+                                            Often I appear out of nowhere to explain, unobtrusively, what you may not already know.
                                             </p>
-                                        </div>
-                                        <div className='chris-Callout-actions'>
-                                            <Link className='chris-Callout-link' href='http://microsoft.com'>Go to microsoft</Link>
                                         </div>
                                     </div>
                                 </Callout>
