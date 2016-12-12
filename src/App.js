@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { Page } from './components/Page';
-import { Heading } from './components/Heading';
-import { HorizontalBar } from './components/HorizontalBar';
+import { Heading, HorizontalBar } from './components';
+
 
 class App extends Component {
   constructor(props) {

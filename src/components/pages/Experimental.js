@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { Callout } from 'office-ui-fabric-react/lib/Callout';
 import { Button } from 'office-ui-fabric-react/lib/Button';
-
 import { Topping } from '../';
-
-const left = "ms-Grid-col ms-u-hiddenSm ms-u-md1 ms-u-lg1 ms-u-xl1 ms-u-xxl2";
-const inner = "ms-Grid-col ms-u-sm12 ms-u-md10 ms-u-lg8 ms-u-xl7 ms-u-xxl5";
-const right = "ms-Grid-col ms-u-hiddenSm ms-u-md1 ms-u-lg3 ms-u-xl4 ms-u-xxl5";
 
 export class Experimental extends Component {
     render () {
+        let left = this.props.left;
+        let inner = this.props.inner;
+        let right = this.props.right;
+
         let isCalloutVisible = this.props.isCalloutVisible;
         this._onShowMenuClicked = this.props._onShowMenuClicked;
         this._onCalloutDismiss = this.props._onCalloutDismiss;
