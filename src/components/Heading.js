@@ -24,10 +24,15 @@ export class Heading extends Component {
                                 { key: 'experimental', text: 'Experimental' }
                             ]}
                         selectedKey={this.props.selectedKey}
-                        onChanged={this.handleChange.bind(this)}
-                        />
+                        onChanged={this.handleChange.bind(this)} />
                 </div>
             </div>
         );
     }
 };
+
+/* ES6 Syntax */
+Heading.propTypes = {
+    selectedKey: React.PropTypes.string.isRequired,
+    changePage: React.PropTypes.func.isRequired
+}

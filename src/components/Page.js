@@ -76,3 +76,7 @@ export class Page extends Component {
         } // end switch
     }
 }
+
+Page.propTypes = {
+    page: React.PropTypes.string.isRequired
+}
