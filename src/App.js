@@ -7,7 +7,7 @@ import { Heading, HorizontalBar } from './components';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { page: 'experimental' };
+    this.state = { page: 'home' };
   }
   
   changePage(p) {
