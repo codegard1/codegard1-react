@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
 let divStyles = {
-    border: '1px solid #eee',
+    borderTop: '1px solid #eee',
     'backgroundColor':'ghostwhite'
 };
-
+// TODO: move this state up into Page 
+// so that the input form can be used to change other components
 export class FormBasic extends Component {
     constructor(props) {
         super(props);
@@ -24,7 +25,7 @@ export class FormBasic extends Component {
 	render () {
 	  return (
         <div style={divStyles}>
-            <p className="ms-font-l">Basic Form</p>
+            <p className="ms-font-l">(Extremely) Basic Form</p>
             <p>
                 <input 
                     className="ms-font-m"
