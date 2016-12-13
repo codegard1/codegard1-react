@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Callout } from 'office-ui-fabric-react/lib/Callout';
 import { Button } from 'office-ui-fabric-react/lib/Button';
 import { Topping } from '../';
-import { FormBasic } from '../experiments/FormBasic'
+import { FormBasic } from '../experiments/FormBasic';
 
 export class Experimental extends Component {
     render () {
