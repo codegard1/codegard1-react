@@ -1,11 +1,4 @@
-import { Heading } from './Heading';
-import { HorizontalBar } from './HorizontalBar';
-import { Topping } from './Topping';
-import { Page } from './Page';
-
-module.exports = {
-    Heading,
-    HorizontalBar,
-    Topping,
-    Page
-}
+export { Heading } from './Heading';
+export { HorizontalBar } from './HorizontalBar';
+export { Topping } from './Topping';
+export { Page } from './Page';
