@@ -3,8 +3,7 @@ import './App.css';
 import { Page } from './components/Page';
 import { Heading, HorizontalBar } from './components';
 
-
-class App extends Component {
+export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = { page: 'home' };
@@ -29,5 +28,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

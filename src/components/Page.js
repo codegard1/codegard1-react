@@ -13,7 +13,8 @@ export class Page extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            isCalloutVisible: false
+            isCalloutVisible: false,
+            page: this.props.page
         };
 
         this._onShowMenuClicked = this._onShowMenuClicked.bind(this);
@@ -35,7 +36,7 @@ export class Page extends Component {
     }
 
     render() {
-        switch (this.props.page) {
+        switch (this.state.page) {
             case 'home':
                 return <Home 
                         left={left}
