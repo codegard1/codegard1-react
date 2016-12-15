@@ -7,9 +7,9 @@ import * as fabric from '../fabricStyles';
 
 export class Experimental extends Component {
     render () {
-        let left = fabric.left;
-        let inner = fabric.inner;
-        let right = fabric.right;
+        let leftCol = fabric.left;
+        let innerCol = fabric.inner;
+        let rightCol = fabric.right;
 
         let isCalloutVisible = this.props.isCalloutVisible;
         this._onShowMenuClicked = this.props._onShowMenuClicked;
@@ -18,9 +18,9 @@ export class Experimental extends Component {
         return (
             <div className="ms-u-slideRightIn40 ms-Grid-row">
                 <Topping title="Experimental" icon="circle" />
-                <div className={left}></div>
+                <div className={leftCol}></div>
 
-                <div className={inner}>
+                <div className={innerCol}>
                     <div className="ms-font-xl" ref={(calloutTarget) => this._menuButtonElement = calloutTarget}>
                         <p>Fabric UI Callout Example</p>
                         <p>isCalloutVisible? : {JSON.stringify(isCalloutVisible)}</p>
@@ -57,7 +57,7 @@ export class Experimental extends Component {
 
                 </div>
 
-                <div className={right}></div>
+                <div className={rightCol}></div>
             </div> /* end ms-grid */
         );
     }

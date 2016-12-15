@@ -5,16 +5,16 @@ import * as fabric from '../fabricStyles';
 
 export class Projects extends Component {
     render () {
-        let left = fabric.left;
-        let inner = fabric.inner;
-        let right = fabric.right;
+        let leftCol = fabric.left;
+        let innerCol = fabric.inner;
+        let rightCol = fabric.right;
 
         return (
             <div className="ms-Grid-row">
                 <Topping title="Current Projects" icon="heartEmpty" />
-                <div className={left}></div>
+                <div className={leftCol}></div>
 
-                <div className={inner}>
+                <div className={innerCol}>
                     <div className="ms-font-xl">
                         <p>
                             Here is a sampling of what I'm doing now:</p>
@@ -31,7 +31,7 @@ export class Projects extends Component {
                     </div>
                 </div>
 
-                <div className={right}></div>
+                <div className={rightCol}></div>
             </div> /* end ms-Grid-row */
         );
     }

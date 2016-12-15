@@ -5,16 +5,16 @@ import * as fabric from '../fabricStyles';
 
 export class Identity extends Component {
     render () {
-        let left = fabric.left;
-        let inner = fabric.inner;
-        let right = fabric.right;
+        let leftCol = fabric.left;
+        let innerCol = fabric.inner;
+        let rightCol = fabric.right;
 
         return (
             <div className="ms-Grid-row">
                 <Topping title="Identity" icon="contact" />
-                <div className={left}></div>
+                <div className={leftCol}></div>
 
-                <div className={inner}>
+                <div className={innerCol}>
                     <div className="ms-font-xl">
                         <p>Email: <Link href="mailto:c.odegard@gmail.com">c.odegard[at]gmail.com</Link></p>
                         <p>
@@ -29,7 +29,7 @@ export class Identity extends Component {
                     </div>
                 </div>
 
-                <div className={right}></div>
+                <div className={rightCol}></div>
             </div> /* end ms-Grid-row */
         );
     }
