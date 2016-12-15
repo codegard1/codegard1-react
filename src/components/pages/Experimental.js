@@ -3,12 +3,13 @@ import { Callout } from 'office-ui-fabric-react/lib/Callout';
 import { Button } from 'office-ui-fabric-react/lib/Button';
 import { Topping } from '../';
 import { FormBasic } from '../experiments/FormBasic';
+import * as fabric from '../fabricStyles';
 
 export class Experimental extends Component {
     render () {
-        let left = this.props.left;
-        let inner = this.props.inner;
-        let right = this.props.right;
+        let left = fabric.left;
+        let inner = fabric.inner;
+        let right = fabric.right;
 
         let isCalloutVisible = this.props.isCalloutVisible;
         this._onShowMenuClicked = this.props._onShowMenuClicked;

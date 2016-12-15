@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 import { Topping } from '../';
+import * as fabric from '../fabricStyles';
 
 export class Home extends Component {
     render () {
-        let left = this.props.left;
-        let inner = this.props.inner;
-        let right = this.props.right;
+        let left = fabric.left;
+        let inner = fabric.inner;
+        let right = fabric.right;
 
         return (
             <div className="ms-Grid-row">
