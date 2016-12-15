@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 let divStyles = {
     borderTop: '1px solid #eee',
-    backgroundColor:'ghostwhite',
     overflowX: 'hidden'
 };
 // TODO: move this state up into Page 
