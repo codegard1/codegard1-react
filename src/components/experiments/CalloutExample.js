@@ -2,11 +2,23 @@ import React, { Component } from 'react';
 import { Callout } from 'office-ui-fabric-react/lib/Callout';
 import { Button } from 'office-ui-fabric-react/lib/Button';
 
-export class CalloutExample extends Component {
+let divStyles = {
+    borderTop: '1px solid #eee',
+    overflowX: 'hidden'
+};
 
+export class CalloutExample extends Component {
     render () {
+
+        let isCalloutVisible = this.props.isCalloutVisible;
+        this._onShowMenuClicked = this.props._onShowMenuClicked;
+        this._onCalloutDismiss = this.props._onCalloutDismiss;
+
         return (
-            <div className="ms-font-xl" ref={(calloutTarget) => this._menuButtonElement = calloutTarget}>
+            <div 
+            className="ms-font-xl" 
+            ref={(calloutTarget) => this._menuButtonElement = calloutTarget}
+            style={divStyles} >
                 <p>Fabric UI Callout Example</p>
                 <p>isCalloutVisible? : {JSON.stringify(isCalloutVisible)}</p>
                 <p>
@@ -20,18 +32,17 @@ export class CalloutExample extends Component {
                         className="chris-Callout"
                         targetElement={this._menuButtonElement}
                         onDismiss={this._onCalloutDismiss}
-                        setInitialFocus={true}
-                        >
+                        setInitialFocus={true} >
                         <div className='chris-Callout-header'>
                             <p className='chris-Callout-title'>
                                 My name is Craig Callout
-                                </p>
+                            </p>
                         </div>
                         <div className='chris-Callout-inner'>
                             <div className='chris-Callout-content'>
                                 <p className='chris-Callout-subText'>
                                     Often I appear out of nowhere to explain, unobtrusively, what you may not already know.
-                                    </p>
+                                </p>
                             </div>
                         </div>
                     </Callout>
@@ -40,3 +51,9 @@ export class CalloutExample extends Component {
         );
     }
 }
+
+CalloutExample.propTypes = {
+    isCalloutVisible:   React.PropTypes.bool.isRequired,
+    _onShowMenuClicked: React.PropTypes.func.isRequired,
+    _onCalloutDismiss:  React.PropTypes.func.isRequired
+};
