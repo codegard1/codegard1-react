@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Topping } from '../';
 import { FormBasic } from '../experiments/FormBasic';
 import { CalloutExample } from '../experiments/CalloutExample';
+import { ColorBox } from '../experiments/ColorBox';
 import * as fabric from '../fabricStyles';
 
 export class Experimental extends Component {
@@ -24,6 +25,7 @@ export class Experimental extends Component {
                     _onCalloutDismiss={this.props._onCalloutDismiss}
                     isCalloutVisible={this.props.isCalloutVisible} />
 
+                    <ColorBox />
                 </div>
 
                 <div className={rightCol}></div>

@@ -4,7 +4,7 @@ import * as fabric from './fabricStyles';
 
 export class Heading extends Component {
     handleChange (options) {
-        this.props.changePage(options.key);
+        this.props._changePage(options.key);
     }
     
     render () {
@@ -37,5 +37,5 @@ export class Heading extends Component {
 /* ES6 Syntax */
 Heading.propTypes = {
     selectedKey: React.PropTypes.string.isRequired,
-    changePage: React.PropTypes.func.isRequired
+    _changePage: React.PropTypes.func.isRequired
 }
