@@ -4,8 +4,6 @@ import {Dropdown} from 'office-ui-fabric-react/lib/Dropdown';
 
 export class ColorBox extends Component {
     
-    let handleChange = function () {};
-    
     render() {
         let divStyles = {
             display: 'block',
