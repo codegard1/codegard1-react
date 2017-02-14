@@ -4,7 +4,7 @@ export const colorPrefix = {
         'border': 'ms-borderColor-'
     };
 export const colorSuffix = {
-        'themeDarker': 'themeDarker',
+        /*'themeDarker': 'themeDarker',
         'themeDark': 'themeDark',
         'ThemeDarkAlt': 'ThemeDarkAlt',
         'themePrimary': 'themePrimary',
@@ -12,9 +12,9 @@ export const colorSuffix = {
         'themeTertiary': 'themeTertiary',
         'themeLight': 'themeLight',
         'themeLighter': 'themeLighter',
-        'themeLighterAlt': 'themeLighterAlt',
+        'themeLighterAlt': 'themeLighterAlt',*/
         'black': 'black',
-        'neutralDark': 'neutralDark',
+        /*'neutralDark': 'neutralDark',
         'neutralPrimary': 'neutralPrimary',
         'neutralSecondary': 'neutralSecondary',
         'neutralSecondaryAlt': 'neutralSecondaryAlt',
@@ -22,7 +22,7 @@ export const colorSuffix = {
         'neutralTertiaryAlt': 'neutralTertiaryAlt',
         'neutralLight': 'neutralLight',
         'neutralLighter': 'neutralLighter',
-        'neutralLighterAlt': 'neutralLighterAlt',
+        'neutralLighterAlt': 'neutralLighterAlt',*/
         'white': 'white',
         'yellow': 'yellow',
         'yellowLight': 'yellowLight',
