@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import * as fabric from './fabricStyles';
+import { fabricColor } from './fabricStyles';
 
 export class Topping extends Component {
     render () {
         let icon = this.props.icon;
         let title = this.props.title;
         // TODO: pass in bgColor and fontColor as props
-        let bgColor = fabric.bgColor;
-        let fontColor = fabric.fontColor;
+        let bgColor = fabricColor('bg','tealLight');
+        let fontColor = fabricColor('font','tealDark');
 
         return (
             <div className={"ms-Grid-row topping " + bgColor}>

@@ -8,7 +8,7 @@ export class ColorBox extends Component {
         this._handleChange = this._handleChange.bind(this);
     }
 
-    _colorArray() {
+    colorArray() {
         let arr = [];
         if (colorSuffix) {
             for (var key in colorSuffix) {
@@ -23,8 +23,94 @@ export class ColorBox extends Component {
         }
     }
 
-    _handleChange(options) {
+    _animationArray() {
+        let animations = ['bounce',
+            'flash',
+            'pulse',
+            'rubberBand',
+            'shake',
+            'headShake',
+            'swing',
+            'tada',
+            'wobble',
+            'jello',
+            'bounceIn',
+            'bounceInDown',
+            'bounceInLeft',
+            'bounceInRight',
+            'bounceInUp',
+            'bounceOut',
+            'bounceOutDown',
+            'bounceOutLeft',
+            'bounceOutRight',
+            'bounceOutUp',
+            'fadeIn',
+            'fadeInDown',
+            'fadeInDownBig',
+            'fadeInLeft',
+            'fadeInLeftBig',
+            'fadeInRight',
+            'fadeInRightBig',
+            'fadeInUp',
+            'fadeInUpBig',
+            'fadeOut',
+            'fadeOutDown',
+            'fadeOutDownBig',
+            'fadeOutLeft',
+            'fadeOutLeftBig',
+            'fadeOutRight',
+            'fadeOutRightBig',
+            'fadeOutUp',
+            'fadeOutUpBig',
+            'flipInX',
+            'flipInY',
+            'flipOutX',
+            'flipOutY',
+            'lightSpeedIn',
+            'lightSpeedOut',
+            'rotateIn',
+            'rotateInDownLeft',
+            'rotateInDownRight',
+            'rotateInUpLeft',
+            'rotateInUpRight',
+            'rotateOut',
+            'rotateOutDownLeft',
+            'rotateOutDownRight',
+            'rotateOutUpLeft',
+            'rotateOutUpRight',
+            'hinge',
+            'rollIn',
+            'rollOut',
+            'zoomIn',
+            'zoomInDown',
+            'zoomInLeft',
+            'zoomInRight',
+            'zoomInUp',
+            'zoomOut',
+            'zoomOutDown',
+            'zoomOutLeft',
+            'zoomOutRight',
+            'zoomOutUp',
+            'slideInDown',
+            'slideInLeft',
+            'slideInRight',
+            'slideInUp',
+            'slideOutDown',
+            'slideOutLeft',
+            'slideOutRight',
+            'slideOutUp'
+        ].map(function(current, index, arr){
+            return {'key':current,'text':current};
+        });
+        return animations;
+    }
+
+    _handleChangeColor(options) {
         this.props._changeColor(options);
+    }
+
+    _handleChangeAnimation(options) {
+        console.log(options.key);
     }
 
     render() {
@@ -33,16 +119,22 @@ export class ColorBox extends Component {
             display: 'block',
             width: '100px',
             height: '100px',
-            marginBottom: '1em'
+            marginBottom: '1em',
+            border: '5px solid salmon'
         };
 
         return (
             <div>
                 <Dropdown
                     label='Color'
-                    options={this._colorArray()}
+                    options={this.colorArray()}
                     selectedKey={this.props.color}
-                    onChanged={this._handleChange} />
+                    onChanged={this._handleChangeColor} />
+                <Dropdown
+                    label='Animation'
+                    options={this._animationArray()}
+                    selectedKey={'bounce'}
+                    onChanged={this._handleChangeAnimation} />
                 <div
                     className="ms-fontxl"
                     style={{
