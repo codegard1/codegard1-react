@@ -29,7 +29,7 @@ export class ColorBox extends Component {
     }
 
     _animationArray() {
-        let animations = ['bounce',
+        return ['bounce',
             'flash',
             'pulse',
             'rubberBand',
@@ -104,10 +104,9 @@ export class ColorBox extends Component {
             'slideOutLeft',
             'slideOutRight',
             'slideOutUp'
-        ].map(function (current, index, arr) {
+        ].sort().map(function (current, index, arr) {
             return { 'key': current, 'text': current };
         });
-        return animations;
     }
 
     _handleChangeColor(options) {
@@ -118,7 +117,6 @@ export class ColorBox extends Component {
         this.setState({
             animation: options.key
         });
-        
     }
 
     render() {
@@ -136,7 +134,7 @@ export class ColorBox extends Component {
             <div className="ms-Grid">
                 <p className="ms-font-xl">ColorBox</p>
                 <div className="ms-Grid-row">
-                    <div className="ms-Grid-col ms-u-sm8 ms-u-md8 ms-u-lg8">
+                    <div className="ms-Grid-col ms-u-sm8 ms-u-md8 ms-u-lg8 ms-u-xl8">
                         <Dropdown
                             label='Color'
                             options={this.colorArray()}
@@ -148,7 +146,13 @@ export class ColorBox extends Component {
                             selectedKey={this.state.animation}
                             onChanged={this._handleChangeAnimation} />
                     </div>
-                    <div className="ms-Grid-col ms-u-sm4 ms-u-md4 ms-u-lg4">                    
+                    <div className="ms-Grid-col ms-u-sm4 ms-u-md4 ms-u-lg4 ms-u-xl2">
+                        <div 
+                        style={divStyles} 
+                        className={divClass} 
+                        id="colorBox"></div>
+                    </div>
+                    <div className="ms-Grid-col ms-u-hiddenSm ms-u-hiddenMd ms-u-hiddenLg ms-u-xl2">                    
                         <div style={divStyles} className={divClass} id="colorBox"></div>
                     </div>
                 </div>
