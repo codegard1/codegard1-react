@@ -32,17 +32,17 @@ export class Page extends Component {
     render() {
         switch (this.props.page) {
             case 'home':
-                return <Home />;
+                return <Home color={this.props.color} />;
                 // eslint-disable-next-line
                 break;
 
             case 'identity':
-                return <Identity />;
+                return <Identity color={this.props.color} />;
                 // eslint-disable-next-line
                 break;
 
             case 'projects':
-                return <Projects />;
+                return <Projects color={this.props.color} />;
                 // eslint-disable-next-line
                 break;
 

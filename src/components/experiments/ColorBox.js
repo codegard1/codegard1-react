@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { fabricColor, colorSuffix } from '../fabricStyles';
 import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
 
+
 export class ColorBox extends Component {
     constructor(props) {
         super(props);
-        this._handleChange = this._handleChange.bind(this);
+        this.state = {
+            animation: 'bounce'
+        };
+        this._handleChangeColor = this._handleChangeColor.bind(this);
+        this._handleChangeAnimation = this._handleChangeAnimation.bind(this);
     }
 
     colorArray() {
@@ -99,8 +104,8 @@ export class ColorBox extends Component {
             'slideOutLeft',
             'slideOutRight',
             'slideOutUp'
-        ].map(function(current, index, arr){
-            return {'key':current,'text':current};
+        ].map(function (current, index, arr) {
+            return { 'key': current, 'text': current };
         });
         return animations;
     }
@@ -110,41 +115,43 @@ export class ColorBox extends Component {
     }
 
     _handleChangeAnimation(options) {
-        console.log(options.key);
+        this.setState({
+            animation: options.key
+        });
+        
     }
 
     render() {
-        let divClass = fabricColor('bg', this.props.color) + ' animated pulse';
+        let divClass = fabricColor('bg', this.props.color) + ' animated ' + this.state.animation;
         let divStyles = {
             display: 'block',
             width: '100px',
             height: '100px',
             marginBottom: '1em',
-            border: '5px solid salmon'
+            border: '5px solid salmon',
+            float: 'right'
         };
 
         return (
-            <div>
-                <Dropdown
-                    label='Color'
-                    options={this.colorArray()}
-                    selectedKey={this.props.color}
-                    onChanged={this._handleChangeColor} />
-                <Dropdown
-                    label='Animation'
-                    options={this._animationArray()}
-                    selectedKey={'bounce'}
-                    onChanged={this._handleChangeAnimation} />
-                <div
-                    className="ms-fontxl"
-                    style={{
-                        borderTop: '1px solid #eee',
-                        marginTop: '1em'
-                    }}>
-                    ColorBox
-                    <br />
+            <div className="ms-Grid">
+                <p className="ms-font-xl">ColorBox</p>
+                <div className="ms-Grid-row">
+                    <div className="ms-Grid-col ms-u-sm8 ms-u-md8 ms-u-lg8">
+                        <Dropdown
+                            label='Color'
+                            options={this.colorArray()}
+                            selectedKey={this.props.color}
+                            onChanged={this._handleChangeColor} />
+                        <Dropdown
+                            label='Animation'
+                            options={this._animationArray()}
+                            selectedKey={this.state.animation}
+                            onChanged={this._handleChangeAnimation} />
+                    </div>
+                    <div className="ms-Grid-col ms-u-sm4 ms-u-md4 ms-u-lg4">                    
+                        <div style={divStyles} className={divClass} id="colorBox"></div>
+                    </div>
                 </div>
-                <div style={divStyles} className={divClass}></div>
             </div>
         )
     }
