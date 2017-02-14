@@ -16,13 +16,12 @@ export default class App extends Component {
   _changePage(p) {
     this.setState({
       page: p
-
     });
   }
 
-  _changeColor(c) {
+  _changeColor(options) {
     this.setState({
-      color: c
+      color: options.key
     });
   }
 
@@ -30,10 +29,14 @@ export default class App extends Component {
     return (
       <div className="App">
         <div className="ms-Grid ms-u-fadeIn400">
-          <Heading selectedKey={this.state.page} _changePage={this._changePage.bind(this)} />
+          <Heading 
+            selectedKey={this.state.page} 
+            _changePage={this._changePage.bind(this)} />
           <HorizontalBar />
           <Page 
-            page={this.state.page} />
+            page={this.state.page}
+            color={this.state.color}
+            _changeColor={this._changeColor.bind(this)} />
           <HorizontalBar />
         </div>
       </div>

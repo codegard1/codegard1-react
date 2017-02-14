@@ -25,7 +25,11 @@ export class Experimental extends Component {
                     _onCalloutDismiss={this.props._onCalloutDismiss}
                     isCalloutVisible={this.props.isCalloutVisible} />
 
-                    <ColorBox />
+
+                    <ColorBox 
+                        color={this.props.color}
+                        _changeColor={this.props._changeColor}
+                    />
                 </div>
 
                 <div className={rightCol}></div>
@@ -33,3 +37,11 @@ export class Experimental extends Component {
         );
     }
 } 
+
+Experimental.propTypes = {
+    _onShowMenuClicked: React.PropTypes.func.isRequired,
+    _onCalloutDismiss: React.PropTypes.func.isRequired,
+    isCalloutVisible: React.PropTypes.bool.isRequired,
+    color: React.PropTypes.string.isRequired,
+    _changeColor: React.PropTypes.func.isRequired
+}

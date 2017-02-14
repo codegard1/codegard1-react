@@ -9,7 +9,6 @@ export class Page extends Component {
         super(props);
         this.state = {
             isCalloutVisible: false,
-            page: props.page
         };
 
         this._onShowMenuClicked = this._onShowMenuClicked.bind(this);
@@ -51,7 +50,9 @@ export class Page extends Component {
                 return <Experimental
                         _onShowMenuClicked={this._onShowMenuClicked}
                         _onCalloutDismiss={this._onCalloutDismiss}
-                        isCalloutVisible={this.state.isCalloutVisible} />
+                        isCalloutVisible={this.state.isCalloutVisible}
+                        color={this.props.color}
+                        _changeColor={this.props._changeColor} />
                 // eslint-disable-next-line
                 break;                
 
@@ -62,5 +63,7 @@ export class Page extends Component {
 }
 
 Page.propTypes = {
-    page: React.PropTypes.string.isRequired
+    page: React.PropTypes.string.isRequired,
+    color: React.PropTypes.string.isRequired,
+    _changeColor: React.PropTypes.func.isRequired
 }
