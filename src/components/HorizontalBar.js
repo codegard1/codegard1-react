@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import * as fabric from './fabricStyles';
+import { fabricColor } from './fabricStyles';
 
 export class HorizontalBar extends Component {
-    render () {
-        let bgColor = fabric.bgColor;
+    render() {
+        let bgColor = fabricColor('bg', 'teal');
 
         return (
             <div className={"ms-Grid-row " + bgColor}>
@@ -12,3 +12,7 @@ export class HorizontalBar extends Component {
         );
     }
 };
+
+HorizontalBar.propTypes = {
+    color: React.PropTypes.string.isRequired
+}

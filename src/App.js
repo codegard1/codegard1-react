@@ -32,12 +32,14 @@ export default class App extends Component {
           <Heading 
             selectedKey={this.state.page} 
             _changePage={this._changePage.bind(this)} />
-          <HorizontalBar />
+          <HorizontalBar 
+            color={this.state.color} />
           <Page 
             page={this.state.page}
             color={this.state.color}
             _changeColor={this._changeColor.bind(this)} />
-          <HorizontalBar />
+          <HorizontalBar 
+            color={this.state.color} />
         </div>
       </div>
     );
