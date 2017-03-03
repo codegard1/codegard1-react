@@ -3,6 +3,7 @@ import { Topping } from '../';
 import { FormBasic } from '../experiments/FormBasic';
 import { CalloutExample } from '../experiments/CalloutExample';
 import { ColorBox } from '../experiments/ColorBox';
+import { FabricList } from '../experiments/FabricList';
 import * as fabric from '../fabricStyles';
 
 export class Experimental extends Component {
@@ -25,11 +26,11 @@ export class Experimental extends Component {
                     _onCalloutDismiss={this.props._onCalloutDismiss}
                     isCalloutVisible={this.props.isCalloutVisible} />
 
-
                     <ColorBox 
                         color={this.props.color}
-                        _changeColor={this.props._changeColor}
-                    />
+                        _changeColor={this.props._changeColor} />
+
+                    <FabricList color={this.props.color} />
                 </div>
 
                 <div className={rightCol}></div>
