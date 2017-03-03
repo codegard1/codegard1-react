@@ -3,6 +3,8 @@ export const colorPrefix = {
         'font': 'ms-fontColor-',
         'border': 'ms-borderColor-'
     };
+
+//Todo: implement KeyMirror for this object
 export const colorSuffix = {
         /*'themeDarker': 'themeDarker',
         'themeDark': 'themeDark',
