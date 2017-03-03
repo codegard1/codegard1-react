@@ -7,12 +7,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ### TODO
-* Check that imports and export syntax is consistent
-* Move Callout Example to a component class
 * Raise Page state to App
-* Move static MS-Grid styles into a module
 * Make Fabric UI color a prop
-* Use Fabric input component in Form Basic
+* Implement proper Routing
+* Implement Flux 
+* Implement React animations
 
 ### Wishes
 * Change site color via dropdown menu
@@ -22,3 +21,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * New page: Learning Log
 * Implement Fabric List component
 * Implement Typescript globally
+* Update projects page with actual work stuff, including pictures
+* Combine all content from existing pages to one 
+
+## Done
+* Check that imports and export syntax is consistent
+* Move Callout Example to a component class
+* Move static MS-Grid styles into a module
+* Use Fabric input component in Form Basic
