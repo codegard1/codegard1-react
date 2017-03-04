@@ -7,36 +7,46 @@ import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZ
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { Image, ImageFit } from 'office-ui-fabric-react/lib/Image';
 import { List } from 'office-ui-fabric-react/lib/List';
+//import { genericItems } from './genericItems';
+//import './List.Basic.Example.css';
+
+import { loadTheme } from '@microsoft/load-themed-styles';
+
+loadTheme({
+  'themePrimary': 'red'
+});
 
 let divStyles = {
     borderTop: '1px solid #eee',
     overflowX: 'hidden'
 };
 
-var logArrayProcessed = learningLog2016.map(value => {
+/*var logArrayProcessed = learningLog2016.map(value => {
     return React.createElement('h5', { key: value.key, className: "ms-font-m" }, `Date: ${value.date}`,
         React.createElement('p', { className: "ms-font-m" }, `Work: ${value.work === undefined ? 'none' : value.work}`),
         React.createElement('p', { className: "ms-font-m" }, `Notes: ${value.notes === undefined ? 'none' : value.notes}`)
     );
-});
+});*/
 
 export class FabricList extends Component {
     constructor(props) {
         super(props);
+        
+        this._onFilterChanged = this._onFilterChanged.bind(this);
+
         this.state = {
-            //Fabric state
             filterText: '',
-            items: learningLog2016
+            // passed from <Experimental>
+            items: props.items
         };
         // Fabric private method
-        this._onFilterChanged = this._onFilterChanged.bind(this);
     }
     render() {
         //Fabric vars
         let { items: originalItems } = this.props;
         let { items } = this.state;
         let resultCountText = items.length === originalItems.length ? '' : ` (${items.length} of ${originalItems.length} shown)`;
-
+        
         return (
             <FocusZone direction={FocusZoneDirection.vertical}>
                 <TextField label={'Filter by name' + resultCountText} onBeforeChange={this._onFilterChanged} />

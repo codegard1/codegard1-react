@@ -7,6 +7,7 @@ import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZ
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { Image, ImageFit } from 'office-ui-fabric-react/lib/Image';
 import { List } from 'office-ui-fabric-react/lib/List';
+import './List.Basic.Example.css';
 
 export class ListBasicExample extends React.Component {
   constructor(props) {
