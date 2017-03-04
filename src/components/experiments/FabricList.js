@@ -35,6 +35,7 @@ export class FabricList extends Component {
 
         return (
             <div style={divStyles}>
+                <p className="ms-font-xl">Learning Log</p>
                 <FocusZone direction={FocusZoneDirection.vertical}>
                     <TextField label={`Filter by Date` + resultCountText} onBeforeChange={this._onFilterChanged} />
                     <List
