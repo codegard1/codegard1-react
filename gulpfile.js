@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const inject = require('gulp-inject');
 const jshint = require('gulp-jshint');
 const del = require('del');
 const jsFiles = ['*.js', 'src/**/*.js'];
@@ -17,4 +18,11 @@ gulp.task('style', () => {
         }));
 });
 
-gulp.task('default', ['style']);
+gulp.task('inject', function () {
+    var target = gulp.src('./Public/index.html');
+    var sources = gulp.src(['./node_modules/office-ui-fabric-react/dist/css/*.min.css'], {read:false});
+     return target.pipe(inject(sources))
+     .pipe(gulp.dest('./Public'))
+});
+
+gulp.task('default', ['style', 'inject']);

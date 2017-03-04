@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { fabricColor, colorSuffix } from '../fabricStyles';
+//import { fabricColor, colorSuffix } from '../fabricStyles';
 
-// Fabric List imports
+// Fabric   List imports
 import { css, getRTL } from 'office-ui-fabric-react/lib/Utilities';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
@@ -11,15 +11,11 @@ import { List } from 'office-ui-fabric-react/lib/List';
 
 let divStyles = {
     borderTop: '1px solid #eee',
-    overflowX: 'hidden'
+    overflowX: 'hidden',
+    overflowY: 'auto',
+    maxHeight: '80vh',
+    padding: '20px 0'
 };
-
-/*var logArrayProcessed = learningLog2016.map(value => {
-    return React.createElement('h5', { key: value.key, className: "ms-font-m" }, `Date: ${value.date}`,
-        React.createElement('p', { className: "ms-font-m" }, `Work: ${value.work === undefined ? 'none' : value.work}`),
-        React.createElement('p', { className: "ms-font-m" }, `Notes: ${value.notes === undefined ? 'none' : value.notes}`)
-    );
-});*/
 
 export class FabricList extends Component {
     constructor(props) {
@@ -29,45 +25,51 @@ export class FabricList extends Component {
 
         this.state = {
             filterText: '',
-            // passed from <Experimental>
-            items: props.items
+            items: props.items,
         };
-        // Fabric private method
     }
     render() {
-        //Fabric vars
         let { items: originalItems } = this.props;
         let { items } = this.state;
         let resultCountText = items.length === originalItems.length ? '' : ` (${items.length} of ${originalItems.length} shown)`;
-       // let resultCountText = '';
+
         return (
-            <FocusZone direction={FocusZoneDirection.vertical}>
-                <TextField label={'Filter by name' + resultCountText} onBeforeChange={this._onFilterChanged} />
-                <List
-                    items={items}
-                    onRenderCell={(item, index) => (
-                        <div className='fabricList-itemCell' data-is-focusable={true}>
-                            <Image
-                                className='fabricList-itemImage'
-                                src={'C:\Users\n5014_000\Documents\GitHub\codegard1-react\src\img\avatarkat.png'}
-                                width={50}
-                                height={50}
-                                imageFit={ImageFit.cover}
-                            />
-                            <div className='fabricList-itemContent'>
-                                <div className='fabricList-itemName ms-font-xl'>{item.date}</div>
-                                <div className='fabricList-itemIndex ms-font-m'>{`Item ${index}`}</div>
-                                <div className='fabricList-itemDesc ms-font-s'>{item.work}</div>
-                                <div className='fabricList-itemDesc ms-font-s'>{item.notes}</div>
+            <div style={divStyles}>
+                <FocusZone direction={FocusZoneDirection.vertical}>
+                    <TextField label={`Filter by Date` + resultCountText} onBeforeChange={this._onFilterChanged} />
+                    <List
+                        items={items}
+                        onRenderCell={(item, index) => (
+                            <div className='fabricList-itemCell' data-is-focusable={true}>
+                                <Image
+                                    className='fabricList-itemImage'
+                                    src={'https://placeholdit.imgix.net/~text?txtsize=17&txt=176%C3%97176&w=176&h=176'}
+                                    width={50}
+                                    height={50}
+                                    imageFit={ImageFit.cover}
+                                />
+                                <div className='fabricList-itemContent'>
+                                    <div className='fabricList-itemName ms-font-xl'>{item.date}</div>
+                                    <div className='fabricList-itemIndex ms-font-xs'>{`Item ${index}`}</div>
+                                    <div className='fabricList-itemDesc'>
+                                        <span className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Work</span>
+                                        <p className="ms-font-xs">{item.work}</p>
+                                        </div>
+                                    <div className='fabricList-itemDesc'>
+                                        <span className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Notes</span>
+                                        <p className="ms-font-xs">{item.notes}</p>
+                                        
+                                    </div>
+                                </div>
+                                <i className={css('ms-fontColor-themePrimary ms-Icon', {
+                                    'ms-Icon--chevronRight': !getRTL(),
+                                    'ms-Icon--chevronLeft': getRTL()
+                                })} />
                             </div>
-                            <i className={css('ms-fontColor-themePrimary ms-Icon', {
-                                'ms-Icon--chevronRight': !getRTL(),
-                                'ms-Icon--chevronLeft': getRTL()
-                            })} />
-                        </div>
-                    )}
-                />
-            </FocusZone>
+                        )}
+                    />
+                </FocusZone>
+            </div>
         );
     }
     // Fabric Private method
@@ -77,7 +79,8 @@ export class FabricList extends Component {
         this.setState({
             filterText: text,
             items: text ?
-                items.filter(item => item.date.toLowerCase().indexOf(text.toLowerCase()) >= 0) :
+                items.filter(
+                    item => item.date.toLowerCase().indexOf(text.toLowerCase()) >= 0) :
                 items
         });
     }

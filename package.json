@@ -5,6 +5,7 @@
   "devDependencies": {
     "del": "^2.2.2",
     "gulp": "^3.9.1",
+    "gulp-inject": "^4.2.0",
     "gulp-jshint": "^2.0.4",
     "jshint": "^2.9.4",
     "jshint-jsx": "^0.5.0",

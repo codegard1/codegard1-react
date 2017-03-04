@@ -71,7 +71,8 @@ export const learningLog2016 = [{
     {
         key: 10,
         date: '11/29/2016',
-        work: ['Continued learning about how to use Jade',
+        work: [
+            'Continued learning about how to use Jade',
             'Learned about Handlebars'
         ],
         notes: ['See Templating Engines']
@@ -171,7 +172,7 @@ export const learningLog2016 = [{
         ]
     },
     {
-        'dat]e': '10/19/2016',
+        date: '10/19/2016',
         work: ['MS Ignite Deck: Build Business Apps for O365 - InfoPath, PowerApps, Flow, and More'],
         key: 23
     },

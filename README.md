@@ -12,6 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Implement proper Routing
 * Implement Flux 
 * Implement React animations
+* Textured background image for <Heading>
 
 ### Wishes
 * Change site color via dropdown menu
