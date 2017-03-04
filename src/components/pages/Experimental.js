@@ -5,7 +5,9 @@ import { CalloutExample } from '../experiments/CalloutExample';
 import { ColorBox } from '../experiments/ColorBox';
 import { FabricList } from '../experiments/FabricList';
 import * as fabric from '../fabricStyles';
+//item lists
 import { genericItems } from '../experiments/genericItems';
+import { learningLog2016 } from '../experiments/learningLog2016';
 
 export class Experimental extends Component {
     render () {
@@ -33,7 +35,7 @@ export class Experimental extends Component {
 
                     <FabricList 
                         color={this.props.color} 
-                        items={genericItems}
+                        items={learningLog2016}
                         startIndex={0}
                         renderedWindowsAhead={2}
                         renderedWindowsBehind={2} />

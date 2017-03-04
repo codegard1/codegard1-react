@@ -1,20 +1,13 @@
 import React, { Component } from 'react';
 import { fabricColor, colorSuffix } from '../fabricStyles';
-import { learningLog2016 } from './learningLog2016';
+
 // Fabric List imports
 import { css, getRTL } from 'office-ui-fabric-react/lib/Utilities';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
 import { Image, ImageFit } from 'office-ui-fabric-react/lib/Image';
 import { List } from 'office-ui-fabric-react/lib/List';
-//import { genericItems } from './genericItems';
-//import './List.Basic.Example.css';
 
-import { loadTheme } from '@microsoft/load-themed-styles';
-
-loadTheme({
-  'themePrimary': 'red'
-});
 
 let divStyles = {
     borderTop: '1px solid #eee',
@@ -31,7 +24,7 @@ let divStyles = {
 export class FabricList extends Component {
     constructor(props) {
         super(props);
-        
+
         this._onFilterChanged = this._onFilterChanged.bind(this);
 
         this.state = {
@@ -46,27 +39,28 @@ export class FabricList extends Component {
         let { items: originalItems } = this.props;
         let { items } = this.state;
         let resultCountText = items.length === originalItems.length ? '' : ` (${items.length} of ${originalItems.length} shown)`;
-        
+       // let resultCountText = '';
         return (
             <FocusZone direction={FocusZoneDirection.vertical}>
                 <TextField label={'Filter by name' + resultCountText} onBeforeChange={this._onFilterChanged} />
                 <List
                     items={items}
                     onRenderCell={(item, index) => (
-                        <div className='ms-ListBasicExample-itemCell' data-is-focusable={true}>
+                        <div className='fabricList-itemCell' data-is-focusable={true}>
                             <Image
-                                className='ms-ListBasicExample-itemImage'
-                                src={item.thumbnail}
+                                className='fabricList-itemImage'
+                                src={'C:\Users\n5014_000\Documents\GitHub\codegard1-react\src\img\avatarkat.png'}
                                 width={50}
                                 height={50}
                                 imageFit={ImageFit.cover}
                             />
-                            <div className='ms-ListBasicExample-itemContent'>
-                                <div className='ms-ListBasicExample-itemName ms-font-xl'>{item.date}</div>
-                                <div className='ms-ListBasicExample-itemIndex'>{`Item ${index}`}</div>
-                                <div className='ms-ListBasicExample-itemDesc ms-font-s'>{item.work}</div>
+                            <div className='fabricList-itemContent'>
+                                <div className='fabricList-itemName ms-font-xl'>{item.date}</div>
+                                <div className='fabricList-itemIndex ms-font-m'>{`Item ${index}`}</div>
+                                <div className='fabricList-itemDesc ms-font-s'>{item.work}</div>
+                                <div className='fabricList-itemDesc ms-font-s'>{item.notes}</div>
                             </div>
-                            <i className={css('ms-ListBasicExample-chevron ms-Icon', {
+                            <i className={css('ms-fontColor-themePrimary ms-Icon', {
                                 'ms-Icon--chevronRight': !getRTL(),
                                 'ms-Icon--chevronLeft': getRTL()
                             })} />
@@ -75,13 +69,6 @@ export class FabricList extends Component {
                 />
             </FocusZone>
         );
-        /* TODO: delete
-        <div style={divStyles}>
-            <h3>Learning Log 2016</h3>
-            <ul>
-                {logArrayProcessed}
-            </ul>
-        </div> */
     }
     // Fabric Private method
     _onFilterChanged(text) {
@@ -90,7 +77,7 @@ export class FabricList extends Component {
         this.setState({
             filterText: text,
             items: text ?
-                items.filter(item => item.name.toLowerCase().indexOf(text.toLowerCase()) >= 0) :
+                items.filter(item => item.date.toLowerCase().indexOf(text.toLowerCase()) >= 0) :
                 items
         });
     }
