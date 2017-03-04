@@ -1,7 +1,4 @@
-import React, { Component } from 'react';
-import { fabricColor, colorSuffix } from '../fabricStyles';
-import { learningLog2016 } from './learningLog2016'; 
-// Fabric List imports
+import * as React from 'react';
 import {
   css,
   getRTL
@@ -68,33 +65,4 @@ export class ListBasicExample extends React.Component {
         items
     });
   }
-}
-
-
-let divStyles = {
-    borderTop: '1px solid #eee',
-    overflowX: 'hidden'
-};
-
-var logArrayProcessed = learningLog2016.map(value => {
-    return React.createElement('h5', { key: value.key, className: "ms-font-m" }, `Date: ${value.date}`,
-        React.createElement('p', { className: "ms-font-m" }, `Work: ${value.work === undefined ? 'none' : value.work}`),
-        React.createElement('p', { className: "ms-font-m" }, `Notes: ${value.notes === undefined ? 'none' : value.notes}`)
-    );
-});
-
-export class FabricList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-        };
-    }
-    render() {
-        return <div style={divStyles}>
-            <h3>Learning Log 2016</h3>
-            <ul>
-                {logArrayProcessed}
-            </ul>
-        </div>
-    }
 }
