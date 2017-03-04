@@ -54,7 +54,7 @@ export class FabricList extends Component {
                             <div className='ms-ListBasicExample-itemContent'>
                                 <div className='ms-ListBasicExample-itemName ms-font-xl'>{item.date}</div>
                                 <div className='ms-ListBasicExample-itemIndex'>{`Item ${index}`}</div>
-                                <div className='ms-ListBasicExample-itemDesc ms-font-s'>{item.description}</div>
+                                <div className='ms-ListBasicExample-itemDesc ms-font-s'>{item.work}</div>
                             </div>
                             <i className={css('ms-ListBasicExample-chevron ms-Icon', {
                                 'ms-Icon--chevronRight': !getRTL(),
@@ -73,16 +73,15 @@ export class FabricList extends Component {
             </ul>
         </div> */
     }
-}
+    // Fabric Private method
+    _onFilterChanged(text) {
+        let { items } = this.props;
 
-// Fabric Private method
-_onFilterChanged(text) {
-    let { items } = this.props;
-
-    this.setState({
-        filterText: text,
-        items: text ?
-            items.filter(item => item.name.toLowerCase().indexOf(text.toLowerCase()) >= 0) :
-            items
-    });
+        this.setState({
+            filterText: text,
+            items: text ?
+                items.filter(item => item.name.toLowerCase().indexOf(text.toLowerCase()) >= 0) :
+                items
+        });
+    }
 }
