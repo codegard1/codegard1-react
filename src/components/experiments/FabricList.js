@@ -52,13 +52,17 @@ export class FabricList extends Component {
                                     <div className='fabricList-itemName ms-font-xl'>{item.date}</div>
                                     <div className='fabricList-itemIndex ms-font-xs'>{`Item ${index}`}</div>
                                     <div className='fabricList-itemDesc'>
-                                        <span className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Work</span>
-                                        <p className="ms-font-xs">{item.work}</p>
-                                        </div>
+                                        <p className="ms-font-xs"><span className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Work</span>
+                                        <br />
+                                        {item.work}
+                                        </p>
+                                    </div>
+                                    <hr/>
                                     <div className='fabricList-itemDesc'>
-                                        <span className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Notes</span>
-                                        <p className="ms-font-xs">{item.notes}</p>
-                                        
+                                        <p className="ms-font-xs"><span className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Notes</span>
+                                            <br />
+                                            {item.notes}
+                                        </p>
                                     </div>
                                 </div>
                                 <i className={css('ms-fontColor-themePrimary ms-Icon', {

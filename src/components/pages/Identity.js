@@ -11,7 +11,7 @@ export class Identity extends Component {
 
         return (
             <div className="ms-Grid-row">
-                <Topping title="Identity" icon="contact" />
+                <Topping title="Identity" icon="Contact" />
                 <div className={leftCol}></div>
 
                 <div className={innerCol}>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'animate.css';
+import 'office-ui-fabric-react/dist/css/fabric.min.css';
 import { Page } from './components/Page';
 import { Heading, HorizontalBar } from './components';
 

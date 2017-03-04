@@ -15,7 +15,7 @@ export class Experimental extends Component {
 
         return (
             <div className="ms-u-slideRightIn40 ms-Grid-row">
-                <Topping title="Experimental" icon="circle" />
+                <Topping title="Experimental" icon="Puzzle" />
                 <div className={leftCol}></div>
 
                 <div className={innerCol}>

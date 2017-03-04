@@ -11,7 +11,7 @@ export class Home extends Component {
 
         return (
             <div className="ms-Grid-row">
-                <Topping title="Home" icon="home" />
+                <Topping title="Home" icon="Home" />
                 <div className={leftCol}></div>
 
                 <div className={innerCol}>

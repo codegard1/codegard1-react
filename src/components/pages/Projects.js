@@ -11,7 +11,7 @@ export class Projects extends Component {
 
         return (
             <div className="ms-Grid-row">
-                <Topping title="Current Projects" icon="heartEmpty" />
+                <Topping title="Current Projects" icon="Heart" />
                 <div className={leftCol}></div>
 
                 <div className={innerCol}>
