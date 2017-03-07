@@ -7,6 +7,25 @@ import { FabricList } from '../experiments/FabricList';
 import * as fabric from '../fabricStyles';
 import { learningLog2016 } from '../experiments/learningLog2016';
 
+// Prepare the learningLog2016 array for passing to <FabricList>
+let itemsArray = learningLog2016.map(function (item) {
+    let key = item.key || Math.round(Math.random()*10000);
+    let date = item.date || 'no date';
+    let work = item.work || []; 
+    let notes = item.notes || [];
+    let workReact = [];
+    let notesReact = [];
+
+    if (work.length > 0) {
+            workReact = work.map((item,index) => React.createElement('li', { key: (date+"-work-" + index) }, item));
+        }
+    if (notes.length > 0) {
+            notesReact = notes.map( (item,index) => React.createElement('li', { key: (date+"-note-" + index) }, item));
+        }
+
+    return {'date': date, 'work': workReact, 'notes': notesReact, 'key':("learningLog-" + key)};
+});
+
 export class Experimental extends Component {
     render () {
         let leftCol = fabric.left;
@@ -34,7 +53,7 @@ export class Experimental extends Component {
                         
                     <FabricList 
                         color={this.props.color} 
-                        items={learningLog2016}
+                        items={itemsArray}
                         startIndex={0}
                         renderedWindowsAhead={1}
                         renderedWindowsBehind={1} />

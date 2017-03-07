@@ -243,6 +243,6 @@ export const learningLog2016 = [{
     {
         key: 32,
         date: '9/21/2016',
-        work: 'Read Grokking Scope in JavaScript'
+        work: ['Read Grokking Scope in JavaScript']
     }
 ];

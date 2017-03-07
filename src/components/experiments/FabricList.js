@@ -17,6 +17,8 @@ let divStyles = {
     padding: '20px 0'
 };
 
+
+
 export class FabricList extends Component {
     constructor(props) {
         super(props);
@@ -42,27 +44,24 @@ export class FabricList extends Component {
                         items={items}
                         onRenderCell={(item, index) => (
                             <div className='fabricList-itemCell' data-is-focusable={true}>
-                                <Image
-                                    className='fabricList-itemImage'
-                                    src={'https://placeholdit.imgix.net/~text?txtsize=17&txt=176%C3%97176&w=176&h=176'}
-                                    width={50}
-                                    height={50}
-                                    imageFit={ImageFit.cover}
-                                />
+                                
                                 <div className='fabricList-itemContent'>
                                     <div className='fabricList-itemName ms-font-xl'>{item.date}</div>
-                                    <div className='fabricList-itemIndex ms-font-xs'>{`Item ${index}`}</div>
-                                    <div className='fabricList-itemDesc'>
-                                        <p className="ms-font-xs"><span className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Work</span>
-                                        <br />
-                                        {item.work}
+                                    <div className='fabricList-itemIndex ms-font-xs'><p>{`Item ${index}`}</p></div>
+                                    <div className='fabricList-itemDesc ms-font-xs'>
+                                        <p className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Work
+                                            <br />
+                                            <ul>
+                                                {item.work.length > 0 ? item.work : 'None'}
+                                            </ul>
                                         </p>
                                     </div>
-                                    <hr/>
-                                    <div className='fabricList-itemDesc'>
-                                        <p className="ms-font-xs"><span className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Notes</span>
+                                    <div className='fabricList-itemDesc ms-font-xs'>
+                                        <p className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Notes
                                             <br />
-                                            {item.notes}
+                                            <ul>
+                                                {item.notes.length > 0 ? item.notes : 'None'}
+                                            </ul>
                                         </p>
                                     </div>
                                 </div>
