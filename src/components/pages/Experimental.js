@@ -9,25 +9,25 @@ import { learningLog2016 } from '../experiments/learningLog2016';
 
 // Prepare the learningLog2016 array for passing to <FabricList>
 let itemsArray = learningLog2016.map(function (item) {
-    let key = item.key || Math.round(Math.random()*10000);
+    let key = item.key || Math.round(Math.random() * 10000);
     let date = item.date || 'no date';
-    let work = item.work || []; 
+    let work = item.work || [];
     let notes = item.notes || [];
     let workReact = [];
     let notesReact = [];
 
     if (work.length > 0) {
-            workReact = work.map((item,index) => React.createElement('li', { key: (date+"-work-" + index) }, item));
-        }
+        workReact = work.map((item, index) => React.createElement('li', { key: (date + "-work-" + index) }, item));
+    }
     if (notes.length > 0) {
-            notesReact = notes.map( (item,index) => React.createElement('li', { key: (date+"-note-" + index) }, item));
-        }
+        notesReact = notes.map((item, index) => React.createElement('li', { key: (date + "-note-" + index) }, item));
+    }
 
-    return {'date': date, 'work': workReact, 'notes': notesReact, 'key':("learningLog-" + key)};
+    return { 'date': date, 'work': workReact, 'notes': notesReact, 'key': ("learningLog-" + key) };
 });
 
 export class Experimental extends Component {
-    render () {
+    render() {
         let leftCol = fabric.left;
         let innerCol = fabric.inner;
         let rightCol = fabric.right;
@@ -40,19 +40,19 @@ export class Experimental extends Component {
                 <div className={innerCol}>
 
                     <FormBasic />
-                    
-                    <CalloutExample 
-                    _onShowMenuClicked={this.props._onShowMenuClicked}
-                    _onCalloutDismiss={this.props._onCalloutDismiss}
-                    isCalloutVisible={this.props.isCalloutVisible} />
 
-                    <ColorBox 
+                    <CalloutExample
+                        _onShowMenuClicked={this.props._onShowMenuClicked}
+                        _onCalloutDismiss={this.props._onCalloutDismiss}
+                        isCalloutVisible={this.props.isCalloutVisible} />
+
+                    <ColorBox
                         color={this.props.color}
                         _changeColor={this.props._changeColor} />
 
-                        
-                    <FabricList 
-                        color={this.props.color} 
+
+                    <FabricList
+                        color={this.props.color}
                         items={itemsArray}
                         startIndex={0}
                         renderedWindowsAhead={1}
@@ -63,7 +63,7 @@ export class Experimental extends Component {
             </div> /* end ms-grid */
         );
     }
-} 
+}
 
 Experimental.propTypes = {
     _onShowMenuClicked: React.PropTypes.func.isRequired,

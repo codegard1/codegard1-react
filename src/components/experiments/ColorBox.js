@@ -146,14 +146,11 @@ export class ColorBox extends Component {
                             selectedKey={this.state.animation}
                             onChanged={this._handleChangeAnimation} />
                     </div>
-                    <div className="ms-Grid-col ms-u-sm4 ms-u-md4 ms-u-lg4 ms-u-xl2">
+                    <div className="ms-Grid-col ms-u-sm4 ms-u-md4 ms-u-lg4 ms-u-xl4">
                         <div 
                         style={divStyles} 
                         className={divClass} 
                         id="colorBox"></div>
-                    </div>
-                    <div className="ms-Grid-col ms-u-hiddenSm ms-u-hiddenMd ms-u-hiddenLg ms-u-xl2">                    
-                        <div style={divStyles} className={divClass} id="colorBox"></div>
                     </div>
                 </div>
             </div>
