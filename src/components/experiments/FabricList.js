@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
-//import { fabricColor, colorSuffix } from '../fabricStyles';
-
-// Fabric   List imports
 import { css, getRTL } from 'office-ui-fabric-react/lib/Utilities';
 import { FocusZone, FocusZoneDirection } from 'office-ui-fabric-react/lib/FocusZone';
 import { TextField } from 'office-ui-fabric-react/lib/TextField';
-import { Image, ImageFit } from 'office-ui-fabric-react/lib/Image';
 import { List } from 'office-ui-fabric-react/lib/List';
-
 
 let divStyles = {
     borderTop: '1px solid #eee',
@@ -16,8 +11,6 @@ let divStyles = {
     maxHeight: '80vh',
     padding: '20px 0'
 };
-
-
 
 export class FabricList extends Component {
     constructor(props) {
@@ -49,20 +42,19 @@ export class FabricList extends Component {
                                     <div className='fabricList-itemName ms-font-xl'>{item.date}</div>
                                     <div className='fabricList-itemIndex ms-font-xs'><p>{`Item ${index}`}</p></div>
                                     <div className='fabricList-itemDesc ms-font-xs'>
-                                        <p className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Work
+                                        <p className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Work</p>
                                             <br />
                                             <ul>
                                                 {item.work.length > 0 ? item.work : 'None'}
                                             </ul>
-                                        </p>
                                     </div>
                                     <div className='fabricList-itemDesc ms-font-xs'>
-                                        <p className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Notes
+                                        <p className="ms-font-s"><i className="ms-Icon ms-Icon--QuickNote"></i>Notes</p>
                                             <br />
                                             <ul>
                                                 {item.notes.length > 0 ? item.notes : 'None'}
                                             </ul>
-                                        </p>
+                                        
                                     </div>
                                 </div>
                                 <i className={css('ms-fontColor-themePrimary ms-Icon', {
