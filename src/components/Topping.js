@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import * as T from 'prop-types';
+
 import { fabricColor } from './fabricStyles';
 
 export class Topping extends Component {
@@ -21,6 +23,6 @@ export class Topping extends Component {
 };
 
 Topping.propTypes = {
-    icon: React.PropTypes.string,
-    title: React.PropTypes.string.isRequired
+    icon: T.string,
+    title: T.string.isRequired
 }

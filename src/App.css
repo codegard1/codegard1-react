@@ -1,18 +1,4 @@
-/*.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}*/
-
-.App div.ms-Grid:first-child {
+#App div.ms-Grid:first-child {
   box-shadow: 0 2px 15px rgba(0, 0, 0, .4);
   margin: 2em 1em 2em 1em;
   overflow: hidden;

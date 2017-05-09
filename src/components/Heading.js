@@ -1,14 +1,48 @@
 import React, { Component } from 'react';
+import * as T from 'prop-types';
 import { Dropdown } from 'office-ui-fabric-react/lib/Dropdown';
+import { CommandBar } from 'office-ui-fabric-react/lib/CommandBar';
 import * as fabric from './fabricStyles';
 
+
+
 export class Heading extends Component {
-    handleChange (options) {
+    handleChange(options) {
         this.props._changePage(options.key);
     }
-    
-    render () {
-        let fontColor = fabric.fontColor;
+
+    render() {
+        let commandBarDefinition = {
+            items: [
+                {
+                    key: 'options',
+                    name: 'Options',
+                    ariaLabel: 'Site options menu',
+                    subMenuProps: {
+                        items: [
+                            {
+                                key: 'home',
+                                name: 'Home',
+                                ariaLabel: 'Home',
+                            },
+                            {
+                                key: 'identity',
+                                name: 'Identity',
+                                ariaLabel: 'Identity',
+                            },
+                            {
+                                key: 'experimental',
+                                name: 'Experimental',
+                                ariaLabel: 'Experimental',
+                            },
+                        ],
+                        isSubMenu: true,
+                        isBeakVisible: true,
+                    },
+                },
+            ]
+        };
+        const fontColor = fabric.fontColor;
 
         return (
             <div className="ms-Grid-row">
@@ -18,16 +52,21 @@ export class Heading extends Component {
                     </span>
                 </div>
                 <div className="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg3 ms-u-xl2 ms-bgColor-neutralLighter header">
-                    <Dropdown
+                    <CommandBar
+                        isSearchBoxVisible={false}
+                        elipisisAriaLabel='Navigation'
+                        items={commandBarDefinition.items}
+                    />
+                    {/*<Dropdown
                         label=''
                         options={[
-                                { key: 'home', text: 'Home' },
-                                { key: 'identity', text: 'Identity' },
-                                { key: 'projects', text: 'Projects' },
-                                { key: 'experimental', text: 'Experimental' }
-                            ]}
+                            { key: 'home', text: 'Home' },
+                            { key: 'identity', text: 'Identity' },
+                            { key: 'projects', text: 'Projects' },
+                            { key: 'experimental', text: 'Experimental' }
+                        ]}
                         selectedKey={this.props.selectedKey}
-                        onChanged={this.handleChange.bind(this)} />
+                        onChanged={this.handleChange.bind(this)} />*/}
                 </div>
             </div>
         );
@@ -36,6 +75,6 @@ export class Heading extends Component {
 
 /* ES6 Syntax */
 Heading.propTypes = {
-    selectedKey: React.PropTypes.string.isRequired,
-    _changePage: React.PropTypes.func.isRequired
+    selectedKey: T.string.isRequired,
+    _changePage: T.func.isRequired
 }

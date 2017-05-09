@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import * as T from 'prop-types';
+import { Nav } from 'office-ui-fabric-react/lib/Nav';
+
 import { Topping } from '../';
 import { FormBasic } from '../experiments/FormBasic';
 import { CalloutExample } from '../experiments/CalloutExample';
 import { ColorBox } from '../experiments/ColorBox';
 import { FabricList } from '../experiments/FabricList';
+
 import * as fabric from '../fabricStyles';
 import { learningLog2016 } from '../experiments/learningLog2016';
 
@@ -59,16 +63,23 @@ export class Experimental extends Component {
                         renderedWindowsBehind={1} />
                 </div>
 
-                <div className={rightCol}></div>
+                <div className={rightCol}>
+                    <Nav groups={this.props.NavDefinition}
+                        onRenderLink={(link) => ([
+                            <span key={1} className='Nav-linkText'>{link.name}</span>,
+                        ])}
+                        isOnTop={false}
+                    />
+                </div>
             </div> /* end ms-grid */
         );
     }
 }
 
 Experimental.propTypes = {
-    _onShowMenuClicked: React.PropTypes.func.isRequired,
-    _onCalloutDismiss: React.PropTypes.func.isRequired,
-    isCalloutVisible: React.PropTypes.bool.isRequired,
-    color: React.PropTypes.string.isRequired,
-    _changeColor: React.PropTypes.func.isRequired
+    _onShowMenuClicked: T.func.isRequired,
+    _onCalloutDismiss: T.func.isRequired,
+    isCalloutVisible: T.bool.isRequired,
+    color: T.string.isRequired,
+    _changeColor: T.func.isRequired
 }

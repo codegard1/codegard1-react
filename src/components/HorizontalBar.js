@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import * as T from 'prop-types';
 import { fabricColor } from './fabricStyles';
 
+/*
+HorizontalBar is a child of App
+
+*/
 export class HorizontalBar extends Component {
     render() {
         let bgColor = fabricColor('bg', 'teal');
@@ -14,5 +19,5 @@ export class HorizontalBar extends Component {
 };
 
 HorizontalBar.propTypes = {
-    color: React.PropTypes.string.isRequired
+    color: T.string,
 }

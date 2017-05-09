@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import * as T from 'prop-types';
 import {Home,
         Identity,
         Projects,
         Experimental} from './pages/';
+
+const pages = [
+    
+]
 
 export class Page extends Component {
     constructor(props) {
@@ -63,7 +68,7 @@ export class Page extends Component {
 }
 
 Page.propTypes = {
-    page: React.PropTypes.string.isRequired,
-    color: React.PropTypes.string.isRequired,
-    _changeColor: React.PropTypes.func.isRequired
+    page: T.string.isRequired,
+    color: T.string.isRequired,
+    _changeColor: T.func.isRequired
 }

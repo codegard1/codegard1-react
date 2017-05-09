@@ -1,6 +1,6 @@
 {
   "name": "codegard1-react",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "private": true,
   "devDependencies": {
     "del": "^2.2.2",
@@ -10,15 +10,15 @@
     "jshint": "^2.9.4",
     "jshint-jsx": "^0.5.0",
     "jshint-stylish": "^2.2.1",
-    "react-scripts": "0.6.1"
+    "react-scripts": "^0.6.1"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
     "history": "^4.6.0",
-    "jquery": "^3.1.1",
-    "office-ui-fabric-react": "^0.63.4",
-    "react": "15.3.2",
-    "react-dom": "15.3.2",
+    "office-ui-fabric-react": "^2.0.0",
+    "prop-types": "^15.5.8",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "react-router": "^3.0.2"
   },
   "scripts": {
