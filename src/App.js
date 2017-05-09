@@ -12,9 +12,11 @@ export default class App extends Component {
     super(props);
     this.state = {
       page: 'home',
+      selectedNavItem: 'home',
       color: 'teal',
       isNavOpen: false,
       isMenuVisible: false,
+      isCalloutVisible: false,
     };
 
     this._onIsMenuVisibleChanged = this._onIsMenuVisibleChanged.bind(this);
@@ -25,6 +27,9 @@ export default class App extends Component {
     this._onShowPanel = this._onShowPanel.bind(this);
     this._changeColor = this._changeColor.bind(this);
     this._changePage = this._changePage.bind(this);
+    this._onNavLinkClicked = this._onNavLinkClicked.bind(this);
+    this._onShowMenuClicked = this._onShowMenuClicked.bind(this);
+    this._onCalloutDismiss = this._onCalloutDismiss.bind(this);
   }
 
   // App methods
@@ -53,12 +58,32 @@ export default class App extends Component {
   }
 
   _changePage(p) {
-    this.setState({ page: p });
+    this.setState({ page: p, selectedNavItem: p });
+  }
+
+  _onNavLinkClicked(ev, item) {
+    console.log("item.key:", item.key);
+    this.setState({ selectedNavItem: item.key, page: item.key });
   }
 
   _changeColor(options) {
     this.setState({ color: options.key });
   }
+
+  _onShowMenuClicked() {
+    console.log('_onShowMenuClicked called');
+    this.setState({
+      isCalloutVisible: !this.state.isCalloutVisible
+    });
+  }
+
+  _onCalloutDismiss() {
+    console.log('_onCalloutDismiss called');
+    this.setState({
+      isCalloutVisible: false
+    });
+  }
+
 
   /*
   <App> ms-Grid
@@ -82,21 +107,14 @@ export default class App extends Component {
           <HorizontalBar
             color={this.state.color} />
           <Page
-            page={'home'}
+            page={this.state.page}
             color={this.state.color}
-            _changeColor={this._changeColor} />
-          <Page
-            page={'identity'}
-            color={this.state.color}
-            _changeColor={this._changeColor} />
-          <Page
-            page={'projects'}
-            color={this.state.color}
-            _changeColor={this._changeColor} />
-          <Page
-            page={'experimental'}
-            color={this.state.color}
-            _changeColor={this._changeColor} />
+            _changeColor={this._changeColor}
+            _onNavLinkClicked={this._onNavLinkClicked}
+            selectedNavItem={this.state.selectedNavItem}
+            _onShowMenuClicked={this._onShowMenuClicked}
+            _onCalloutDismiss={this._onCalloutDismiss}
+             />
           <HorizontalBar
             color={this.state.color} />
         </div>

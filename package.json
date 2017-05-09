@@ -1,6 +1,6 @@
 {
   "name": "codegard1-react",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "private": true,
   "devDependencies": {
     "del": "^2.2.2",
