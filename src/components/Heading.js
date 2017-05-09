@@ -59,6 +59,7 @@ export class Heading extends Component {
                         items={commandBarDefinition.items}
                     />*/}
                     <Dropdown
+
                         label=''
                         options={[
                             { key: 'home', text: 'Home' },

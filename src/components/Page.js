@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import * as T from 'prop-types';
+
 import { Nav } from 'office-ui-fabric-react/lib/Nav';
 import { Link } from 'office-ui-fabric-react/lib/Link';
 
 import { Topping } from './Topping';
+
+
 import {
     Home,
     Identity,
     Projects,
     Experimental
 } from './pages/';
+
 import { FormBasic } from './experiments/FormBasic';
 import { CalloutExample } from './experiments/CalloutExample';
 import { ColorBox } from './experiments/ColorBox';
@@ -206,8 +210,7 @@ export class Page extends Component {
             default:
                 return <Topping title="" icon="" />;
         }
-    }
-
+    }   
 }
 
 Page.propTypes = {
