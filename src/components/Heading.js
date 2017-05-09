@@ -46,17 +46,19 @@ export class Heading extends Component {
 
         return (
             <div className="ms-Grid-row">
-                <div className="ms-Grid-col ms-u-sm6 ms-u-md8 ms-u-lg9 ms-u-xl10 ms-bgColor-neutralLighter header">
+                <div className="ms-Grid-col ms-u-sm6 ms-u-md6 ms-bgColor-neutralLighter header">
                     <span className={"ms-font-su ms-u-fadeIn400 " + fontColor}>
                         <strong>codegard1</strong>
                     </span>
                 </div>
-                <div className="ms-Grid-col ms-u-sm6 ms-u-md4 ms-u-lg3 ms-u-xl2 ms-bgColor-neutralLighter header">
-                    <CommandBar
+                <div className="ms-Grid-col ms-u-sm6 ms-u-md6 ms-bgColor-neutralLighter header">
+                    <div className="header-right">
+                        <CommandBar
                         isSearchBoxVisible={false}
                         elipisisAriaLabel='Navigation'
                         items={commandBarDefinition.items}
                     />
+                    </div>
                     {/*<Dropdown
                         label=''
                         options={[
