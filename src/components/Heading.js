@@ -52,8 +52,8 @@ export class Heading extends Component {
                     </span>
                 </div>
 
-                <div className="ms-Grid-col ms-u-sm6 ms-u-md6 ms-bgColor-neutralLighter header">
-                        {/*<CommandBar
+                <div className="ms-Grid-col ms-u-sm3 ms-u-md3 ms-bgColor-neutralLighter header">
+                    {/*<CommandBar
                         isSearchBoxVisible={false}
                         elipisisAriaLabel='Navigation'
                         items={commandBarDefinition.items}
@@ -65,7 +65,11 @@ export class Heading extends Component {
                             { key: 'home', text: 'Home' },
                             { key: 'identity', text: 'Identity' },
                             { key: 'projects', text: 'Projects' },
-                            { key: 'experimental', text: 'Experimental' }
+                            { key: 'experimental', text: 'Experimental' },
+                            { key: 'fabric-callout' },
+                            { key: 'color-box', text: 'color-box' },
+                            { key: 'fabric-list', text: 'fabric-list' },
+                            { key: 'basic-form', text: 'basic-form' },
                         ]}
                         selectedKey={this.props.selectedKey}
                         onChanged={this.handleChange.bind(this)} />

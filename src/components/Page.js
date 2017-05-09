@@ -128,12 +128,7 @@ export class Page extends Component {
                 // eslint-disable-next-line
                 break;
             case 'experimental':
-                return (<Experimental
-                    _onShowMenuClicked={this._onShowMenuClicked}
-                    _onCalloutDismiss={this._onCalloutDismiss}
-                    isCalloutVisible={this.state.isCalloutVisible}
-                    color={this.props.color}
-                    _changeColor={this.props._changeColor} />);
+                return (<Experimental />);
                 // eslint-disable-next-line
                 break;
             case 'basic-form':
