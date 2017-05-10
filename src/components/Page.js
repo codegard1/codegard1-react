@@ -22,6 +22,25 @@ import { FabricList } from './experiments/FabricList';
 import { learningLog2016 } from './experiments/learningLog2016';
 import * as fabric from './fabricStyles';
 
+// Prepare the learningLog2016 array for passing to <FabricList>
+const itemsArray = learningLog2016.map(function (item) {
+    let key = item.key || Math.round(Math.random() * 10000);
+    let date = item.date || 'no date';
+    let work = item.work || [];
+    let notes = item.notes || [];
+    let workReact = [];
+    let notesReact = [];
+
+    if (work.length > 0) {
+        workReact = work.map((item, index) => React.createElement('li', { key: (date + "-work-" + index) }, item));
+    }
+    if (notes.length > 0) {
+        notesReact = notes.map((item, index) => React.createElement('li', { key: (date + "-note-" + index) }, item));
+    }
+
+    return { 'date': date, 'work': workReact, 'notes': notesReact, 'key': ("learningLog-" + key) };
+});
+
 export class Page extends Component {
     render() {
         let leftCol = fabric.left,
@@ -147,7 +166,7 @@ export class Page extends Component {
                 return (
                     <FabricList
                         color={this.props.color}
-                        items={this.itemsArray}
+                        items={itemsArray}
                         startIndex={0}
                         renderedWindowsAhead={1}
                         renderedWindowsBehind={1} />
@@ -205,7 +224,7 @@ export class Page extends Component {
             default:
                 return <Topping title="" icon="" />;
         }
-    }   
+    }
 }
 
 Page.propTypes = {

@@ -64,12 +64,11 @@ export class Heading extends Component {
                         options={[
                             { key: 'home', text: 'Home' },
                             { key: 'identity', text: 'Identity' },
-                            { key: 'projects', text: 'Projects' },
-                            { key: 'experimental', text: 'Experimental' },
-                            { key: 'fabric-callout' },
-                            { key: 'color-box', text: 'color-box' },
-                            { key: 'fabric-list', text: 'fabric-list' },
-                            { key: 'basic-form', text: 'basic-form' },
+                            { key: 'projects', text: 'Projects' },                            { key: 'fabric-callout' },
+                            { key: 'color-box', text: 'Color Box' },
+                            { key: 'fabric-list', text: 'Fabric List' },
+                            { key: 'basic-form', text: 'Basic Form' },
+                            { key: 'fabric-callout', text: 'Fabric Callout'},
                         ]}
                         selectedKey={this.props.selectedKey}
                         onChanged={this.handleChange.bind(this)} />
