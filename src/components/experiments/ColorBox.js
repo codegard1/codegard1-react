@@ -143,7 +143,7 @@ export class ColorBox extends Component {
     render() {
         let divClass = fabricColor('bg', this.props.color) + ' animated ' + this.state.animation;
         let divStyles = {
-            display: 'block',
+            display: 'inline-block',
             width: '100px',
             height: '100px',
             marginBottom: '1em',
@@ -152,28 +152,24 @@ export class ColorBox extends Component {
         };
 
         return (
-            <div className="ms-Grid">
+            <div>
                 <p className="ms-font-xl">ColorBox</p>
-                <div className="ms-Grid-row">
-                    <div className="ms-Grid-col ms-u-sm8 ms-u-md8 ms-u-lg8 ms-u-xl8">
-                        <Dropdown
-                            label='Color'
-                            options={this.colorArray()}
-                            selectedKey={this.props.color}
-                            onChanged={this._handleChangeColor} />
-                        <Dropdown
-                            label='Animation'
-                            options={this._animationArray()}
-                            selectedKey={this.state.animation}
-                            onChanged={this._handleChangeAnimation} />
-                    </div>
-                    <div className="ms-Grid-col ms-u-sm4 ms-u-md4 ms-u-lg4 ms-u-xl4">
-                        <div
-                            onClick={this._handleClick}
-                            style={divStyles}
-                            className={divClass}
-                            id="colorBox"></div>
-                    </div>
+                <Dropdown
+                    label='Color'
+                    options={this.colorArray()}
+                    selectedKey={this.props.color}
+                    onChanged={this._handleChangeColor} />
+                <Dropdown
+                    label='Animation'
+                    options={this._animationArray()}
+                    selectedKey={this.state.animation}
+                    onChanged={this._handleChangeAnimation} />
+
+                <div
+                    onClick={this._handleClick}
+                    style={divStyles}
+                    className={divClass}
+                    id="colorBox">
                 </div>
             </div>
         )
