@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Callout } from 'office-ui-fabric-react/lib/Callout';
-import { Button } from 'office-ui-fabric-react/lib/Button';
+import { PrimaryButton } from 'office-ui-fabric-react/lib/Button';
 
 let divStyles = {
     borderTop: '1px solid #eee',
@@ -22,9 +22,9 @@ export class CalloutExample extends Component {
                 <p>Fabric UI Callout Example</p>
                 <p>isCalloutVisible? : {JSON.stringify(isCalloutVisible)}</p>
                 <p>
-                    <Button onClick={this._onShowMenuClicked}>
+                    <PrimaryButton onClick={this._onShowMenuClicked}>
                         {isCalloutVisible ? 'Hide Callout' : 'Show Callout'}
-                    </Button>
+                    </PrimaryButton>
                 </p>
 
                 {isCalloutVisible && (

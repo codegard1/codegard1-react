@@ -114,6 +114,7 @@ export default class App extends Component {
             selectedNavItem={this.state.selectedNavItem}
             _onShowMenuClicked={this._onShowMenuClicked}
             _onCalloutDismiss={this._onCalloutDismiss}
+            isCalloutVisible={this.state.isCalloutVisible}
              />
           <HorizontalBar
             color={this.state.color} />

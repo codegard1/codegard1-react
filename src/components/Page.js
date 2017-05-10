@@ -157,8 +157,8 @@ export class Page extends Component {
             case 'fabric-callout':
                 return (
                     <CalloutExample
-                        _onShowMenuClicked={this._onShowMenuClicked}
-                        _onCalloutDismiss={this._onCalloutDismiss}
+                        _onShowMenuClicked={this.props._onShowMenuClicked}
+                        _onCalloutDismiss={this.props._onCalloutDismiss}
                         isCalloutVisible={this.props.isCalloutVisible} />
                 );
                 // eslint-disable-next-line
