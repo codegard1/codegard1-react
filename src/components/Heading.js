@@ -46,13 +46,13 @@ export class Heading extends Component {
 
         return (
             <div className="ms-Grid-row">
-                <div className="ms-Grid-col ms-u-sm9 ms-u-md9 ms-bgColor-neutralLighter header">
+                <div className="ms-Grid-col ms-u-sm8 ms-u-md9 ms-u-lg12 ms-bgColor-neutralLighter header">
                     <span className={"ms-font-su ms-u-fadeIn400 " + fontColor}>
                         <strong>codegard1</strong>
                     </span>
                 </div>
 
-                <div className="ms-Grid-col ms-u-sm3 ms-u-md3 ms-bgColor-neutralLighter header">
+                <div className="ms-Grid-col ms-u-sm4 ms-u-md3 ms-u-hiddenLgUp ms-bgColor-neutralLighter header ms-u-fadeIn400">
                     {/*<CommandBar
                         isSearchBoxVisible={false}
                         elipisisAriaLabel='Navigation'
@@ -64,7 +64,8 @@ export class Heading extends Component {
                         options={[
                             { key: 'home', text: 'Home' },
                             { key: 'identity', text: 'Identity' },
-                            { key: 'projects', text: 'Projects' },                            { key: 'fabric-callout' },
+                            { key: 'projects', text: 'Projects' },                            
+                            { key: 'fabric-callout',text:"Fabric Callout" },
                             { key: 'color-box', text: 'Color Box' },
                             { key: 'fabric-list', text: 'Fabric List' },
                             { key: 'basic-form', text: 'Basic Form' },
