@@ -1,2 +1,0 @@
-C:\Users\n501457\github\codegard1-react\obj\Debug\codegard1.njsprojResolveAssemblyReference.cache
-C:\Users\n501457\github\codegard1-react\bin\Microsoft.NodejsTools.WebRole.dll
