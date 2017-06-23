@@ -9,10 +9,8 @@ export class Projects extends Component {
                 <p>
                     Here is a sampling of what I'm doing now:</p>
                 <ul>
+                    <li>Building <Link href="https://github.com/codegard1/blackjack/">my own version of blackjack</Link> using React, Fabric, Masonry, and <Link href="https://github.com/troygoode/node-shuffle">node-shuffle</Link></li>
                     <li>Working with Gatekeepers and business owners to migrate sites and content from an older site collection (SP 2013) to the new one (SP 2016)</li>
-                    <li>Learning how to use <Link href="http://gulpjs.com/">Gulp</Link> to automate routine dev processes</li>
-                    <li>Developing a volunteer opportunities signup application for internal use</li>
-                    <li>Using <Link href="http://datatables.net/">Datatables</Link> to display SharePoint List data in an on-premise Site Collection</li>
                     <li>Getting used to the <Link href="https://github.com/petehunt/react-howto">React ecosystem</Link>, with the intention
                                 of using the framework to create modular forms within SharePoint pages, obviating some of our dependence on
                                 <Link href="http://www.nintex.com/">Nintex Forms</Link></li>
