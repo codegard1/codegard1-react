@@ -4,19 +4,15 @@
   "private": true,
   "homepage": "http://codegard1.com",
   "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-inject": "^4.2.0",
-    "gulp-jshint": "^2.0.4",
     "react-dev-utils": "^3.0.0",
     "react-scripts": "^0.6.1"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
-    "office-ui-fabric-react": "^2.34.2",
+    "office-ui-fabric-react": "2.34.2",
     "prop-types": "^15.5.10",
-    "react": "^16.0.0-alpha.12",
-    "react-dom": "^16.0.0-alpha.12"
+    "react": "^15.5.10",
+    "react-dom": "^15.5.10"
   },
   "scripts": {
     "start": "react-scripts start",
