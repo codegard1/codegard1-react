@@ -1,18 +1,15 @@
 import React, { Component } from "react";
 import * as T from "prop-types";
-
 import { Nav } from "office-ui-fabric-react/lib/Nav";
 import { Link } from "office-ui-fabric-react/lib/Link";
 
+/* custom stuff */
 import { Topping } from "./Topping";
-
 import { Home, Identity, Projects, Experimental } from "./pages/";
-
 import { FormBasic } from "./experiments/FormBasic";
 import { CalloutExample } from "./experiments/CalloutExample";
 import { ColorBox } from "./experiments/ColorBox";
 import { FabricList } from "./experiments/FabricList";
-
 import { learningLog2016 } from "./experiments/learningLog2016";
 import * as fabric from "./fabricStyles";
 
@@ -48,8 +45,8 @@ export class Page extends Component {
   render() {
     let leftCol = fabric.left, innerCol = fabric.inner, rightCol = fabric.right;
 
-    let pageContent = this._returnContent(this.props.selectedNavItem),
-      pageTopping = this._returnTopping(this.props.selectedNavItem);
+    let pageContent = this._returnContent(this.props.page),
+      pageTopping = this._returnTopping(this.props.page);
 
     let NavDefinition = [
       {
@@ -137,7 +134,7 @@ export class Page extends Component {
             ]}
             isOnTop={false}
             onLinkClick={this.props._onNavLinkClicked}
-            selectedKey={this.props.selectedNavItem}
+            selectedKey={this.props.page}
             initialSelectedKey={"home"}
           />
         </div>
@@ -263,7 +260,6 @@ Page.propTypes = {
   page: T.string.isRequired,
   color: T.string.isRequired,
   _changeColor: T.func.isRequired,
-  selectedNavItem: T.string,
   _onNavLinkClicked: T.func,
   _onShowMenuClicked: T.func,
   _onCalloutDismis: T.func,

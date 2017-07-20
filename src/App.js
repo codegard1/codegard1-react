@@ -12,7 +12,6 @@ export default class App extends BaseComponent {
 
     this.state = {
       page: "home",
-      selectedNavItem: "home",
       color: "teal",
       isNavOpen: false,
       isMenuVisible: false,
@@ -84,7 +83,6 @@ export default class App extends BaseComponent {
             color={this.state.color}
             _changeColor={this._changeColor}
             _onNavLinkClicked={this._onNavLinkClicked}
-            selectedNavItem={this.state.page}
             _onShowMenuClicked={this._onShowMenuClicked}
             _onCalloutDismiss={this._onCalloutDismiss}
             isCalloutVisible={this.state.isCalloutVisible}
