@@ -14,7 +14,7 @@ import { learningLog2016 } from "./experiments/learningLog2016";
 import * as fabric from "./fabricStyles";
 
 // Prepare the learningLog2016 array for passing to <FabricList>
-const itemsArray = learningLog2016.map(function(item) {
+const itemsArray = learningLog2016.map(item => {
   let key = item.key || Math.round(Math.random() * 10000);
   let date = item.date || "no date";
   let work = item.work || [];
@@ -23,21 +23,21 @@ const itemsArray = learningLog2016.map(function(item) {
   let notesReact = [];
 
   if (work.length > 0) {
-    workReact = work.map((item, index) =>
-      React.createElement("li", { key: date + "-work-" + index }, item)
-    );
+    workReact = work.map((item, index) => (
+      <li key={`${date}-work-${index}`}>{item}</li>
+    ));
   }
   if (notes.length > 0) {
-    notesReact = notes.map((item, index) =>
-      React.createElement("li", { key: date + "-note-" + index }, item)
-    );
+    notesReact = notes.map((item, index) => (
+      <li key={`${date}-note-${index}`}>{item}</li>
+    ));
   }
 
   return {
-    date: date,
+    key: `learningLog-${key}`,
+    date,
     work: workReact,
     notes: notesReact,
-    key: "learningLog-" + key
   };
 });
 
