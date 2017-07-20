@@ -77,10 +77,6 @@ export default class App extends BaseComponent {
           <Heading
             selectedKey={this.state.page}
             _changePage={this._changePage}
-            isMenuVisible={this.state.isMenuVisible}
-            isNavOpen={this.state.isNavOpen}
-            closePanel={this._onClosePanel}
-            showPanel={this._onShowPanel}
           />
           <HorizontalBar color={this.state.color} />
           <Page
