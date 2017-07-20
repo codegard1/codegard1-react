@@ -21,9 +21,6 @@ export default class App extends BaseComponent {
 
     /* bind private methods */
     this._bind(
-      "_onLinkClick",
-      "_onOverlayClicked",
-      "_onNavItemClicked",
       "_onClosePanel",
       "_onShowPanel",
       "_changeColor",
@@ -32,18 +29,6 @@ export default class App extends BaseComponent {
       "_onShowMenuClicked",
       "_onCalloutDismiss"
     );
-  }
-
-  _onLinkClick() {
-    this.setState({ isMenuVisible: false });
-  }
-
-  _onOverlayClicked(ev) {
-    this.setState({ isNavOpen: false });
-  }
-
-  _onNavItemClicked(ev) {
-    this.setState({ isNavOpen: false });
   }
 
   _onClosePanel = () => {
@@ -59,7 +44,6 @@ export default class App extends BaseComponent {
   }
 
   _onNavLinkClicked(ev, item) {
-    console.log("item.key:", item.key);
     this.setState({ selectedNavItem: item.key, page: item.key });
   }
 
@@ -68,14 +52,12 @@ export default class App extends BaseComponent {
   }
 
   _onShowMenuClicked() {
-    console.log("_onShowMenuClicked called");
     this.setState({
       isCalloutVisible: !this.state.isCalloutVisible
     });
   }
 
   _onCalloutDismiss() {
-    console.log("_onCalloutDismiss called");
     this.setState({
       isCalloutVisible: false
     });
