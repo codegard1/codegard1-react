@@ -269,3 +269,5 @@ Page.propTypes = {
   _onCalloutDismis: T.func,
   isCalloutVisible: T.bool
 };
+
+export default Page;

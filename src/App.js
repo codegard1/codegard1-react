@@ -1,40 +1,37 @@
-import React, { Component } from 'react';
-import './App.css';
-import 'animate.css';
-import 'office-ui-fabric-react/dist/css/fabric.min.css';
+import React from "react";
+import "./App.css";
+import "animate.css";
+import "office-ui-fabric-react/dist/css/fabric.min.css";
 
 /* Custom Components */
-import { Page } from './components/Page';
-import { Heading, HorizontalBar } from './components';
+import { BaseComponent, Page, Heading, HorizontalBar } from "./components";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
+export default class App extends BaseComponent {
+  constructor() {
+    super();
+
     this.state = {
-      page: 'home',
-      selectedNavItem: 'home',
-      color: 'teal',
+      page: "home",
+      selectedNavItem: "home",
+      color: "teal",
       isNavOpen: false,
       isMenuVisible: false,
-      isCalloutVisible: false,
+      isCalloutVisible: false
     };
 
-    this._onIsMenuVisibleChanged = this._onIsMenuVisibleChanged.bind(this);
-    this._onLinkClick = this._onLinkClick.bind(this);
-    this._onOverlayClicked = this._onOverlayClicked.bind(this);
-    this._onNavItemClicked = this._onNavItemClicked.bind(this);
-    this._onClosePanel = this._onClosePanel.bind(this);
-    this._onShowPanel = this._onShowPanel.bind(this);
-    this._changeColor = this._changeColor.bind(this);
-    this._changePage = this._changePage.bind(this);
-    this._onNavLinkClicked = this._onNavLinkClicked.bind(this);
-    this._onShowMenuClicked = this._onShowMenuClicked.bind(this);
-    this._onCalloutDismiss = this._onCalloutDismiss.bind(this);
-  }
-
-  // App methods
-  _onIsMenuVisibleChanged(isMenuVisible) {
-    this.setState({ isMenuVisible });
+    /* bind private methods */
+    this._bind(
+      "_onLinkClick",
+      "_onOverlayClicked",
+      "_onNavItemClicked",
+      "_onClosePanel",
+      "_onShowPanel",
+      "_changeColor",
+      "_changePage",
+      "_onNavLinkClicked",
+      "_onShowMenuClicked",
+      "_onCalloutDismiss"
+    );
   }
 
   _onLinkClick() {
@@ -51,11 +48,11 @@ export default class App extends Component {
 
   _onClosePanel = () => {
     this.setState({ isNavOpen: false });
-  }
+  };
 
   _onShowPanel = () => {
     this.setState({ isNavOpen: true });
-  }
+  };
 
   _changePage(p) {
     this.setState({ page: p, selectedNavItem: p });
@@ -71,19 +68,18 @@ export default class App extends Component {
   }
 
   _onShowMenuClicked() {
-    console.log('_onShowMenuClicked called');
+    console.log("_onShowMenuClicked called");
     this.setState({
       isCalloutVisible: !this.state.isCalloutVisible
     });
   }
 
   _onCalloutDismiss() {
-    console.log('_onCalloutDismiss called');
+    console.log("_onCalloutDismiss called");
     this.setState({
       isCalloutVisible: false
     });
   }
-
 
   /*
   <App> ms-Grid
@@ -104,8 +100,7 @@ export default class App extends Component {
             closePanel={this._onClosePanel}
             showPanel={this._onShowPanel}
           />
-          <HorizontalBar
-            color={this.state.color} />
+          <HorizontalBar color={this.state.color} />
           <Page
             page={this.state.page}
             color={this.state.color}
@@ -115,9 +110,8 @@ export default class App extends Component {
             _onShowMenuClicked={this._onShowMenuClicked}
             _onCalloutDismiss={this._onCalloutDismiss}
             isCalloutVisible={this.state.isCalloutVisible}
-             />
-          <HorizontalBar
-            color={this.state.color} />
+          />
+          <HorizontalBar color={this.state.color} />
         </div>
       </div>
     );
