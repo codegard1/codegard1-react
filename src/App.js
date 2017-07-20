@@ -40,11 +40,11 @@ export default class App extends BaseComponent {
   };
 
   _changePage(p) {
-    this.setState({ page: p, selectedNavItem: p });
+    this.setState({ page: p });
   }
 
   _onNavLinkClicked(ev, item) {
-    this.setState({ selectedNavItem: item.key, page: item.key });
+    this.setState({ page: item.key });
   }
 
   _changeColor(options) {
@@ -88,7 +88,7 @@ export default class App extends BaseComponent {
             color={this.state.color}
             _changeColor={this._changeColor}
             _onNavLinkClicked={this._onNavLinkClicked}
-            selectedNavItem={this.state.selectedNavItem}
+            selectedNavItem={this.state.page}
             _onShowMenuClicked={this._onShowMenuClicked}
             _onCalloutDismiss={this._onCalloutDismiss}
             isCalloutVisible={this.state.isCalloutVisible}
