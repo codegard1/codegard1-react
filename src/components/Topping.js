@@ -3,6 +3,7 @@ import * as T from "prop-types";
 
 /* custom stuff */
 import { fabricColor } from "./fabricStyles";
+import "./Topping.css";
 
 export function Topping(props) {
   /**
