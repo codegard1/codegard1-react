@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import * as T from "prop-types";
 import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
-import { CommandBar } from "office-ui-fabric-react/lib/CommandBar";
 
 /* custom stuff */
 import * as fabric from "./fabricStyles";

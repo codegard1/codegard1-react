@@ -2,16 +2,19 @@ import React, { Component } from "react";
 import * as T from "prop-types";
 import { Nav } from "office-ui-fabric-react/lib/Nav";
 import { Link } from "office-ui-fabric-react/lib/Link";
+import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
 /* custom stuff */
 import { Topping } from "./Topping";
-import { Home, Identity, Projects, Experimental } from "./pages/";
 import { FormBasic } from "./experiments/FormBasic";
 import { CalloutExample } from "./experiments/CalloutExample";
 import { ColorBox } from "./experiments/ColorBox";
 import { FabricList } from "./experiments/FabricList";
 import { learningLog2016 } from "./experiments/learningLog2016";
 import * as fabric from "./fabricStyles";
+import * as Pages from "./pageContent";
+
+const BasePage = props => <Fabric>{props.children}</Fabric>;
 
 // Prepare the learningLog2016 array for passing to <FabricList>
 const itemsArray = learningLog2016.map(item => {
@@ -37,132 +40,21 @@ const itemsArray = learningLog2016.map(item => {
     key: `learningLog-${key}`,
     date,
     work: workReact,
-    notes: notesReact,
+    notes: notesReact
   };
 });
 
 export class Page extends Component {
-  render() {
-    let leftCol = fabric.left, innerCol = fabric.inner, rightCol = fabric.right;
-
-    let pageContent = this._returnContent(this.props.page),
-      pageTopping = this._returnTopping(this.props.page);
-
-    let NavDefinition = [
-      {
-        name: "Pages",
-        links: [
-          {
-            key: "home",
-            name: "Home"
-          },
-          {
-            key: "identity",
-            name: "Identity"
-          },
-          {
-            key: "projects",
-            name: "Projects"
-          }
-        ]
-      },
-      {
-        name: "Experiments",
-        links: [
-          {
-            key: "fabric-callout",
-            name: "Fabric Callout"
-          },
-          {
-            key: "color-box",
-            name: "Color Box"
-          },
-          {
-            key: "fabric-list",
-            name: "Fabric List"
-          },
-          {
-            key: "basic-form",
-            name: "Basic Form"
-          }
-        ]
-      }
-    ];
-
-    // Prepare the learningLog2016 array for passing to <FabricList>
-    let itemsArray = learningLog2016.map(function(item) {
-      let key = item.key || Math.round(Math.random() * 10000);
-      let date = item.date || "no date";
-      let work = item.work || [];
-      let notes = item.notes || [];
-      let workReact = [];
-      let notesReact = [];
-
-      if (work.length > 0) {
-        workReact = work.map((item, index) =>
-          React.createElement("li", { key: date + "-work-" + index }, item)
-        );
-      }
-      if (notes.length > 0) {
-        notesReact = notes.map((item, index) =>
-          React.createElement("li", { key: date + "-note-" + index }, item)
-        );
-      }
-
-      return {
-        date: date,
-        work: workReact,
-        notes: notesReact,
-        key: "learningLog-" + key
-      };
-    });
-
-    return (
-      <div className="ms-Grid-row">
-        {pageTopping}
-        <div className={leftCol} />
-        <div className={innerCol}>
-          {pageContent}
-        </div>
-        <div className={rightCol}>
-          <Nav
-            groups={NavDefinition}
-            onRenderLink={link => [
-              <span key={"navItem-" + link.name} className="ms-font-m">
-                <Link>{link.name}</Link>
-              </span>
-            ]}
-            isOnTop={false}
-            onLinkClick={this.props._onNavLinkClicked}
-            selectedKey={this.props.page}
-            initialSelectedKey={"home"}
-          />
-        </div>
-      </div>
-    );
-  }
-
   _returnContent(p) {
     switch (p) {
       case "home":
-        return <Home color={this.props.color} />;
-        // eslint-disable-next-line
-        break;
+        return <BasePage>{Pages.home}</BasePage>;
 
       case "identity":
-        return <Identity color={this.props.color} />;
-        // eslint-disable-next-line
-        break;
+        return <BasePage>{Pages.identity}</BasePage>;
 
       case "projects":
-        return <Projects color={this.props.color} />;
-        // eslint-disable-next-line
-        break;
-
-      case "experimental":
-        return <Experimental />;
-        // eslint-disable-next-line
-        break;
+        return <BasePage>{Pages.projects}</BasePage>;
 
       case "basic-form":
         return <FormBasic />;
@@ -253,6 +145,80 @@ export class Page extends Component {
       default:
         return <Topping title="" icon="" />;
     }
+  }
+
+  render() {
+    const leftCol = fabric.left,
+      innerCol = fabric.inner,
+      rightCol = fabric.right;
+
+    const pageContent = this._returnContent(this.props.page);
+    const pageTopping = this._returnTopping(this.props.page);
+
+    const NavDefinition = [
+      {
+        name: "Pages",
+        links: [
+          {
+            key: "home",
+            name: "Home"
+          },
+          {
+            key: "identity",
+            name: "Identity"
+          },
+          {
+            key: "projects",
+            name: "Projects"
+          }
+        ]
+      },
+      {
+        name: "Experiments",
+        links: [
+          {
+            key: "fabric-callout",
+            name: "Fabric Callout"
+          },
+          {
+            key: "color-box",
+            name: "Color Box"
+          },
+          {
+            key: "fabric-list",
+            name: "Fabric List"
+          },
+          {
+            key: "basic-form",
+            name: "Basic Form"
+          }
+        ]
+      }
+    ];
+
+    return (
+      <div className="ms-Grid-row">
+        {pageTopping}
+        <div className={leftCol} />
+        <div className={innerCol}>
+          {pageContent}
+        </div>
+        <div className={rightCol}>
+          <Nav
+            groups={NavDefinition}
+            onRenderLink={link => [
+              <span key={"navItem-" + link.name} className="ms-font-m">
+                <Link>{link.name}</Link>
+              </span>
+            ]}
+            isOnTop={false}
+            onLinkClick={this.props._onNavLinkClicked}
+            selectedKey={this.props.page}
+            initialSelectedKey={"home"}
+          />
+        </div>
+      </div>
+    );
   }
 }
 
