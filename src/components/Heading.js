@@ -5,9 +5,16 @@ import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
 /* custom stuff */
 import * as fabric from "./fabricStyles";
 import "./Heading.css";
+import { NavDefinition } from "./Page";
 
 export function Heading(props) {
   const fontColor = fabric.fontColor;
+
+  /* make NavDefinition more Dropdown-friendly */
+  const dropDownOptions = NavDefinition[0].links.map(item => ({
+    key: item.key,
+    text: item.name
+  }));
 
   return (
     <div className="ms-Grid-row" id="Heading">
@@ -19,24 +26,7 @@ export function Heading(props) {
 
       <div className="ms-Grid-col ms-u-sm4 ms-u-md3 ms-u-hiddenLgUp ms-u-fadeIn400">
         <Dropdown
-          options={[
-            {
-            key: "home",
-            text: "Home"
-          },
-          {
-            key: "identity",
-            text: "Identity"
-          },
-          {
-            key: "projects",
-            text: "Projects"
-          },
-          {
-            key: "experiments",
-            text: "Experiments"
-          }
-          ]}
+          options={dropDownOptions}
           selectedKey={props.selectedKey}
           onChanged={options => props._changePage(options.key)}
         />

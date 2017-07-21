@@ -9,26 +9,7 @@ import * as fabric from "./fabricStyles";
 import * as Pages from "./pageContent";
 import './Page.css';
 
-export class Page extends Component {
-  render() {
-    /* classNames for MS-Grid columns */
-    const leftCol = fabric.left;
-    const rightCol = fabric.right;
-
-    /* Wrapper for page content that passes props from Page to any children components */
-    const BasePage = props => {
-      const childrenWithProps = React.Children.map(props.children, child =>
-        React.cloneElement(child, { ...props })
-      );
-      return <Fabric id="BasePage">{childrenWithProps}</Fabric>;
-    };
-
-    /* wrap page content in BasePage */
-    const pageContent = (
-      <BasePage {...this.props}>{Pages[this.props.page]}</BasePage>
-    );
-
-    const NavDefinition = [
+export const NavDefinition = [
       {
         name: "Pages",
         links: [
@@ -51,6 +32,25 @@ export class Page extends Component {
         ]
       }
     ];
+
+export class Page extends Component {
+  render() {
+    /* classNames for MS-Grid columns */
+    const leftCol = fabric.left;
+    const rightCol = fabric.right;
+
+    /* Wrapper for page content that passes props from Page to any children components */
+    const BasePage = props => {
+      const childrenWithProps = React.Children.map(props.children, child =>
+        React.cloneElement(child, { ...props })
+      );
+      return <Fabric id="BasePage">{childrenWithProps}</Fabric>;
+    };
+
+    /* wrap page content in BasePage */
+    const pageContent = (
+      <BasePage {...this.props}>{Pages[this.props.page]}</BasePage>
+    );
 
     return (
       <div className="ms-Grid-row">
