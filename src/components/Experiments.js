@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import * as T from "prop-types";
+import React from "react";
+// import * as T from "prop-types";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
 /* custom stuff */
@@ -10,7 +10,6 @@ import {
   FabricList
 } from "./experiments/";
 import { learningLog2016 } from "./experiments/learningLog2016";
-import * as fabric from "./fabricStyles";
 
 /* Prepare the learningLog2016 array for passing to FabricList */
 const itemsArray = learningLog2016.map(item => {

@@ -60,9 +60,8 @@ export function fabricColor (element, color) {
 }
 
 // MS Grid for pages
-export const left = "ms-Grid-col ms-u-hiddenSm ms-u-md1 ms-u-lg1 ms-u-xl1 ms-u-xxl2";
-export const inner = "ms-Grid-col ms-u-sm12 ms-u-md10 ms-u-lg8 ms-u-xl8 ms-u-xxl6";
-export const right = "ms-Grid-col ms-u-hiddenMdDown ms-u-md1 ms-u-lg3 ms-u-xl3 ms-u-xxl4";
+export const left = "ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12 ms-u-xl8";
+export const right = "ms-Grid-col ms-u-hiddenLgDown  ms-u-xl4";
 
 // Colors
 export const bgColor = fabricColor('bg', 'tealLight');

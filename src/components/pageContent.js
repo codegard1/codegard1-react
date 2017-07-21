@@ -141,4 +141,4 @@ export const projects = (
   </div>
 );
 
-export const experiments = <Experiments />;
+export const experiments =  <Experiments />;
