@@ -6,100 +6,12 @@ import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
 /* custom stuff */
 import { Topping } from "./Topping";
-import { FormBasic } from "./experiments/FormBasic";
-import { CalloutExample } from "./experiments/CalloutExample";
-import { ColorBox } from "./experiments/ColorBox";
-import { FabricList } from "./experiments/FabricList";
-import { learningLog2016 } from "./experiments/learningLog2016";
 import * as fabric from "./fabricStyles";
 import * as Pages from "./pageContent";
 
 const BasePage = props => <Fabric>{props.children}</Fabric>;
 
-// Prepare the learningLog2016 array for passing to <FabricList>
-const itemsArray = learningLog2016.map(item => {
-  let key = item.key || Math.round(Math.random() * 10000);
-  let date = item.date || "no date";
-  let work = item.work || [];
-  let notes = item.notes || [];
-  let workReact = [];
-  let notesReact = [];
-
-  if (work.length > 0) {
-    workReact = work.map((item, index) => (
-      <li key={`${date}-work-${index}`}>{item}</li>
-    ));
-  }
-  if (notes.length > 0) {
-    notesReact = notes.map((item, index) => (
-      <li key={`${date}-note-${index}`}>{item}</li>
-    ));
-  }
-
-  return {
-    key: `learningLog-${key}`,
-    date,
-    work: workReact,
-    notes: notesReact
-  };
-});
-
 export class Page extends Component {
-  _returnContent(p) {
-    switch (p) {
-      case "home":
-        return <BasePage>{Pages.home}</BasePage>;
-
-      case "identity":
-        return <BasePage>{Pages.identity}</BasePage>;
-
-      case "projects":
-        return <BasePage>{Pages.projects}</BasePage>;
-
-      case "basic-form":
-        return <FormBasic />;
-        // eslint-disable-next-line
-        break;
-
-      case "color-box":
-        return (
-          <ColorBox
-            color={this.props.color}
-            _changeColor={this.props._changeColor}
-          />
-        );
-        // eslint-disable-next-line
-        break;
-
-      case "fabric-list":
-        return (
-          <FabricList
-            color={this.props.color}
-            items={itemsArray}
-            startIndex={0}
-            renderedWindowsAhead={1}
-            renderedWindowsBehind={1}
-          />
-        );
-        // eslint-disable-next-line
-        break;
-
-      case "fabric-callout":
-        return (
-          <CalloutExample
-            _onShowMenuClicked={this.props._onShowMenuClicked}
-            _onCalloutDismiss={this.props._onCalloutDismiss}
-            isCalloutVisible={this.props.isCalloutVisible}
-          />
-        );
-        // eslint-disable-next-line
-        break;
-
-      default:
-        return <div><p>No content</p></div>;
-    }
-  }
-
   _returnTopping(p) {
     switch (this.props.page) {
       case "home":
@@ -152,7 +64,9 @@ export class Page extends Component {
       innerCol = fabric.inner,
       rightCol = fabric.right;
 
-    const pageContent = this._returnContent(this.props.page);
+    const pageContent = (
+      <BasePage {...this.props}>{Pages[this.props.page]}</BasePage>
+    );
     const pageTopping = this._returnTopping(this.props.page);
 
     const NavDefinition = [
@@ -170,27 +84,10 @@ export class Page extends Component {
           {
             key: "projects",
             name: "Projects"
-          }
-        ]
-      },
-      {
-        name: "Experiments",
-        links: [
-          {
-            key: "fabric-callout",
-            name: "Fabric Callout"
           },
           {
-            key: "color-box",
-            name: "Color Box"
-          },
-          {
-            key: "fabric-list",
-            name: "Fabric List"
-          },
-          {
-            key: "basic-form",
-            name: "Basic Form"
+            key: "experiments",
+            name: "Experiments"
           }
         ]
       }

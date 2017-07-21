@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "office-ui-fabric-react/lib/Link";
 
+/* custom stuff */
+import { Experiments } from "./Experiments";
+
 export const home = (
   <div className="ms-font-xl">
     <p>Hello, my name is Chris. Here are some facts about me:</p>
@@ -137,3 +140,5 @@ export const projects = (
     </ul>
   </div>
 );
+
+export const experiments = <Experiments />;
