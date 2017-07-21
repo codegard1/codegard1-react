@@ -8,13 +8,21 @@ import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 import * as fabric from "./fabricStyles";
 import * as Pages from "./pageContent";
 
-const BasePage = props => <Fabric>{props.children}</Fabric>;
-
 export class Page extends Component {
   render() {
+    /* classNames for MS-Grid columns */
     const leftCol = fabric.left;
     const rightCol = fabric.right;
 
+    /* Wrapper for page content that passes props from Page to any children components */
+    const BasePage = props => {
+      const childrenWithProps = React.Children.map(props.children, child =>
+        React.cloneElement(child, { ...props })
+      );
+      return <Fabric>{childrenWithProps}</Fabric>;
+    };
+
+    /* wrap page content in BasePage */
     const pageContent = (
       <BasePage {...this.props}>{Pages[this.props.page]}</BasePage>
     );
@@ -69,8 +77,8 @@ export class Page extends Component {
 
 Page.propTypes = {
   page: T.string.isRequired,
-  color: T.string.isRequired,
-  _changeColor: T.func.isRequired,
+  color: T.string,
+  _changeColor: T.func,
   _onNavLinkClicked: T.func,
   _onShowMenuClicked: T.func,
   _onCalloutDismis: T.func,

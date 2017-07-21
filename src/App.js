@@ -81,11 +81,11 @@ export default class App extends BaseComponent {
           <Page
             page={this.state.page}
             color={this.state.color}
+            isCalloutVisible={this.state.isCalloutVisible}
             _changeColor={this._changeColor}
             _onNavLinkClicked={this._onNavLinkClicked}
             _onShowMenuClicked={this._onShowMenuClicked}
             _onCalloutDismiss={this._onCalloutDismiss}
-            isCalloutVisible={this.state.isCalloutVisible}
           />
           <HorizontalBar color={this.state.color} />
         </div>
