@@ -11,13 +11,13 @@ export function Heading(props) {
 
   return (
     <div className="ms-Grid-row" id="Heading">
-      <div className="ms-Grid-col ms-u-sm8 ms-u-md9 ms-u-lg12 ms-bgColor-neutralLighter">
+      <div className="ms-Grid-col ms-u-sm8 ms-u-md9 ms-u-lg12">
         <span className={"ms-font-su ms-u-fadeIn400 " + fontColor}>
           <strong>codegard1</strong>
         </span>
       </div>
 
-      <div className="ms-Grid-col ms-u-sm4 ms-u-md3 ms-u-hiddenLgUp ms-bgColor-neutralLighter ms-u-fadeIn400">
+      <div className="ms-Grid-col ms-u-sm4 ms-u-md3 ms-u-hiddenLgUp ms-u-fadeIn400">
         <Dropdown
           options={[
             {

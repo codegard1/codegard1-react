@@ -1,0 +1,5 @@
+/* wrapper element for Page content */
+div#BasePage {
+    text-align: justify;
+    margin: calc(100vw / 25);
+}

@@ -7,6 +7,7 @@ import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 /* custom stuff */
 import * as fabric from "./fabricStyles";
 import * as Pages from "./pageContent";
+import './Page.css';
 
 export class Page extends Component {
   render() {
@@ -19,7 +20,7 @@ export class Page extends Component {
       const childrenWithProps = React.Children.map(props.children, child =>
         React.cloneElement(child, { ...props })
       );
-      return <Fabric>{childrenWithProps}</Fabric>;
+      return <Fabric id="BasePage">{childrenWithProps}</Fabric>;
     };
 
     /* wrap page content in BasePage */

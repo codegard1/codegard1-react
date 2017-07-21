@@ -23,9 +23,7 @@ export const home = (
         <ul>
           <li>
             <Link href="https://nodejs.org/en/">NodeJS</Link>
-            {" "}
-            &
-            {" "}
+            {" & "}
             <Link href="https://www.npmjs.com/">npm</Link>
           </li>
           <li><Link href="https://facebook.github.io/react/">React</Link></li>
@@ -35,6 +33,7 @@ export const home = (
             </Link>
           </li>
           <li><Link href="">SharePoint Framework</Link></li>
+          <li><Link href="https://powerbi.microsoft.com/en-us/">Power BI</Link></li>
           <li>
             <Link href="https://www.nintex.com/">Nintex Workflows</Link>
           </li>
@@ -141,4 +140,4 @@ export const projects = (
   </div>
 );
 
-export const experiments =  <Experiments />;
+export const experiments = <Experiments />;
