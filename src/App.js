@@ -22,11 +22,8 @@ export default class App extends BaseComponent {
     this._bind(
       "_onClosePanel",
       "_onShowPanel",
-      "_changeColor",
       "_changePage",
-      "_onNavLinkClicked",
-      "_onShowMenuClicked",
-      "_onCalloutDismiss"
+      "_onNavLinkClicked"
     );
   }
 
@@ -44,22 +41,6 @@ export default class App extends BaseComponent {
 
   _onNavLinkClicked(ev, item) {
     this.setState({ page: item.key });
-  }
-
-  _changeColor(options) {
-    this.setState({ color: options.key });
-  }
-
-  _onShowMenuClicked() {
-    this.setState({
-      isCalloutVisible: !this.state.isCalloutVisible
-    });
-  }
-
-  _onCalloutDismiss() {
-    this.setState({
-      isCalloutVisible: false
-    });
   }
 
   /*
@@ -80,12 +61,7 @@ export default class App extends BaseComponent {
           <HorizontalBar color={this.state.color} />
           <Page
             page={this.state.page}
-            color={this.state.color}
-            isCalloutVisible={this.state.isCalloutVisible}
-            _changeColor={this._changeColor}
             _onNavLinkClicked={this._onNavLinkClicked}
-            _onShowMenuClicked={this._onShowMenuClicked}
-            _onCalloutDismiss={this._onCalloutDismiss}
           />
           <HorizontalBar color={this.state.color} />
         </div>
