@@ -1,4 +1,3 @@
-export {CalloutExample} from './CalloutExample';
-export {ColorBox} from './ColorBox'; 
-export {LearningLog} from './LearningLog';
-export {FormBasic} from './FormBasic';
+export { CalloutExample } from "./CalloutExample";
+export { ColorBox } from "./ColorBox";
+export { FormBasic } from "./FormBasic";

@@ -28,6 +28,10 @@ export const NavDefinition = [
       {
         key: "experiments",
         name: "Experiments"
+      },
+      {
+        key: "learninglog",
+        name: "Learning Log"
       }
     ]
   }

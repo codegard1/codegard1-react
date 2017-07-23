@@ -3,19 +3,12 @@ import React from "react";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
 /* custom stuff */
-import {
-  FormBasic,
-  CalloutExample,
-  ColorBox,
-  LearningLog
-} from "./experiments/";
 import "./experiments.css";
+import { FormBasic, CalloutExample, ColorBox } from "./experiments/";
 
 export const Experiments = props => (
   <Fabric>
     <FormBasic />
-
-    <LearningLog />
 
     <CalloutExample />
 

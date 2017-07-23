@@ -7,8 +7,9 @@ import { TextField } from "office-ui-fabric-react/lib/TextField";
 import { List } from "office-ui-fabric-react/lib/List";
 
 /* custom stuff */
-import { BaseComponent } from "../BaseComponent";
+import { BaseComponent } from "./BaseComponent";
 import { learningLog2016 } from "./learningLog2016";
+import "./learninglog.css";
 
 export class LearningLog extends BaseComponent {
   constructor(props) {
@@ -71,38 +72,32 @@ export class LearningLog extends BaseComponent {
 
   _onRenderCell(item, index) {
     return (
-      <div className="fabricList-itemCell" data-is-focusable={true}>
+      <div className="itemCell" data-is-focusable={true}>
 
-        <div className="fabricList-itemContent">
-          <div className="fabricList-itemName ms-font-xl">
-            {item.date}
+        <div className="itemContent">
+          <div>
+            <span className="itemName ms-font-xl">{item.date}</span>
+            <span className="itemIndex ms-font-xs">{`#${index}`}</span>
           </div>
-          <div className="fabricList-itemIndex ms-font-xs">
-            <p>{`Item ${index}`}</p>
-          </div>
-          <div className="fabricList-itemDesc ms-font-xs">
-            <p className="ms-font-s">
-              <i className="ms-Icon ms-Icon--QuickNote" />&nbsp;Work
+          <div className="itemDesc ms-font-s">
+
+            <p>
+              <i className="ms-Icon ms-Icon--QuickNote" /> &nbsp; Work
             </p>
-            <br />
+
             <ul>
               {item.work.length > 0 ? item.work : "None"}
             </ul>
-          </div>
-          <div className="fabricList-itemDesc ms-font-xs">
+
             <p className="ms-font-s">
               <i className="ms-Icon ms-Icon--QuickNote" /> &nbsp; Notes
             </p>
-            <br />
+
             <ul>
               {item.notes.length > 0 ? item.notes : "None"}
             </ul>
-
           </div>
         </div>
-        <i
-          className={"ms-fontColor-themePrimary ms-Icon ms-Icon--chevronRight"}
-        />
       </div>
     );
   }

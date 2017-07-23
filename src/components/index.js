@@ -1,4 +1,5 @@
-export { Heading } from './Heading';
-export { HorizontalBar } from './HorizontalBar';
-export { Page } from './Page';
-export { BaseComponent } from './BaseComponent';
+export { Heading } from "./Heading";
+export { HorizontalBar } from "./HorizontalBar";
+export { Page } from "./Page";
+export { BaseComponent } from "./BaseComponent";
+export { LearningLog } from "./LearningLog";

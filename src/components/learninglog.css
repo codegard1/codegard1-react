@@ -1,0 +1,31 @@
+div#learning-log {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 600px; 
+  padding: 20px;
+}
+
+div#learning-log .itemName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  float: left;
+}
+
+div#learning-log .itemIndex {
+  color: #a6a6a6;
+  float: right;
+}
+
+div#learning-log .itemCell {
+  display: flex;
+  position: relative;
+  border-bottom: 1px solid #eaeaea;
+}
+
+div#learning-log .itemContent {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}

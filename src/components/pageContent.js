@@ -3,6 +3,7 @@ import { Link } from "office-ui-fabric-react/lib/Link";
 
 /* custom stuff */
 import { Experiments } from "./Experiments";
+import  { LearningLog } from './LearningLog';
 
 export const home = (
   <div className="ms-font-xl">
@@ -141,3 +142,5 @@ export const projects = (
 );
 
 export const experiments = <Experiments />;
+
+export const learninglog = <LearningLog />;
