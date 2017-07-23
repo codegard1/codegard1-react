@@ -12,7 +12,8 @@
     "office-ui-fabric-react": "^2.34.2",
     "prop-types": "^15.5.10",
     "react": "^15.5.10",
-    "react-dom": "^15.5.10"
+    "react-dom": "^15.5.10",
+    "blackjack": "git+https://github.com/codegard1/blackjack.git"
   },
   "scripts": {
     "start": "react-scripts start",
