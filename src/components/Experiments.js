@@ -9,6 +9,7 @@ import {
   ColorBox,
   FabricList
 } from "./experiments/";
+import "./experiments.css";
 
 export const Experiments = props => (
   <Fabric>
