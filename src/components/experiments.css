@@ -11,7 +11,8 @@ div.chris-Callout .chris-Callout-header {
   padding: 18px 24px 12px;
 }
 
-div.chris-Callout .chris-Callout-title {
+/* Callout title text */
+div.chris-Callout .chris-Callout-header > p {
   margin: 0;
   font-family: inherit;
   font-size: 21px;
@@ -49,14 +50,14 @@ div.chris-Callout .chris-Callout-actions {
   white-space: nowrap;
 }
 
+
+/*fabricList styles*/
+
 .fabricList-itemName {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-
-/*fabricList styles*/
 
 .fabricList-itemCell {
   outline: transparent;

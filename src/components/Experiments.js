@@ -23,11 +23,7 @@ export const Experiments = props => (
       renderedWindowsBehind={1}
     />
 
-    <CalloutExample
-      _onShowMenuClicked={props._onShowMenuClicked}
-      _onCalloutDismiss={props._onCalloutDismiss}
-      isCalloutVisible={props.isCalloutVisible}
-    />
+    <CalloutExample />
 
   </Fabric>
 );

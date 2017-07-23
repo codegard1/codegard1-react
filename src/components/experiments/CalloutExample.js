@@ -5,11 +5,6 @@ import { PrimaryButton } from "office-ui-fabric-react/lib/Button";
 /* custom stuff */
 import { BaseComponent } from "../BaseComponent";
 
-let divStyles = {
-  borderTop: "1px solid #eee",
-  overflowX: "hidden"
-};
-
 export class CalloutExample extends BaseComponent {
   constructor(props) {
     super(props);
@@ -17,48 +12,42 @@ export class CalloutExample extends BaseComponent {
     this.state = { isCalloutVisible: false };
 
     /* bind private methods */
-    this._bind("_onShowMenuClicked", "_onCalloutDismiss");
+    this._bind("_showCallout", "_hideCallout");
   }
 
-  _onShowMenuClicked() {
-    this.setState({
-      isCalloutVisible: !this.state.isCalloutVisible
-    });
+  _showCallout() {
+    this.setState({ isCalloutVisible: true });
   }
 
-  _onCalloutDismiss() {
-    this.setState({
-      isCalloutVisible: false
-    });
+  _hideCallout() {
+    this.setState({ isCalloutVisible: false });
   }
 
   render() {
     const isCalloutVisible = this.state.isCalloutVisible;
 
     return (
-      <div
-        className="ms-font-xl"
-        ref={calloutTarget => this._menuButtonElement = calloutTarget}
-        style={divStyles}
-      >
-        <p>Fabric UI Callout Example</p>
-        <p>isCalloutVisible? : {JSON.stringify(isCalloutVisible)}</p>
-        <p>
-          <PrimaryButton onClick={this._onShowMenuClicked}>
-            {isCalloutVisible ? "Hide Callout" : "Show Callout"}
-          </PrimaryButton>
+      <div>
+        <p className="ms-font-su" ref={p => this._calloutTarget = p}>
+          Fabric UI Callout Example
         </p>
+        <PrimaryButton
+          onClick={this._showCallout}
+          disabled={this.state.isCalloutVisible}
+        >
+          Show Callout
+        </PrimaryButton>
 
         {isCalloutVisible &&
           <Callout
             className="chris-Callout"
-            targetElement={this._menuButtonElement}
-            onDismiss={this._onCalloutDismiss}
+            targetElement={this._calloutTarget}
+            onDismiss={this._hideCallout}
             setInitialFocus={true}
           >
             <div className="chris-Callout-header">
-              <p className="chris-Callout-title">
-                My name is Craig Callout
+              <p>
+                My name is Chris Callout
               </p>
             </div>
             <div className="chris-Callout-inner">
@@ -66,6 +55,7 @@ export class CalloutExample extends BaseComponent {
                 <p className="chris-Callout-subText">
                   Often I appear out of nowhere to explain, unobtrusively, what you may not already know.
                 </p>
+                <PrimaryButton onClick={this._hideCallout}>Close</PrimaryButton>
               </div>
             </div>
           </Callout>}
