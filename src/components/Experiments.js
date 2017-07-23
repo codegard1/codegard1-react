@@ -7,7 +7,7 @@ import {
   FormBasic,
   CalloutExample,
   ColorBox,
-  FabricList
+  LearningLog
 } from "./experiments/";
 import "./experiments.css";
 
@@ -15,16 +15,11 @@ export const Experiments = props => (
   <Fabric>
     <FormBasic />
 
-    <ColorBox />
-
-    <FabricList
-      startIndex={0}
-      renderedWindowsAhead={1}
-      renderedWindowsBehind={1}
-    />
+    <LearningLog />
 
     <CalloutExample />
 
+    <ColorBox />
   </Fabric>
 );
 

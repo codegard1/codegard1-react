@@ -53,6 +53,14 @@ div.chris-Callout .chris-Callout-actions {
 
 /*fabricList styles*/
 
+div#learning-log {
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 600px; 
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+
 .fabricList-itemName {
   white-space: nowrap;
   overflow: hidden;
@@ -71,11 +79,6 @@ div.chris-Callout .chris-Callout-actions {
   display: flex;
 }
 
-.fabricList-itemImage {
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
 .fabricList-itemContent {
   overflow: hidden;
   -webkit-box-flex: 1;
@@ -84,18 +87,18 @@ div.chris-Callout .chris-Callout-actions {
   margin-left: 10px;
 }
 
-fabricList-itemName {
+.fabricList-itemName {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-fabricList-itemIndex {
+.fabricList-itemIndex {
   font-size: 12px;
   color: #a6a6a6;
   margin-bottom: 10px;
 }
 
-fabricList-itemDesc {
+.fabricList-itemDesc {
   display: block;
 }

@@ -9,15 +9,8 @@ import { List } from "office-ui-fabric-react/lib/List";
 /* custom stuff */
 import { BaseComponent } from "../BaseComponent";
 import { learningLog2016 } from "./learningLog2016";
-let divStyles = {
-  borderTop: "1px solid #eee",
-  overflowX: "hidden",
-  overflowY: "auto",
-  maxHeight: "600px",
-  padding: "20px 0"
-};
 
-export class FabricList extends BaseComponent {
+export class LearningLog extends BaseComponent {
   constructor(props) {
     super(props);
 
@@ -27,7 +20,7 @@ export class FabricList extends BaseComponent {
     };
 
     /* bind private methods */
-    this._bind("_onFilterChanged");
+    this._bind("_onFilterChanged", "_onRenderCell");
 
     /* Prepare the learningLog2016 array for passing to FabricList */
     this.itemsArray = learningLog2016.map(item => {
@@ -76,16 +69,54 @@ export class FabricList extends BaseComponent {
     });
   }
 
+  _onRenderCell(item, index) {
+    return (
+      <div className="fabricList-itemCell" data-is-focusable={true}>
+
+        <div className="fabricList-itemContent">
+          <div className="fabricList-itemName ms-font-xl">
+            {item.date}
+          </div>
+          <div className="fabricList-itemIndex ms-font-xs">
+            <p>{`Item ${index}`}</p>
+          </div>
+          <div className="fabricList-itemDesc ms-font-xs">
+            <p className="ms-font-s">
+              <i className="ms-Icon ms-Icon--QuickNote" />&nbsp;Work
+            </p>
+            <br />
+            <ul>
+              {item.work.length > 0 ? item.work : "None"}
+            </ul>
+          </div>
+          <div className="fabricList-itemDesc ms-font-xs">
+            <p className="ms-font-s">
+              <i className="ms-Icon ms-Icon--QuickNote" /> &nbsp; Notes
+            </p>
+            <br />
+            <ul>
+              {item.notes.length > 0 ? item.notes : "None"}
+            </ul>
+
+          </div>
+        </div>
+        <i
+          className={"ms-fontColor-themePrimary ms-Icon ms-Icon--chevronRight"}
+        />
+      </div>
+    );
+  }
+
   render() {
     let originalItems = this.itemsArray;
-    let items  = this.state.items;
+    let items = this.state.items;
     let resultCountText = items.length === originalItems.length
       ? ""
       : ` (${items.length} of ${originalItems.length} shown)`;
 
     return (
-      <div style={divStyles}>
-        <p className="ms-font-xl">Learning Log</p>
+      <div id="learning-log">
+        <p className="ms-font-su">Learning Log</p>
         <FocusZone direction={FocusZoneDirection.vertical}>
           <TextField
             label={`Filter by Date` + resultCountText}
@@ -93,43 +124,10 @@ export class FabricList extends BaseComponent {
           />
           <List
             items={items}
-            onRenderCell={(item, index) => (
-              <div className="fabricList-itemCell" data-is-focusable={true}>
-
-                <div className="fabricList-itemContent">
-                  <div className="fabricList-itemName ms-font-xl">
-                    {item.date}
-                  </div>
-                  <div className="fabricList-itemIndex ms-font-xs">
-                    <p>{`Item ${index}`}</p>
-                  </div>
-                  <div className="fabricList-itemDesc ms-font-xs">
-                    <p className="ms-font-s">
-                      <i className="ms-Icon ms-Icon--QuickNote" />Work
-                    </p>
-                    <br />
-                    <ul>
-                      {item.work.length > 0 ? item.work : "None"}
-                    </ul>
-                  </div>
-                  <div className="fabricList-itemDesc ms-font-xs">
-                    <p className="ms-font-s">
-                      <i className="ms-Icon ms-Icon--QuickNote" />Notes
-                    </p>
-                    <br />
-                    <ul>
-                      {item.notes.length > 0 ? item.notes : "None"}
-                    </ul>
-
-                  </div>
-                </div>
-                <i
-                  className={
-                    "ms-fontColor-themePrimary ms-Icon ms-Icon--chevronRight"
-                  }
-                />
-              </div>
-            )}
+            onRenderCell={this._onRenderCell}
+            startIndex={0}
+            renderedWindowsAhead={1}
+            renderedWindowsBehind={1}
           />
         </FocusZone>
       </div>
@@ -137,4 +135,4 @@ export class FabricList extends BaseComponent {
   }
 }
 
-export default FabricList;
+export default LearningLog;
