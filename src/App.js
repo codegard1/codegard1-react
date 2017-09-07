@@ -11,7 +11,7 @@ export default class App extends BaseComponent {
     super();
 
     this.state = {
-      page: "learninglog",
+      page: "home",
       color: "teal",
       isNavOpen: false,
       isMenuVisible: false,
