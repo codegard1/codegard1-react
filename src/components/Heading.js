@@ -24,7 +24,7 @@ export function Heading(props) {
         </span>
       </div>
 
-      <div className="ms-Grid-col ms-u-sm4 ms-u-md3 ms-u-lg3 ms-u-fadeIn400">
+      <div className="ms-Grid-col ms-u-sm4 ms-u-md3 ms-u-hiddenXlUp ms-u-fadeIn400">
         <Dropdown
           options={dropDownOptions}
           selectedKey={props.selectedKey}

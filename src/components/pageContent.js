@@ -141,3 +141,5 @@ export const projects = (
 export const experiments = <Experiments />;
 
 export const learninglog = <LearningLog />;
+
+export const pages = { home, identity, projects, experiments, learninglog };
