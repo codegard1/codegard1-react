@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import * as T from "prop-types";
 import { Nav } from "office-ui-fabric-react/lib/Nav";
-import { Link as FabricLink } from "office-ui-fabric-react/lib/Link";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
@@ -40,36 +39,42 @@ export const NavDefinition = [
   }
 ];
 
-const routes = [
+export const routes = [
   {
     path: "/",
     exact: true,
-    main: () => <BasePage {...this.props}>{Pages.home}</BasePage>
+    main: () => <BasePage {...this.props}>{Pages.home}</BasePage>,
+    key: "home"
   },
   {
     path: "/home",
     exact: false,
-    main: () => <BasePage {...this.props}>{Pages.home}</BasePage>
+    main: () => <BasePage {...this.props}>{Pages.home}</BasePage>,
+    key: "home"
   },
   {
     path: "/identity",
     exact: false,
-    main: () => <BasePage {...this.props}>{Pages.identity}</BasePage>
+    main: () => <BasePage {...this.props}>{Pages.identity}</BasePage>,
+    key: "identity"
   },
   {
     path: "/projects",
     exact: false,
-    main: () => <BasePage {...this.props}>{Pages.projects}</BasePage>
+    main: () => <BasePage {...this.props}>{Pages.projects}</BasePage>,
+    key: "projects"
   },
   {
     path: "/experiments",
     exact: false,
-    main: () => <BasePage {...this.props}>{Pages.experiments}</BasePage>
+    main: () => <BasePage {...this.props}>{Pages.experiments}</BasePage>,
+    key: "experiments"
   },
   {
     path: "/learninglog",
     exact: false,
-    main: () => <BasePage {...this.props}>{Pages.learninglog}</BasePage>
+    main: () => <BasePage {...this.props}>{Pages.learninglog}</BasePage>,
+    key: "learninglog"
   }
 ];
 

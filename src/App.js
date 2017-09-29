@@ -4,7 +4,11 @@ import "animate.css";
 import "office-ui-fabric-react/dist/css/fabric.min.css";
 
 /* Custom Components */
-import { BaseComponent, Page, Heading, HorizontalBar } from "./components";
+import Heading from "./components/Heading";
+import HorizontalBar from "./components/HorizontalBar";
+import Page from "./components/Page";
+import BaseComponent from "./components/BaseComponent";
+// import LearningLog from "./components/LearningLog";
 
 export default class App extends BaseComponent {
   constructor() {
@@ -52,7 +56,7 @@ export default class App extends BaseComponent {
             _changePage={this._changePage}
           />
           <HorizontalBar color={this.state.color} />
-          <Page page={this.spage} _onNavLinkClicked={this._onNavLinkClicked} />
+          <Page />
           <HorizontalBar color={this.state.color} />
         </div>
       </div>

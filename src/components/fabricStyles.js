@@ -1,68 +1,50 @@
 export const colorPrefix = {
-        'bg': 'ms-bgColor-',
-        'font': 'ms-fontColor-',
-        'border': 'ms-borderColor-'
-    };
+  bg: "ms-bgColor-",
+  font: "ms-fontColor-",
+  border: "ms-borderColor-"
+};
 
 //Todo: implement KeyMirror for this object
 export const colorSuffix = {
-        /*'themeDarker': 'themeDarker',
-        'themeDark': 'themeDark',
-        'ThemeDarkAlt': 'ThemeDarkAlt',
-        'themePrimary': 'themePrimary',
-        'themeSecondary': 'themeSecondary',
-        'themeTertiary': 'themeTertiary',
-        'themeLight': 'themeLight',
-        'themeLighter': 'themeLighter',
-        'themeLighterAlt': 'themeLighterAlt',*/
-        'black': 'black',
-        /*'neutralDark': 'neutralDark',
-        'neutralPrimary': 'neutralPrimary',
-        'neutralSecondary': 'neutralSecondary',
-        'neutralSecondaryAlt': 'neutralSecondaryAlt',
-        'neutralTertiary': 'neutralTertiary',
-        'neutralTertiaryAlt': 'neutralTertiaryAlt',
-        'neutralLight': 'neutralLight',
-        'neutralLighter': 'neutralLighter',
-        'neutralLighterAlt': 'neutralLighterAlt',*/
-        'white': 'white',
-        'yellow': 'yellow',
-        'yellowLight': 'yellowLight',
-        'orange': 'orange',
-        'orangeLight': 'orangeLight',
-        'orangeLighter': 'orangeLighter',
-        'redDark': 'redDark',
-        'red': 'red',
-        'magentaLight': 'magentaLight',
-        'magenta': 'magenta',
-        'magentaDark': 'magentaDark',
-        'purpleLight': 'purpleLight',
-        'purple': 'purple',
-        'purpleDark': 'purpleDark',
-        'blueLight': 'blueLight',
-        'blueMid': 'blueMid',
-        'blue': 'blue',
-        'blueDark': 'blueDark',
-        'tealLight': 'tealLight',
-        'teal': 'teal',
-        'tealDark': 'tealDark',
-        'greenLight': 'greenLight',
-        'green': 'green',
-        'greenDark': 'greenDark',
-        'info': 'info',
-        'success': 'success',
-        'alert': 'alert',
-        'error': 'error'
-    };
+  alert: "alert",
+  black: "black",
+  blue: "blue",
+  blueDark: "blueDark",
+  blueLight: "blueLight",
+  blueMid: "blueMid",
+  error: "error",
+  green: "green",
+  greenDark: "greenDark",
+  greenLight: "greenLight",
+  info: "info",
+  magenta: "magenta",
+  magentaDark: "magentaDark",
+  magentaLight: "magentaLight",
+  orange: "orange",
+  orangeLight: "orangeLight",
+  orangeLighter: "orangeLighter",
+  purple: "purple",
+  purpleDark: "purpleDark",
+  purpleLight: "purpleLight",
+  red: "red",
+  redDark: "redDark",
+  success: "success",
+  teal: "teal",
+  tealDark: "tealDark",
+  tealLight: "tealLight",
+  white: "white",
+  yellow: "yellow",
+  yellowLight: "yellowLight"
+};
 
-export function fabricColor (element, color) {
-    return colorPrefix[element] + colorSuffix[color];
+export function fabricColor(element, color) {
+  return colorPrefix[element] + colorSuffix[color];
 }
 
 // MS Grid for pages
-export const left = "ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg12 ms-u-xl8";
-export const right = "ms-Grid-col ms-u-hiddenLgDown  ms-u-xl4";
+export const left = "ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg9";
+export const right = "ms-Grid-col ms-u-hiddenMdDown ms-u-lg3";
 
 // Colors
-export const bgColor = fabricColor('bg', 'tealLight');
-export const fontColor = 'ms-fontColor-tealDark';
+export const bgColor = fabricColor("bg", "tealLight");
+export const fontColor = "ms-fontColor-tealDark";
