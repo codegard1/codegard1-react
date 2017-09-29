@@ -3,7 +3,7 @@ import { Callout } from "office-ui-fabric-react/lib/Callout";
 import { PrimaryButton } from "office-ui-fabric-react/lib/Button";
 
 /* custom stuff */
-import { BaseComponent } from "../BaseComponent";
+import  BaseComponent  from "../BaseComponent";
 
 export class CalloutExample extends BaseComponent {
   constructor(props) {

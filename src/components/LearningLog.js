@@ -7,7 +7,7 @@ import { TextField } from "office-ui-fabric-react/lib/TextField";
 import { List } from "office-ui-fabric-react/lib/List";
 
 /* custom stuff */
-import { BaseComponent } from "./BaseComponent";
+import  BaseComponent  from "./BaseComponent";
 import { learningLog2016 } from "./learningLog2016";
 import "./learninglog.css";
 
