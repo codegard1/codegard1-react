@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "http://codegard1.com",
   "devDependencies": {
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
     "react-dev-utils": "^4.0.0",
     "react-scripts": "^1.0.0"
   },

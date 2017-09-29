@@ -102,9 +102,14 @@ export class Page extends Component {
             <Nav
               groups={NavDefinition}
               onRenderLink={link => [
-                <span key={"navItem-" + link.name} className="ms-font-m">
-                  <Link to={`/${link.key}`}>{link.name}</Link>
-                </span>
+                <Link
+                  style={{ display: "block", textDecoration: "none" }}
+                  key={"navItem-" + link.name}
+                  className="ms-font-m"
+                  to={`/${link.key}`}
+                >
+                  {link.name}
+                </Link>
               ]}
               isOnTop={false}
               onLinkClick={this.props._onNavLinkClicked}
