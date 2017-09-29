@@ -4,15 +4,16 @@
   "private": true,
   "homepage": "http://codegard1.com",
   "devDependencies": {
-    "react-dev-utils": "^3.0.0",
-    "react-scripts": "^0.6.1"
+    "react-dev-utils": "^4.0.0",
+    "react-scripts": "^1.0.0"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
     "office-ui-fabric-react": "^2.34.2",
     "prop-types": "^15.5.10",
     "react": "^15.5.10",
-    "react-dom": "^15.5.10"
+    "react-dom": "^15.5.10",
+    "react-router-dom": "^4.2.2"
   },
   "scripts": {
     "start": "react-scripts start",

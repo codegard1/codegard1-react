@@ -43,13 +43,6 @@ export default class App extends BaseComponent {
     this.setState({ page: item.key });
   }
 
-  /*
-  <App> ms-Grid
-    <Heading> ms-Grid-row
-    <HorizontalBar> ms-Grid-row
-    <Page> ms-Grid-row
-    <HorizontalBar> ms-Grid-row
-  */
   render() {
     return (
       <div id="App">
@@ -59,10 +52,7 @@ export default class App extends BaseComponent {
             _changePage={this._changePage}
           />
           <HorizontalBar color={this.state.color} />
-          <Page
-            page={this.state.page}
-            _onNavLinkClicked={this._onNavLinkClicked}
-          />
+          <Page page={this.spage} _onNavLinkClicked={this._onNavLinkClicked} />
           <HorizontalBar color={this.state.color} />
         </div>
       </div>
