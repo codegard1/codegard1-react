@@ -10,7 +10,7 @@ export const home = (
     <p>Hello, my name is Chris. Here are some facts about me:</p>
     <ul>
       <li>
-        I work for <Link href="http://macys.com">Macy's</Link> as a SharePoint
+        I work for <Link href="http://ramsa.com">RAMSA</Link> as a SharePoint
         Developer
       </li>
       <li>

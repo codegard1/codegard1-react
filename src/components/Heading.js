@@ -35,27 +35,10 @@ class Heading extends BaseComponent {
 
     return (
       <div className="ms-Grid-row" id="Heading">
-        <div className="ms-Grid-col ms-u-sm8 ms-u-md8 ms-u-lg9">
+        <div className="ms-Grid-col ms-u-sm12">
           <span className={"ms-font-su ms-u-fadeIn400 " + fontColor}>
             <strong>codegard1</strong>
           </span>
-        </div>
-
-        <div className="ms-Grid-col ms-u-sm4 ms-u-md4 ms-u-hiddenLgUp ms-u-fadeIn400">
-          {routes.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              render={() => (
-                <Dropdown
-                  options={dropDownOptions}
-                  selectedKey={route.key}
-                  onChanged={this.onChanged}
-                />
-              )}
-            />
-          ))}
         </div>
       </div>
     );

@@ -42,8 +42,8 @@ export function fabricColor(element, color) {
 }
 
 // MS Grid for pages
-export const left = "ms-Grid-col ms-u-sm12 ms-u-md12 ms-u-lg9";
-export const right = "ms-Grid-col ms-u-hiddenMdDown ms-u-lg3";
+export const left = "ms-Grid-col ms-u-sm12 ms-u-md8";
+export const right = "ms-Grid-col ms-u-sm12 ms-u-md4";
 
 // Colors
 export const bgColor = fabricColor("bg", "tealLight");
