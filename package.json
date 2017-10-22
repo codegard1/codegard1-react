@@ -15,11 +15,7 @@
     "prop-types": "^15.6.0",
     "react": "^15.5.10",
     "react-dom": "^15.5.10",
-<<<<<<< HEAD
-    "blackjack": "git+https://github.com/codegard1/blackjack.git"
-=======
     "react-router-dom": "^4.2.2"
->>>>>>> master
   },
   "scripts": {
     "start": "react-scripts start",
