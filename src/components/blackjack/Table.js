@@ -11,6 +11,7 @@ import DeckContainer from "./DeckContainer";
 import BaseComponent from "./BaseComponent";
 import OptionsPanel from "./OptionsPanel";
 import { defaultPlayers } from "./definitions";
+import "./Table.css";
 
 /* flux */
 import { GameStore } from "./stores/GameStore";
@@ -97,7 +98,7 @@ class Table extends BaseComponent {
       // isDealerHandVisible: newState.isDealerHandVisible,
       // isHandValueVisible: newState.isHandValueVisible,
       isMessageBarVisible: newState.isMessageBarVisible,
-      messageBarDefinition: newState.messageBarDefinition,
+      messageBarDefinition: newState.messageBarDefinition
     });
   }
 
@@ -125,7 +126,7 @@ class Table extends BaseComponent {
           </div>
 
           <div className="ms-Grid-row">
-            <div className="ms-Grid-col ms-u-s12">
+            <div className="ms-Grid-col ms-u-sm12">
               <p className="ms-font-xl" id="PotDisplay">
                 Pot: ${this.state.pot}
               </p>

@@ -50,7 +50,7 @@ export default class App extends BaseComponent {
   render() {
     return (
       <div id="App">
-        <div className="ms-Grid ms-u-fadeIn400">
+        <div className="ms-Grid ms-u-fadeIn400" id="FirstDiv">
           <Heading
             selectedKey={this.state.page}
             _changePage={this._changePage}
