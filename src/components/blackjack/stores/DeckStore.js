@@ -2,10 +2,10 @@ import { EventEmitter } from "events";
 import AppDispatcher from "../dispatcher/AppDispatcher";
 import AppConstants from "../constants/AppConstants";
 
-import { Shuffle } from "shuffle";
+import { Shuffle } from "../shuffle";
+import PlayingCard from "../shuffle/playingCard";
 // import { log } from "../utils";
 import { PlayerHand } from "./PlayerHand";
-import PlayingCard from "shuffle/lib/playingCard";
 
 /* state variables */
 let deck = [],
