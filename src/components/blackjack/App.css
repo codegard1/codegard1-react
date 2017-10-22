@@ -1,0 +1,44 @@
+div#App {
+  width: 100vw;
+  padding:0;
+  margin: 0;
+}
+
+div#Table {
+  width: 100%;
+  /*height: 100%;*/
+  padding: 0;
+  margin: 0;
+  /*border:2px solid salmon;*/
+}
+
+.DeckContainer {
+  margin: auto 0;
+  display: block;
+  padding: 0 2em 2em 2em;
+  /*width: 100%;*/
+  /*border: 3px solid blueviolet;*/
+}
+
+.deck {
+  /*border: 2px dotted gold;*/
+  /*width: 100%;*/
+}
+
+.handValue {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div#StatusPanel {
+  padding: 1em;
+}
+
+.ms-Grid-col {
+  /*border:1px solid lightgreen;*/
+}
+
+#PotDisplay {
+  margin: 1em;
+}
