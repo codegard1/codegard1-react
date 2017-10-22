@@ -1,19 +1,25 @@
 {
   "name": "codegard1-react",
-  "version": "0.5.6",
+  "version": "0.5.7",
   "private": true,
   "homepage": "http://codegard1.com",
   "devDependencies": {
-    "react-dev-utils": "^3.0.0",
-    "react-scripts": "^0.6.1"
+    "eslint": "^4.5.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "react-dev-utils": "^4.1.0",
+    "react-scripts": "^1.0.14"
   },
   "dependencies": {
     "animate.css": "^3.5.2",
     "office-ui-fabric-react": "^2.34.2",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.6.0",
     "react": "^15.5.10",
     "react-dom": "^15.5.10",
+<<<<<<< HEAD
     "blackjack": "git+https://github.com/codegard1/blackjack.git"
+=======
+    "react-router-dom": "^4.2.2"
+>>>>>>> master
   },
   "scripts": {
     "start": "react-scripts start",

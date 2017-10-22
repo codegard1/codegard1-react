@@ -4,14 +4,18 @@ import "animate.css";
 import "office-ui-fabric-react/dist/css/fabric.min.css";
 
 /* Custom Components */
-import { BaseComponent, Page, Heading, HorizontalBar } from "./components";
+import Heading from "./components/Heading";
+import HorizontalBar from "./components/HorizontalBar";
+import Page from "./components/Page";
+import BaseComponent from "./components/BaseComponent";
+// import LearningLog from "./components/LearningLog";
 
 export default class App extends BaseComponent {
   constructor() {
     super();
 
     this.state = {
-      page: "learninglog",
+      page: "home",
       color: "teal",
       isNavOpen: false,
       isMenuVisible: false,
@@ -43,13 +47,6 @@ export default class App extends BaseComponent {
     this.setState({ page: item.key });
   }
 
-  /*
-  <App> ms-Grid
-    <Heading> ms-Grid-row
-    <HorizontalBar> ms-Grid-row
-    <Page> ms-Grid-row
-    <HorizontalBar> ms-Grid-row
-  */
   render() {
     return (
       <div id="App">
@@ -59,10 +56,7 @@ export default class App extends BaseComponent {
             _changePage={this._changePage}
           />
           <HorizontalBar color={this.state.color} />
-          <Page
-            page={this.state.page}
-            _onNavLinkClicked={this._onNavLinkClicked}
-          />
+          <Page />
           <HorizontalBar color={this.state.color} />
         </div>
       </div>

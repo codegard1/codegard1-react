@@ -7,10 +7,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ### TODO
+* Add a blackjack page
 * Make the ColorBox component more interesting
 * Make Fabric UI color a prop
-* Implement proper Routing
 * Implement Flux 
+  * But why? 
 * Implement React animations
 * Textured background image for <Heading>
 
@@ -27,6 +28,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Simplify page authoring workflow  
 
 ## Done
+* Implement proper Routing (10.19.2017)
 * Check that imports and export syntax is consistent
 * Move Callout Example to a component class
 * Move static MS-Grid styles into a module
