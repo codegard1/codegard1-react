@@ -3,7 +3,7 @@ import AppDispatcher from "../dispatcher/AppDispatcher";
 import AppConstants from "../constants/AppConstants";
 
 import { Shuffle } from "shuffle";
-import { log } from "../utils";
+// import { log } from "../utils";
 import { PlayerHand } from "./PlayerHand";
 import { PlayingCard } from "shuffle/lib/playingCard";
 
@@ -97,7 +97,7 @@ export const DeckStore = Object.assign({}, EventEmitter.prototype, {
 AppDispatcher.register(action => {
   /* report for debugging */
   const now = new Date().toTimeString();
-  log(`${action.actionType} was called at ${now}`);
+  console.log(`${action.actionType} was called at ${now}`);
 
   switch (action.actionType) {
     case AppConstants.DECK_NEWDECK:

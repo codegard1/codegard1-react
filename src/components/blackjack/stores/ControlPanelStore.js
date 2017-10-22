@@ -4,8 +4,6 @@ import AppConstants from "../constants/AppConstants";
 
 import { MessageBarType } from "office-ui-fabric-react/lib/MessageBar";
 
-import { log } from "../utils";
-
 /* state variables */
 let state = {
   isDeckVisible: false,
@@ -27,21 +25,21 @@ let state = {
 /* Data, Getter method, Event Notifier */
 const CHANGE_EVENT = "controlPanel";
 const ControlPanelStore = Object.assign({}, EventEmitter.prototype, {
-  getState: function () {
+  getState: function() {
     return state;
   },
   /* This is redundant with AppActions.showMessageBar */
-  setMessageBar: function (text, type) {
+  setMessageBar: function(text, type) {
     _showMessageBar(text, type);
     this.emitChange(CHANGE_EVENT);
   },
-  emitChange: function () {
+  emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
-  addChangeListener: function (callback) {
+  addChangeListener: function(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-  removeChangeListener: function (callback) {
+  removeChangeListener: function(callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
 });
@@ -51,7 +49,7 @@ const ControlPanelStore = Object.assign({}, EventEmitter.prototype, {
 AppDispatcher.register(action => {
   /* report for debugging */
   const now = new Date().toTimeString();
-  log(`${action.actionType} was called at ${now}`);
+  console.log(`${action.actionType} was called at ${now}`);
 
   switch (action.actionType) {
     case AppConstants.CONTROLPANEL_HIDEOPTIONSPANEL:

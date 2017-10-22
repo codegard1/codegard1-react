@@ -8,6 +8,7 @@ import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 import * as fabric from "./fabricStyles";
 import * as Pages from "./pageContent";
 import "./Page.css";
+import App from "./blackjack/App";
 
 /* Wrapper for page content that passes props from Page to any children components */
 const BasePage = props => <Fabric id="BasePage">{props.children}</Fabric>;
@@ -83,7 +84,7 @@ export const routes = [
   {
     path: "/blackjack",
     exact: false,
-    main: () => <BasePage {...this.props}>{Pages.blackjack}</BasePage>,
+    main: () => <App />,
     key: "learninglog"
   }
 ];
