@@ -5,7 +5,7 @@ import AppConstants from "../constants/AppConstants";
 import { Shuffle } from "shuffle";
 // import { log } from "../utils";
 import { PlayerHand } from "./PlayerHand";
-import { PlayingCard } from "shuffle/lib/playingCard";
+import PlayingCard from "shuffle/lib/playingCard";
 
 /* state variables */
 let deck = [],
