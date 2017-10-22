@@ -79,6 +79,12 @@ export const routes = [
     exact: false,
     main: () => <BasePage {...this.props}>{Pages.learninglog}</BasePage>,
     key: "learninglog"
+  },
+  {
+    path: "/blackjack",
+    exact: false,
+    main: () => <BasePage {...this.props}>{Pages.blackjack}</BasePage>,
+    key: "learninglog"
   }
 ];
 
