@@ -20,6 +20,8 @@ export const home = (
       <li>
         Some of my other interests include, but are not limited to:
         <ul>
+          <li>PowerShell</li>
+          <li>InfoPath</li>
           <li>SSDT</li>
           <li>
             <Link href="http://powerbi.microsoft.com">Power BI</Link>
