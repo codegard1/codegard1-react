@@ -30,6 +30,11 @@ const AppActions = {
       type
     });
   },
+  hideMessageBar() {
+    AppDispatcher.dispatch({
+      actionType: AppConstants.CONTROLPANEL_HIDEMESSAGEBAR
+    });
+  },
   reset() {
     AppDispatcher.dispatch({
       actionType: AppConstants.DECK_CLEARHANDS
@@ -91,6 +96,13 @@ const AppActions = {
     // console.log(`toggleHandValueVisibility( ${bool} )`);
     AppDispatcher.dispatch({
       actionType: AppConstants.CONTROLPANEL_TOGGLEHANDVALUEVISIBILITY,
+      bool
+    });
+  },
+  toggleCardTitleVisibility(bool) {
+    console.log(`toggleCardTitleVisibility( ${bool} )`);
+    AppDispatcher.dispatch({
+      actionType: AppConstants.CONTROLPANEL_TOGGLECARDTITLEVISIBILITY,
       bool
     });
   },

@@ -21,13 +21,13 @@ class DeckContainer extends BaseComponent {
     this._bind("_toggleDeck");
   }
 
-  /* These props were verified on 8/21/17 */
   static propTypes = {
+    // gameStatusFlag: T.bool.isRequired, // props
     deck: T.array, // DeckStore
     gameStatus: T.number, // GameStore
-    // gameStatusFlag: T.bool.isRequired, // props
     handValue: T.object, // DeckStore
     hidden: T.bool.isRequired, // props
+    isCardDescVisible: T.bool, // ControlPanelStore
     isDealerHandVisible: T.bool, // ControlPanelStore 
     isHandValueVisible: T.bool, // ControlPanelStore
     isNPC: T.bool, // props
@@ -68,6 +68,7 @@ class DeckContainer extends BaseComponent {
           deselect={cardAttributes => AppActions.deselect(cardAttributes)}
           isSelectable={this.props.isSelectable}
           isBackFacing={index === 0 && !this.props.isDealerHandVisible && this.props.isNPC}
+          isDescVisible={this.props.isCardDescVisible}
         />
       ))
     }

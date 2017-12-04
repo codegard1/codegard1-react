@@ -18,13 +18,14 @@ class OptionsPanel extends BaseComponent {
 
     this.state = {
       // All of this comes from ControlPanelStore
+      isCardDescVisible: false,
+      isDealerHandVisible: false,
       isDeckVisible: false,
       isDrawnVisible: false,
-      isSelectedVisible: false,
-      isOptionsPanelVisible: false,
-      isMessageBarVisible: false,
-      isDealerHandVisible: false,
       isHandValueVisible: false,
+      isMessageBarVisible: false,
+      isOptionsPanelVisible: false,
+      isSelectedVisible: false,
     };
 
     this._bind("newDeal", "onChangeControlPanel", "resetGame");
@@ -146,6 +147,15 @@ class OptionsPanel extends BaseComponent {
             onText="On"
             offText="Off"
             onChanged={checked => AppActions.toggleHandValueVisibility(checked)}
+          />
+          <Toggle
+            checked={this.state.isCardDescVisible}
+            label="Show Card Titles"
+            onAriaLabel="The card titles are visible. Press to hide them."
+            offAriaLabel="The card titles are hidden. Press to show them."
+            onText="On"
+            offText="Off"
+            onChanged={checked => AppActions.toggleCardTitleVisibility(checked)}
           />
         </div>
       </Panel>

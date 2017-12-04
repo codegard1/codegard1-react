@@ -11,7 +11,7 @@ import DeckContainer from "./DeckContainer";
 import BaseComponent from "./BaseComponent";
 import OptionsPanel from "./OptionsPanel";
 import { defaultPlayers } from "./definitions";
-import "./Table.css";
+import PotDisplay from "./PotDisplay";
 
 /* flux */
 import { GameStore } from "./stores/GameStore";
@@ -36,10 +36,10 @@ class Table extends BaseComponent {
       round: 0,
       turnCount: 0,
       // ControlPanelStore
-      isDealerHandVisible: true,
+      isDealerHandVisible: false,
       isDeckVisible: false,
       isDrawnVisible: false,
-      isHandValueVisible: true,
+      isHandValueVisible: false,
       isMessageBarVisible: false,
       isOptionsPanelVisible: false,
       isSelectedVisible: false,
@@ -98,7 +98,7 @@ class Table extends BaseComponent {
       // isDealerHandVisible: newState.isDealerHandVisible,
       // isHandValueVisible: newState.isHandValueVisible,
       isMessageBarVisible: newState.isMessageBarVisible,
-      messageBarDefinition: newState.messageBarDefinition
+      messageBarDefinition: newState.messageBarDefinition,
     });
   }
 
@@ -116,8 +116,7 @@ class Table extends BaseComponent {
                 <MessageBar
                   messageBarType={this.state.messageBarDefinition.type}
                   isMultiline={this.state.messageBarDefinition.isMultiLine}
-                  onDismiss={() =>
-                    this.setState({ isMessageBarVisible: false })}
+                  onDismiss={AppActions.hideMessageBar}
                 >
                   {this.state.messageBarDefinition.text}
                 </MessageBar>
@@ -125,13 +124,7 @@ class Table extends BaseComponent {
             </div>
           </div>
 
-          <div className="ms-Grid-row">
-            <div className="ms-Grid-col ms-u-sm12">
-              <p className="ms-font-xl" id="PotDisplay">
-                Pot: ${this.state.pot}
-              </p>
-            </div>
-          </div>
+          <PotDisplay pot={this.state.pot} />
 
           <div className="ms-Grid-row">
             <div className="ms-Grid-col ms-u-sm6">{playersArray[0]}</div>

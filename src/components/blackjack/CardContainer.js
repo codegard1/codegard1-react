@@ -15,14 +15,14 @@ class CardContainer extends BaseComponent {
 
   static propTypes = {
     description: T.string.isRequired,
+    deselect: T.func,
+    isBackFacing: T.bool,
+    isSelectable: T.bool,
+    isDescVisible: T.bool,
+    select: T.func,
     sort: T.number.isRequired,
     suit: T.string.isRequired,
-    select: T.func,
-    deselect: T.func,
-    isSelectable: T.bool,
-    isBackFacing: T.bool,
   };
-
 
   _toggleSelect() {
     const cardAttributes = {
@@ -41,23 +41,23 @@ class CardContainer extends BaseComponent {
   }
 
   render() {
-    const short = this.props.description + " of " + this.props.suit + "s";
+    const description = this.props.description + " of " + this.props.suit + "s";
     let cardTitle = "";
     switch (this.props.sort) {
       case 14:
-        cardTitle = "A ";
+        cardTitle = "A";
         break;
 
       case 13:
-        cardTitle = "K ";
+        cardTitle = "K";
         break;
 
       case 12:
-        cardTitle = "Q ";
+        cardTitle = "Q";
         break;
 
       case 11:
-        cardTitle = "J ";
+        cardTitle = "J";
         break;
 
       default:
@@ -65,21 +65,22 @@ class CardContainer extends BaseComponent {
         break;
     }
 
+    let cardIcon = "";
     switch (this.props.suit) {
       case "Heart":
-        cardTitle += "\u2665";
+        cardIcon += "\u2665";
         break;
 
       case "Spade":
-        cardTitle += "\u2660";
+        cardIcon += "\u2660";
         break;
 
       case "Diamond":
-        cardTitle += "\u2666";
+        cardIcon += "\u2666";
         break;
 
       case "Club":
-        cardTitle += "\u2663";
+        cardIcon += "\u2663";
         break;
 
       default:
@@ -91,15 +92,16 @@ class CardContainer extends BaseComponent {
     cardClass += this.props.isSelectable ? "selectable " : "unselectable";
     cardClass += this.state.isSelected ? " selected " : "";
     cardClass += this.props.isBackFacing ? " backfacing" : "";
+    cardClass += this.props.isDescVisible ? " descripted" : " nondescript";
 
     return (
       <div
         className={cardClass}
         onClick={this.props.isSelectable && this._toggleSelect}
       >
-        <span className="ms-font-xl card-title top">{cardTitle}</span>
-        <p className="ms-font-m" data-p={short} />
-        <span className="ms-font-xl card-title bottom">{cardTitle}</span>
+        <p className="ms-font-xl card-title top" data-cardTitle={cardTitle} data-cardIcon={cardIcon} />
+        {this.props.isDescVisible && <p className="ms-font-m card-description" data-p={description} />}
+        <p className="ms-font-xl card-title bottom" data-cardTitle={cardTitle} data-cardIcon={cardIcon} />
         {this.props.isBackFacing && <div className="card-back" />}
       </div>
     );

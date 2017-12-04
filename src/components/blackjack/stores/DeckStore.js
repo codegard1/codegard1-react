@@ -2,10 +2,10 @@ import { EventEmitter } from "events";
 import AppDispatcher from "../dispatcher/AppDispatcher";
 import AppConstants from "../constants/AppConstants";
 
-import { Shuffle } from "../shuffle";
-import PlayingCard from "../shuffle/playingCard";
+import Shuffle from "./Shuffle";
 // import { log } from "../utils";
 import { PlayerHand } from "./PlayerHand";
+import PlayingCard from "./PlayingCard";
 
 /* state variables */
 let deck = [],
@@ -96,8 +96,8 @@ export const DeckStore = Object.assign({}, EventEmitter.prototype, {
 /* register methods */
 AppDispatcher.register(action => {
   /* report for debugging */
-  const now = new Date().toTimeString();
-  console.log(`${action.actionType} was called at ${now}`);
+  //const now = new Date().toTimeString();
+  //log(`${action.actionType} was called at ${now}`);
 
   switch (action.actionType) {
     case AppConstants.DECK_NEWDECK:

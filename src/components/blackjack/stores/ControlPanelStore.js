@@ -6,13 +6,14 @@ import { MessageBarType } from "office-ui-fabric-react/lib/MessageBar";
 
 /* state variables */
 let state = {
+  isCardDescVisible: false,
+  isDealerHandVisible: false,
   isDeckVisible: false,
   isDrawnVisible: false,
-  isSelectedVisible: false,
-  isOptionsPanelVisible: false,
+  isHandValueVisible: false,
   isMessageBarVisible: false,
-  isDealerHandVisible: false,
-  isHandValueVisible: true,
+  isOptionsPanelVisible: false,
+  isSelectedVisible: false,
   messageBarDefinition: {
     type: MessageBarType.info,
     text: "",
@@ -25,21 +26,22 @@ let state = {
 /* Data, Getter method, Event Notifier */
 const CHANGE_EVENT = "controlPanel";
 const ControlPanelStore = Object.assign({}, EventEmitter.prototype, {
-  getState: function() {
+  getState: function () {
     return state;
   },
   /* This is redundant with AppActions.showMessageBar */
-  setMessageBar: function(text, type) {
+  /* TO DO: move this to GameStore, since only GameStore uses it. */
+  setMessageBar: function (text, type) {
     _showMessageBar(text, type);
     this.emitChange(CHANGE_EVENT);
   },
-  emitChange: function() {
+  emitChange: function () {
     this.emit(CHANGE_EVENT);
   },
-  addChangeListener: function(callback) {
+  addChangeListener: function (callback) {
     this.on(CHANGE_EVENT, callback);
   },
-  removeChangeListener: function(callback) {
+  removeChangeListener: function (callback) {
     this.removeListener(CHANGE_EVENT, callback);
   }
 });
@@ -48,8 +50,8 @@ const ControlPanelStore = Object.assign({}, EventEmitter.prototype, {
 /* register methods */
 AppDispatcher.register(action => {
   /* report for debugging */
-  const now = new Date().toTimeString();
-  console.log(`${action.actionType} was called at ${now}`);
+  //const now = new Date().toTimeString();
+  //console.log(`  - ${action.actionType} was called at ${now}`);
 
   switch (action.actionType) {
     case AppConstants.CONTROLPANEL_HIDEOPTIONSPANEL:
@@ -64,6 +66,11 @@ AppDispatcher.register(action => {
 
     case AppConstants.CONTROLPANEL_SHOWMESSAGEBAR:
       _showMessageBar(action.text, action.type);
+      ControlPanelStore.emitChange();
+      break;
+
+    case AppConstants.CONTROLPANEL_HIDEMESSAGEBAR:
+      state.isMessageBarVisible = false;
       ControlPanelStore.emitChange();
       break;
 
@@ -91,6 +98,10 @@ AppDispatcher.register(action => {
       state.isDealerHandVisible = action.bool;
       ControlPanelStore.emitChange();
       break;
+
+    case AppConstants.CONTROLPANEL_TOGGLECARDTITLEVISIBILITY:
+      state.isCardDescVisible = action.bool;
+      ControlPanelStore.emitChange();
 
     default:
       /* do nothing */
