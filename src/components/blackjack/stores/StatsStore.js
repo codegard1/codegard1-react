@@ -5,6 +5,7 @@ import AppDispatcher from "../dispatcher/AppDispatcher";
 import AppConstants from "../constants/AppConstants";
 import GameStore from "./GameStore";
 
+/* New instance of PlayerStats created for each player */
 class PlayerStats {
   constructor(id) {
     this.id = id;
@@ -28,3 +29,42 @@ class PlayerStats {
     this.winLossRatio = ratio.substr(0, 4);
   }
 }
+
+/* State variables */
+let state = { playerStats: [] };
+
+/* Data, Getter method, Event Notifier */
+const CHANGE_EVENT = "playerstats";
+export const StatsStore = Object.assign({}, EventEmitter.prototype, {
+  getState: function() {
+    return state;
+  },
+  getStats(playerId) {
+    const index = state.playerStats.findIndex(item => item.id === playerId);
+    return state.playerStats[index];
+  }
+});
+
+/* register methods */
+AppDispatcher.register(action => {
+  /* report for debugging */
+  //const now = new Date().toTimeString();
+  //log(`${action.actionType} was called at ${now}`);
+
+  switch (action.actionType) {
+    case AppConstants.STATS_NEW:
+      break;
+
+    case AppConstants.STATS_UPDATE:
+      const index = state.playerStats.findIndex(
+        item => item.id === action.playerId
+      );
+      state.playerStats[index].update(action.statsFrame);
+      StatsStore.emitChange();
+      break;
+
+    default:
+      /* do nothing */
+      break;
+  }
+});
