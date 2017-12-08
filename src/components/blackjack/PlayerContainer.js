@@ -7,7 +7,7 @@ import BaseComponent from "./BaseComponent";
 import DeckContainer from "./DeckContainer";
 import ControlPanel from "./ControlPanel";
 import "./PlayerContainer.css";
-import "./StatusPanel.css";
+import "./StatusDisplay.css";
 
 /* flux */
 import { GameStore } from "./stores/GameStore";
@@ -311,7 +311,7 @@ class StatusDisplay extends BaseComponent {
     }
 
     return (
-      <div className="StatusPanel ms-font-s">
+      <div className="StatusDisplay ms-font-s">
         <ul className="playerStats">{playerStats}</ul>
         <ul className="playerInfo">{playerInfo}</ul>
       </div>
