@@ -12,7 +12,7 @@ import "./StatusDisplay.css";
 /* flux */
 import { GameStore } from "./stores/GameStore";
 import { DeckStore } from "./stores/DeckStore";
-import { StatsStore } from "./stores/StatsStore";
+import StatsStore from "./stores/StatsStore";
 import ControlPanelStore from "./stores/ControlPanelStore";
 import AppActions from "./actions/AppActions";
 
@@ -352,8 +352,8 @@ class Agent extends BaseComponent {
             (aceAsOne >= 17 && aceAsOne <= 21) ||
             (aceAsEleven >= 17 && aceAsEleven <= 21)
           ) {
-            AppActions.stay();
             console.log("Agent stayed");
+            AppActions.stay();
             this.setState({ lastAction: "Stay" });
           }
         } else {

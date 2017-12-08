@@ -13,7 +13,6 @@ class PlayerStats {
       numberOfGamesLost: 0,
       numberOfGamesPlayed: 0,
       numberOfGamesWon: 0,
-      numberOfHandsPlayer: 0,
       numberOfTimesBlackjack: 0,
       numberOfTimesBusted: 0,
       winLossRatio: "1.000"
@@ -21,12 +20,19 @@ class PlayerStats {
   }
 
   update(statsFrame) {
-    this.state = { ...statsFrame };
+    /* for each key in statsframe, update the corresponding key in state */
+    for (let key in statsFrame) {
+      console.log(`${key}: ${statsFrame[key]}`);
+    }
   }
 
   calculateWinLossRatio() {
     const ratio = (this.numberOfGamesWon / this.numberOfGamesLost).toString();
     this.winLossRatio = ratio.substr(0, 4);
+  }
+
+  getState() {
+    return this.state;
   }
 }
 
@@ -35,7 +41,7 @@ let state = { playerStats: [] };
 
 /* Data, Getter method, Event Notifier */
 const CHANGE_EVENT = "playerstats";
-export const StatsStore = Object.assign({}, EventEmitter.prototype, {
+const StatsStore = Object.assign({}, EventEmitter.prototype, {
   emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
@@ -50,7 +56,13 @@ export const StatsStore = Object.assign({}, EventEmitter.prototype, {
   },
   getStats(playerId) {
     const index = state.playerStats.findIndex(item => item.id === playerId);
-    return state.playerStats[index].state;
+    return state.playerStats[index].getState();
+  },
+  update(playerId, statsFrame) {
+    const index = state.playerStats.findIndex(item => item.id === playerId);
+    // state.playerStats[index].update(statsFrame);
+    console.log(JSON.stringify(statsFrame));
+    this.emitChange();
   }
 });
 
@@ -67,16 +79,10 @@ AppDispatcher.register(action => {
       StatsStore.emitChange();
       break;
 
-    case AppConstants.STATS_UPDATE:
-      const index = state.playerStats.findIndex(
-        item => item.id === action.playerId
-      );
-      state.playerStats[index].update(action.statsFrame);
-      StatsStore.emitChange();
-      break;
-
     default:
       /* do nothing */
       break;
   }
 });
+
+export default StatsStore;
