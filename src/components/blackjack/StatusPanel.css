@@ -1,0 +1,25 @@
+div.StatusPanel {
+  color: #333;
+  max-height: 200px;
+  overflow-y: scroll;
+  padding-right: 20;
+  /* border: 1px solid orange; */
+}
+
+div.StatusPanel > ul {
+  list-style: none;
+  margin-left: -2em;
+  /* border: 1px solid aquamarine; */
+}
+
+div.StatusPanel > ul.playerInfo::before {
+  content: "Player Info";
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+div.StatusPanel > ul.playerStats::before {
+  content: "Player Stats";
+  font-weight: bold;
+  text-decoration: underline;
+}
