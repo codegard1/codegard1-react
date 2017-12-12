@@ -15,7 +15,7 @@ class PlayerStats {
       numberOfGamesWon: 0,
       numberOfTimesBlackjack: 0,
       numberOfTimesBusted: 0,
-      winLossRatio: "1.000"
+      winLossRatio: "1"
     };
   }
 
@@ -23,12 +23,25 @@ class PlayerStats {
     /* for each key in statsframe, update the corresponding key in state */
     for (let key in statsFrame) {
       console.log(`${key}: ${statsFrame[key]}`);
+
+      /* if this PlayerStats has the given key, ++1 it */
+      if (this.state.hasOwnProperty(key)) {
+        this.state[key] += 1;
+        console.log(key, this.state[key]);
+      }
     }
+
+    /* recalculate win/loss ratio */
+    this.calculateWinLossRatio();
   }
 
   calculateWinLossRatio() {
-    const ratio = (this.numberOfGamesWon / this.numberOfGamesLost).toString();
-    this.winLossRatio = ratio.substr(0, 4);
+    const numerator =
+      this.state.numberOfGamesWon > 0 ? this.state.numberOfGamesWon : 1;
+    const denominator =
+      this.state.numberOfGamesLost > 0 ? this.state.numberOfGamesLost : 1;
+    const ratio = (numerator / denominator).toString();
+    this.state.winLossRatio = ratio.substr(0, 4);
   }
 
   getState() {
@@ -61,7 +74,6 @@ const StatsStore = Object.assign({}, EventEmitter.prototype, {
   update(playerId, statsFrame) {
     const index = state.playerStats.findIndex(item => item.id === playerId);
     state.playerStats[index].update(statsFrame);
-    console.log(JSON.stringify(statsFrame));
     this.emitChange();
   },
   new(playerId) {
