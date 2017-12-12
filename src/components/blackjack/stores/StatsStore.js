@@ -60,8 +60,12 @@ const StatsStore = Object.assign({}, EventEmitter.prototype, {
   },
   update(playerId, statsFrame) {
     const index = state.playerStats.findIndex(item => item.id === playerId);
-    // state.playerStats[index].update(statsFrame);
+    state.playerStats[index].update(statsFrame);
     console.log(JSON.stringify(statsFrame));
+    this.emitChange();
+  },
+  new(playerId) {
+    state.playerStats.push(new PlayerStats(playerId));
     this.emitChange();
   }
 });
