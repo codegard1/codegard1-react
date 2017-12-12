@@ -300,13 +300,21 @@ class StatusDisplay extends BaseComponent {
 
     for (let key in this.props.player) {
       if (this.props.player.hasOwnProperty(key)) {
-        playerInfo.push(<li>{`${key}: ${this.props.player[key]}`}</li>);
+        playerInfo.push(
+          <li key={`statusdisplay-${key}`}>{`${key}: ${
+            this.props.player[key]
+          }`}</li>
+        );
       }
     }
 
     for (let key in this.props.stats) {
       if (this.props.stats.hasOwnProperty(key)) {
-        playerStats.push(<li>{`${key}: ${this.props.stats[key]}`}</li>);
+        playerStats.push(
+          <li key={`statusdisplay-${key}`}>{`${key}: ${
+            this.props.stats[key]
+          }`}</li>
+        );
       }
     }
 
