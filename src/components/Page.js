@@ -137,7 +137,7 @@ export const routes = [
     path: "/blackjack",
     exact: false,
     main: () => <Table />,
-    key: "learninglog"
+    key: "blackjack"
   }
 ];
 
