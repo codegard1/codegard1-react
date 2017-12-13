@@ -1,13 +1,14 @@
 import React from "react";
 import * as T from "prop-types";
-import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
+// import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
+import { CommandBar } from "office-ui-fabric-react/lib/CommandBar";
 import { Route, withRouter } from "react-router-dom";
 
 /* custom stuff */
 import BaseComponent from "./BaseComponent";
 import * as fabric from "./fabricStyles";
 import "./Heading.css";
-import { NavDefinition } from "./Page";
+import { NavDefinition, CommandBarDefinition } from "./Page";
 import { routes } from "./Page";
 
 class Heading extends BaseComponent {
@@ -27,18 +28,18 @@ class Heading extends BaseComponent {
   render() {
     const fontColor = fabric.fontColor;
 
-    /* make NavDefinition more Dropdown-friendly */
-    const dropDownOptions = NavDefinition[0].links.map(item => ({
-      key: item.key,
-      text: item.name
-    }));
-
     return (
       <div className="ms-Grid-row" id="Heading">
-        <div className="ms-Grid-col ms-u-sm12">
+        <div className="ms-Grid-col ms-u-sm9">
           <span className={"ms-font-su ms-u-fadeIn400 " + fontColor}>
             <strong>codegard1</strong>
           </span>
+        </div>
+        <div className="ms-Grid-col ms-u-sm3">
+          <CommandBar
+            isSearchBoxVisible={false}
+            farItems={CommandBarDefinition}
+          />
         </div>
       </div>
     );

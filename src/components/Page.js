@@ -17,32 +17,84 @@ export const NavDefinition = [
   {
     links: [
       {
+        ariaLabel: "Home",
+        category: "Pages",
+        iconProps: { iconName: "Home" },
         key: "home",
         name: "Home"
       },
       {
+        ariaLabel: "Identity",
+        category: "Pages",
+        iconProps: { iconName: "Identity" },
         key: "identity",
         name: "Identity"
       },
       {
+        ariaLabel: "Projects",
+        category: "Pages",
+        iconProps: { iconName: "Projects" },
         key: "projects",
         name: "Projects"
       },
       {
+        ariaLabel: "Experiments",
+        category: "Pages",
+        iconProps: { iconName: "Experiments" },
         key: "experiments",
         name: "Experiments"
       },
       {
+        ariaLabel: "Log",
+        category: "Pages",
+        iconProps: { iconName: "Log" },
         key: "learninglog",
         name: "Learning Log"
       },
       {
+        ariaLabel: "Blackjack",
+        category: "Pages",
+        iconProps: { iconName: "Blackjack" },
         key: "blackjack",
         name: "Blackjack"
       }
     ]
   }
 ];
+
+/* make NavDefinition more Dropdown-friendly */
+const pagesMenuItems = NavDefinition[0].links.map(item => ({
+  ariaLabel: item.ariaLabel,
+  category: item.category,
+  disabled: false,
+  iconProps: item.iconProps,
+  key: item.key,
+  name: item.name,
+  onClick: ev => {
+    ev.preventDefault();
+    console.log(item.key, " clicked!");
+  }
+}));
+
+/* group menu items into a dropdown menu */
+const pagesMenu = [
+  {
+    key: "pages-menu",
+    name: "Pages",
+
+    onClick(ev) {
+      ev.preventDefault();
+    },
+    subMenuProps: {
+      items: pagesMenuItems,
+      isSubMenu: true,
+      isBeakVisible: true
+    }
+  }
+];
+
+/* export definition to CommandBar in Heading */
+export const CommandBarDefinition = pagesMenu;
 
 export const routes = [
   {
