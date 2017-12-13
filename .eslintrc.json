@@ -23,6 +23,7 @@
     "valid-typeof": "warn",
     "linebreak-style": "off",
     "no-underscore-dangle": "off",
-    "react/jsx-indent-props": "off"
+    "react/jsx-indent-props": "off",
+    "react/no-multi-comp": "off"
   }
 }
