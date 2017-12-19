@@ -4,6 +4,7 @@ import { Link } from "office-ui-fabric-react/lib/Link";
 /* custom stuff */
 import { Experiments } from "./Experiments";
 import { LearningLog } from "./LearningLog";
+import Table from "./blackjack/Table";
 
 export const home = (
   <div className="ms-font-xl">
@@ -81,9 +82,7 @@ export const identity = (
         I have a <Link href="https://github.com/codegard1">GitHub profile</Link>
       </li>
       <li>
-        I use <Link href="https://jsfiddle.net/user/codegard1/">
-          JSFiddle
-        </Link>{" "}
+        I use <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link>{" "}
         and sometimes{" "}
         <Link href="http://plnkr.co/users/codegard1">Plunker</Link> to test
         ideas
@@ -144,10 +143,13 @@ export const experiments = <Experiments />;
 
 export const learninglog = <LearningLog />;
 
+export const blackjack = <Table />;
+
 export const pages = {
   home,
   identity,
   projects,
   experiments,
-  learninglog
+  learninglog,
+  blackjack
 };

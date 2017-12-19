@@ -6,7 +6,6 @@ import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 /* custom stuff */
 import * as Pages from "./pageContent";
 import "./Page.css";
-import Table from "./blackjack/Table";
 
 /* Wrapper for page content that passes props from Page to any children components */
 const BasePage = props => <Fabric id="BasePage">{props.children}</Fabric>;
@@ -56,12 +55,6 @@ export const NavDefinition = [
 
 export const routes = [
   {
-    path: "/",
-    exact: true,
-    main: () => <BasePage {...this.props}>{Pages.home}</BasePage>,
-    key: "home"
-  },
-  {
     path: "/home",
     exact: false,
     main: () => <BasePage {...this.props}>{Pages.home}</BasePage>,
@@ -94,7 +87,7 @@ export const routes = [
   {
     path: "/blackjack",
     exact: false,
-    main: () => <Table />,
+    main: () => <BasePage {...this.props}>{Pages.blackjack}></BasePage>,
     key: "blackjack"
   }
 ];
@@ -104,9 +97,15 @@ export class Page extends Component {
     return (
       <div className="ms-Grid-row">
         <div className="ms-Grid-col ms-sm12">
+          <Route
+            key="route-default"
+            path="/"
+            exact
+            component={routes[0].main}
+          />
           {routes.map((route, index) => (
             <Route
-              key={index}
+              key={`route-${index}`}
               path={route.path}
               exact={route.exact}
               component={route.main}
