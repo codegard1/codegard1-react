@@ -39,7 +39,7 @@ export default class App extends BaseComponent {
     this.setState({ isNavOpen: true });
   };
 
-  _onNavLinkClicked(ev, item) {
+  _onNavLinkClicked(item) {
     this.setState({ page: item.key });
   }
 

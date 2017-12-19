@@ -1,7 +1,8 @@
 import React from "react";
 import * as T from "prop-types";
 import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
-import { withRouter, Link } from "react-router-dom";
+import { CommandButton } from "office-ui-fabric-react/lib/Button";
+import { withRouter } from "react-router-dom";
 
 /* custom stuff */
 import BaseComponent from "./BaseComponent";
@@ -18,9 +19,9 @@ class Heading extends BaseComponent {
   }
 
   onChanged(option) {
-    console.log("option:", option);
+    console.log("option:", option.key);
     this.props.onChange(option);
-    // this.props.history.push(`/${option.key}`);
+    this.context.router.history.push(`/${option.key}`);
   }
 
   render() {
@@ -49,20 +50,6 @@ class Heading extends BaseComponent {
             options={DropdownDefinition}
             selectedKey={this.props.selectedKey}
             onChanged={option => this.onChanged(option)}
-            onRenderItem={item => (
-              <Link
-                style={{
-                  display: "block",
-                  textDecoration: "none",
-                  padding: "0.5em"
-                }}
-                key={"navItem-" + item.name}
-                className="ms-font-m"
-                to={`/${item.key}`}
-              >
-                {item.name}
-              </Link>
-            )}
           />
         </div>
       </div>
@@ -73,6 +60,10 @@ class Heading extends BaseComponent {
 Heading.propTypes = {
   selectedKey: T.string.isRequired,
   onChange: T.func
+};
+
+Heading.contextTypes = {
+  router: T.object.isRequired
 };
 
 export default withRouter(Heading);
