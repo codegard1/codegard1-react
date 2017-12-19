@@ -3,7 +3,6 @@ import {
   MessageBar,
   MessageBarType
 } from "office-ui-fabric-react/lib/MessageBar";
-import { CommandButton } from "office-ui-fabric-react/lib/Button";
 
 /* custom stuff */
 import PlayerContainer from "./PlayerContainer";
@@ -98,7 +97,7 @@ class Table extends BaseComponent {
       // isDealerHandVisible: newState.isDealerHandVisible,
       // isHandValueVisible: newState.isHandValueVisible,
       isMessageBarVisible: newState.isMessageBarVisible,
-      messageBarDefinition: newState.messageBarDefinition,
+      messageBarDefinition: newState.messageBarDefinition
     });
   }
 
