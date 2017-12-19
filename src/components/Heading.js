@@ -47,9 +47,10 @@ class Heading extends BaseComponent {
         </div>
         <div className="ms-Grid-col ms-sm3">
           <Dropdown
+            onChanged={option => this.onChanged(option)}
             options={DropdownDefinition}
             selectedKey={this.props.selectedKey}
-            onChanged={option => this.onChanged(option)}
+            label="Pages"
           />
         </div>
       </div>
