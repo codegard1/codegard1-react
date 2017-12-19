@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import * as T from "prop-types";
 import { Nav } from "office-ui-fabric-react/lib/Nav";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
 /* custom stuff */
-import * as fabric from "./fabricStyles";
 import * as Pages from "./pageContent";
 import "./Page.css";
 import Table from "./blackjack/Table";
@@ -121,14 +120,10 @@ export const routes = [
 
 export class Page extends Component {
   render() {
-    /* classNames for MS-Grid columns */
-    const leftCol = fabric.left;
-    const rightCol = fabric.right;
-
     return (
       <Router>
         <div className="ms-Grid-row">
-          <div className={leftCol}>
+          <div className="ms-Grid-col ms-sm12">
             {routes.map((route, index) => (
               <Route
                 key={index}
@@ -138,7 +133,6 @@ export class Page extends Component {
               />
             ))}
           </div>
-          <div className={rightCol} />
         </div>
       </Router>
     );
@@ -146,8 +140,7 @@ export class Page extends Component {
 }
 
 Page.propTypes = {
-  page: T.string,
-  _onNavLinkClicked: T.func
+  page: T.string
 };
 
 export default Page;
