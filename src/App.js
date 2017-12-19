@@ -49,20 +49,18 @@ export default class App extends BaseComponent {
   render() {
     return (
       <HashRouter>
-        <Fabric>
-          <div id="App">
-            <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
-              <Heading
-                selectedKey={this.state.page}
-                onChange={this._onNavLinkClicked}
-              />
-              <HorizontalBar color={this.state.color} />
-              <Page
-                page={this.state.page}
-                onNavLinkClicked={this._onNavLinkClicked}
-              />
-              <HorizontalBar color={this.state.color} />
-            </div>
+        <Fabric id="App">
+          <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
+            <Heading
+              selectedKey={this.state.page}
+              onChange={this._onNavLinkClicked}
+            />
+            <HorizontalBar color={this.state.color} />
+            <Page
+              page={this.state.page}
+              onNavLinkClicked={this._onNavLinkClicked}
+            />
+            <HorizontalBar color={this.state.color} />
           </div>
         </Fabric>
       </HashRouter>
