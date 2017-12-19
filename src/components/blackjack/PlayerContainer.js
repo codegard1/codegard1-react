@@ -87,7 +87,7 @@ export class PlayerContainer extends BaseComponent {
     ControlPanelStore.removeChangeListener(this.onChangeControlPanel);
     DeckStore.removeChangeListener(this.onChangeDeck);
     GameStore.removeChangeListener(this.onChangeGame);
-    StatsStore.removeChangeListener();
+    StatsStore.removeChangeListener(this.onChangeStats);
   }
 
   /**
