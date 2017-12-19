@@ -13,6 +13,9 @@ import Page from "./components/Page";
 import BaseComponent from "./components/BaseComponent";
 // import LearningLog from "./components/LearningLog";
 
+/* Initialize Fabric Icons */
+initializeIcons();
+
 export default class App extends BaseComponent {
   constructor() {
     super();
@@ -27,11 +30,6 @@ export default class App extends BaseComponent {
 
     /* bind private methods */
     this._bind("_onClosePanel", "_onShowPanel", "_onNavLinkClicked");
-  }
-
-  onComponentWillMount() {
-    /* Initialize Fabric Icons */
-    initializeIcons();
   }
 
   _onClosePanel = () => {
