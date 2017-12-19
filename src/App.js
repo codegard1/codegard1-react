@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import "animate.css";
 import "office-ui-fabric-react/dist/css/fabric.min.css";
+import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
 /* Custom Components */
 import Heading from "./components/Heading";
@@ -49,7 +50,7 @@ export default class App extends BaseComponent {
 
   render() {
     return (
-      <div id="App">
+      <Fabric id="App">
         <div className="ms-Grid ms-u-fadeIn400" id="FirstDiv">
           <Heading
             selectedKey={this.state.page}
@@ -59,7 +60,7 @@ export default class App extends BaseComponent {
           <Page />
           <HorizontalBar color={this.state.color} />
         </div>
-      </div>
+      </Fabric>
     );
   }
 }
