@@ -38,7 +38,7 @@ class Heading extends BaseComponent {
           <Dropdown
             options={DropdownDefinition}
             selectedKey={this.props.selectedKey}
-            onChanged={option => this.props._changePage(option.key)}
+            onChanged={option => this.onChanged(option)}
             onRenderItem={item => (
               <Link
                 style={{
@@ -61,8 +61,7 @@ class Heading extends BaseComponent {
 }
 
 Heading.propTypes = {
-  selectedKey: T.string.isRequired,
-  _changePage: T.func.isRequired
+  selectedKey: T.string.isRequired
 };
 
 export default withRouter(Heading);

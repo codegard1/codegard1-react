@@ -138,26 +138,7 @@ export class Page extends Component {
               />
             ))}
           </div>
-          <div className={rightCol}>
-            <span className="ms-font-xl">Pages</span>
-            <Nav
-              groups={NavDefinition}
-              onRenderLink={link => [
-                <Link
-                  style={{ display: "block", textDecoration: "none" }}
-                  key={"navItem-" + link.name}
-                  className="ms-font-m"
-                  to={`/${link.key}`}
-                >
-                  {link.name}
-                </Link>
-              ]}
-              isOnTop={false}
-              onLinkClick={this.props._onNavLinkClicked}
-              selectedKey={this.props.page}
-              initialSelectedKey={"home"}
-            />
-          </div>
+          <div className={rightCol} />
         </div>
       </Router>
     );

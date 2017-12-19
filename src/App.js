@@ -52,12 +52,12 @@ export default class App extends BaseComponent {
     return (
       <Fabric id="App">
         <div className="ms-Grid ms-u-fadeIn400" id="FirstDiv">
-          <Heading
-            selectedKey={this.state.page}
-            _changePage={this._changePage}
-          />
+          <Heading selectedKey={this.state.page} />
           <HorizontalBar color={this.state.color} />
-          <Page />
+          <Page
+            page={this.state.page}
+            onNavLinkClicked={this.state._onNavLinkClicked}
+          />
           <HorizontalBar color={this.state.color} />
         </div>
       </Fabric>
