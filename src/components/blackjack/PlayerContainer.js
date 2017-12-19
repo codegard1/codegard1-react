@@ -222,7 +222,7 @@ export class PlayerContainer extends BaseComponent {
         {this.state.isStatusCalloutVisible && (
           <Callout
             gapSpace={1}
-            targetElement={this._statusCalloutTarget}
+            target={this._statusCalloutTarget}
             onDismiss={this._toggleStatusCallout}
             setInitialFocus={false}
           >
