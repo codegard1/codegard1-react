@@ -238,7 +238,7 @@ export class PlayerContainer extends BaseComponent {
             <Callout
               className="DeckCallout"
               gapSpace={1}
-              targetElement={this._deckCalloutTarget}
+              target={this._deckCalloutTarget}
               onDismiss={this._hideDeckCallout}
               setInitialFocus={false}
               directionalHint={DirectionalHint.bottomCenter}
@@ -365,7 +365,7 @@ class Agent extends BaseComponent {
             this.setState({ lastAction: "Stay" });
           }
         } else {
-          console.log("Clear intervalID ", intervalID);
+          // console.log("Clear intervalID ", intervalID);
           clearInterval(intervalID);
         }
       }, 500);
