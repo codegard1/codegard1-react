@@ -27,8 +27,7 @@
     "react-dev-utils": "^4.2.1",
     "react-dom": "^15.5.10",
     "react-masonry-component": "^6.0.1",
-    "react-router-dom": "^4.2.2",
-    "sqlite": "^2.9.0"
+    "react-router-dom": "^4.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
