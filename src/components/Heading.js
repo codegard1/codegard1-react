@@ -1,7 +1,7 @@
 import React from "react";
 import * as T from "prop-types";
 import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
-import { Route, withRouter } from "react-router-dom";
+import { Route, withRouter, Link } from "react-router-dom";
 
 /* custom stuff */
 import BaseComponent from "./BaseComponent";
@@ -38,7 +38,21 @@ class Heading extends BaseComponent {
           <Dropdown
             options={DropdownDefinition}
             selectedKey={this.props.selectedKey}
-            onChanged={(option, index) => this.props._changePage(option.key)}
+            onChanged={option => this.props._changePage(option.key)}
+            onRenderItem={item => (
+              <Link
+                style={{
+                  display: "block",
+                  textDecoration: "none",
+                  padding: "0.5em"
+                }}
+                key={"navItem-" + item.name}
+                className="ms-font-m"
+                to={`/${item.key}`}
+              >
+                {item.name}
+              </Link>
+            )}
           />
         </div>
       </div>
