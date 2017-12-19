@@ -29,12 +29,12 @@ class Heading extends BaseComponent {
 
     return (
       <div className="ms-Grid-row" id="Heading">
-        <div className="ms-Grid-col ms-u-sm9">
-          <span className={"ms-font-su ms-u-fadeIn400 " + fontColor}>
+        <div className="ms-Grid-col ms-sm9">
+          <span className={"ms-font-su ms-fadeIn400 " + fontColor}>
             <strong>codegard1</strong>
           </span>
         </div>
-        <div className="ms-Grid-col ms-u-sm3">
+        <div className="ms-Grid-col ms-sm3">
           <Dropdown
             options={DropdownDefinition}
             selectedKey={this.props.selectedKey}

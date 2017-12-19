@@ -51,7 +51,7 @@ export default class App extends BaseComponent {
   render() {
     return (
       <Fabric id="App">
-        <div className="ms-Grid ms-u-fadeIn400" id="FirstDiv">
+        <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
           <Heading selectedKey={this.state.page} />
           <HorizontalBar color={this.state.color} />
           <Page

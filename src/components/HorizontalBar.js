@@ -9,7 +9,7 @@ export function HorizontalBar(props) {
 
   return (
     <div className={"ms-Grid-row " + bgColor}>
-      <div className="ms-Grid-col ms-u-sm12">&nbsp;</div>
+      <div className="ms-Grid-col ms-sm12">&nbsp;</div>
     </div>
   );
 }
