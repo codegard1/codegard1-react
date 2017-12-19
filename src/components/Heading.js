@@ -1,14 +1,13 @@
 import React from "react";
 import * as T from "prop-types";
-// import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
-import { CommandBar } from "office-ui-fabric-react/lib/CommandBar";
+import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
 import { Route, withRouter } from "react-router-dom";
 
 /* custom stuff */
 import BaseComponent from "./BaseComponent";
 import * as fabric from "./fabricStyles";
 import "./Heading.css";
-import { CommandBarDefinition } from "./Page";
+import { DropdownDefinition } from "./Page";
 // import { routes } from "./Page";
 
 class Heading extends BaseComponent {
@@ -36,9 +35,10 @@ class Heading extends BaseComponent {
           </span>
         </div>
         <div className="ms-Grid-col ms-u-sm3">
-          <CommandBar
-            isSearchBoxVisible={false}
-            farItems={CommandBarDefinition}
+          <Dropdown
+            options={DropdownDefinition}
+            selectedKey={this.props.selectedKey}
+            onChanged={(option, index) => this.props._changePage(option.key)}
           />
         </div>
       </div>
