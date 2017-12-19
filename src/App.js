@@ -1,9 +1,10 @@
-import React from "react";
 import "./App.css";
 import "animate.css";
 import "office-ui-fabric-react/dist/css/fabric.min.css";
+import { HashRouter } from "react-router-dom";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 import { initializeIcons } from "@uifabric/icons";
+import React from "react";
 
 /* Custom Components */
 import Heading from "./components/Heading";
@@ -11,9 +12,6 @@ import HorizontalBar from "./components/HorizontalBar";
 import Page from "./components/Page";
 import BaseComponent from "./components/BaseComponent";
 // import LearningLog from "./components/LearningLog";
-
-/* Initialize Fabric Icons */
-initializeIcons();
 
 export default class App extends BaseComponent {
   constructor() {
@@ -31,6 +29,11 @@ export default class App extends BaseComponent {
     this._bind("_onClosePanel", "_onShowPanel", "_onNavLinkClicked");
   }
 
+  onComponentWillMount() {
+    /* Initialize Fabric Icons */
+    initializeIcons();
+  }
+
   _onClosePanel = () => {
     this.setState({ isNavOpen: false });
   };
@@ -45,22 +48,24 @@ export default class App extends BaseComponent {
 
   render() {
     return (
-      <Fabric>
-        <div id="App">
-          <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
-            <Heading
-              selectedKey={this.state.page}
-              onChange={this._onNavLinkClicked}
-            />
-            <HorizontalBar color={this.state.color} />
-            <Page
-              page={this.state.page}
-              onNavLinkClicked={this._onNavLinkClicked}
-            />
-            <HorizontalBar color={this.state.color} />
+      <HashRouter>
+        <Fabric>
+          <div id="App">
+            <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
+              <Heading
+                selectedKey={this.state.page}
+                onChange={this._onNavLinkClicked}
+              />
+              <HorizontalBar color={this.state.color} />
+              <Page
+                page={this.state.page}
+                onNavLinkClicked={this._onNavLinkClicked}
+              />
+              <HorizontalBar color={this.state.color} />
+            </div>
           </div>
-        </div>
-      </Fabric>
+        </Fabric>
+      </HashRouter>
     );
   }
 }

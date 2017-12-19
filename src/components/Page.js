@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import * as T from "prop-types";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
 /* custom stuff */
@@ -102,20 +102,18 @@ export const routes = [
 export class Page extends Component {
   render() {
     return (
-      <Router>
-        <div className="ms-Grid-row">
-          <div className="ms-Grid-col ms-sm12">
-            {routes.map((route, index) => (
-              <Route
-                key={index}
-                path={route.path}
-                exact={route.exact}
-                component={route.main}
-              />
-            ))}
-          </div>
+      <div className="ms-Grid-row">
+        <div className="ms-Grid-col ms-sm12">
+          {routes.map((route, index) => (
+            <Route
+              key={index}
+              path={route.path}
+              exact={route.exact}
+              component={route.main}
+            />
+          ))}
         </div>
-      </Router>
+      </div>
     );
   }
 }
