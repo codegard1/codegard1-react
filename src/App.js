@@ -3,6 +3,7 @@ import "./App.css";
 import "animate.css";
 import "office-ui-fabric-react/dist/css/fabric.min.css";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
+import { initializeIcons } from "@uifabric/icons";
 
 /* Custom Components */
 import Heading from "./components/Heading";
@@ -10,6 +11,9 @@ import HorizontalBar from "./components/HorizontalBar";
 import Page from "./components/Page";
 import BaseComponent from "./components/BaseComponent";
 // import LearningLog from "./components/LearningLog";
+
+/* Initialize Fabric Icons */
+initializeIcons();
 
 export default class App extends BaseComponent {
   constructor() {
@@ -24,12 +28,7 @@ export default class App extends BaseComponent {
     };
 
     /* bind private methods */
-    this._bind(
-      "_onClosePanel",
-      "_onShowPanel",
-      "_changePage",
-      "_onNavLinkClicked"
-    );
+    this._bind("_onClosePanel", "_onShowPanel", "_onNavLinkClicked");
   }
 
   _onClosePanel = () => {
@@ -40,25 +39,26 @@ export default class App extends BaseComponent {
     this.setState({ isNavOpen: true });
   };
 
-  _changePage(p) {
-    this.setState({ page: p });
-  }
-
   _onNavLinkClicked(ev, item) {
     this.setState({ page: item.key });
   }
 
   render() {
     return (
-      <Fabric id="App">
-        <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
-          <Heading selectedKey={this.state.page} />
-          <HorizontalBar color={this.state.color} />
-          <Page
-            page={this.state.page}
-            onNavLinkClicked={this.state._onNavLinkClicked}
-          />
-          <HorizontalBar color={this.state.color} />
+      <Fabric>
+        <div id="App">
+          <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
+            <Heading
+              selectedKey={this.state.page}
+              onChange={this._onNavLinkClicked}
+            />
+            <HorizontalBar color={this.state.color} />
+            <Page
+              page={this.state.page}
+              onNavLinkClicked={this._onNavLinkClicked}
+            />
+            <HorizontalBar color={this.state.color} />
+          </div>
         </div>
       </Fabric>
     );
