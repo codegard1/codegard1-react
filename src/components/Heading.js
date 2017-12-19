@@ -1,36 +1,46 @@
 import React from "react";
 import * as T from "prop-types";
 import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
-import { Route, withRouter, Link } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 
 /* custom stuff */
 import BaseComponent from "./BaseComponent";
 import * as fabric from "./fabricStyles";
 import "./Heading.css";
-import { DropdownDefinition } from "./Page";
+import { NavDefinition } from "./Page";
 // import { routes } from "./Page";
 
 class Heading extends BaseComponent {
   constructor(props) {
     super(props);
 
-    this.state = { redirect: false };
-
     this._bind("onChanged");
   }
 
   onChanged(option) {
-    this.props._changePage(option.key);
-    this.props.history.push(`/${option.key}`);
+    console.log("option:", option);
+    this.props.onChange(option);
+    // this.props.history.push(`/${option.key}`);
   }
 
   render() {
-    const fontColor = fabric.fontColor;
+    /* make NavDefinition more Dropdown-friendly */
+    const DropdownDefinition = NavDefinition[0].links.map(function(item) {
+      return {
+        ariaLabel: item.name,
+        category: item.category,
+        disabled: false,
+        iconProps: item.iconProps,
+        key: item.key,
+        name: item.name,
+        text: item.name
+      };
+    });
 
     return (
       <div className="ms-Grid-row" id="Heading">
         <div className="ms-Grid-col ms-sm9">
-          <span className={"ms-font-su ms-fadeIn400 " + fontColor}>
+          <span className={"ms-font-su ms-fadeIn400 " + fabric.fontColor}>
             <strong>codegard1</strong>
           </span>
         </div>
@@ -61,7 +71,8 @@ class Heading extends BaseComponent {
 }
 
 Heading.propTypes = {
-  selectedKey: T.string.isRequired
+  selectedKey: T.string.isRequired,
+  onChange: T.func
 };
 
 export default withRouter(Heading);

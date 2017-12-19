@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import * as T from "prop-types";
-import { Nav } from "office-ui-fabric-react/lib/Nav";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
@@ -54,24 +53,6 @@ export const NavDefinition = [
     ]
   }
 ];
-
-function _renderMenuItem(item) {
-  return <div>{item.name}!!</div>;
-}
-
-/* make NavDefinition more Dropdown-friendly */
-export const DropdownDefinition = NavDefinition[0].links.map(function(item) {
-  return {
-    ariaLabel: item.name,
-    category: item.category,
-    disabled: false,
-    iconProps: item.iconProps,
-    key: item.key,
-    name: item.name,
-    text: item.name,
-    onRender: _renderMenuItem
-  };
-});
 
 export const routes = [
   {
