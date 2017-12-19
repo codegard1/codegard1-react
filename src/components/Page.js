@@ -62,29 +62,28 @@ export const NavDefinition = [
   }
 ];
 
+function _renderMenuItem(item) {
+  return <div>{item.name}!!</div>;
+}
+
 /* make NavDefinition more Dropdown-friendly */
-const pagesMenuItems = NavDefinition[0].links.map(item => ({
-  ariaLabel: item.ariaLabel,
-  category: item.category,
-  disabled: false,
-  iconProps: item.iconProps,
-  key: item.key,
-  name: item.name,
-  onClick: ev => {
-    ev.preventDefault();
-    console.log(item.key, " clicked!");
-  }
-}));
+const pagesMenuItems = NavDefinition[0].links.map(function(item) {
+  return {
+    ariaLabel: item.ariaLabel,
+    category: item.category,
+    disabled: false,
+    iconProps: item.iconProps,
+    key: item.key,
+    name: item.name,
+    onRender: _renderMenuItem
+  };
+});
 
 /* group menu items into a dropdown menu */
 const pagesMenu = [
   {
     key: "pages-menu",
     name: "Pages",
-
-    onClick(ev) {
-      ev.preventDefault();
-    },
     subMenuProps: {
       items: pagesMenuItems,
       isSubMenu: true,
