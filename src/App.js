@@ -62,6 +62,7 @@ export default class App extends BaseComponent {
             />
             <HorizontalBar color={this.state.color} />
           </div>
+          {/* <span className="ms-font-su">{this.props.history.location.url}</span> */}
         </Fabric>
       </HashRouter>
     );

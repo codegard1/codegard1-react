@@ -53,44 +53,15 @@ export const NavDefinition = [
   }
 ];
 
-export const routes = [
-  {
-    path: "/home",
-    exact: false,
-    main: () => <BasePage {...this.props}>{Pages.home}</BasePage>,
-    key: "home"
-  },
-  {
-    path: "/identity",
-    exact: false,
-    main: () => <BasePage {...this.props}>{Pages.identity}</BasePage>,
-    key: "identity"
-  },
-  {
-    path: "/projects",
-    exact: false,
-    main: () => <BasePage {...this.props}>{Pages.projects}</BasePage>,
-    key: "projects"
-  },
-  {
-    path: "/experiments",
-    exact: false,
-    main: () => <BasePage {...this.props}>{Pages.experiments}</BasePage>,
-    key: "experiments"
-  },
-  {
-    path: "/learninglog",
-    exact: false,
-    main: () => <BasePage {...this.props}>{Pages.learninglog}</BasePage>,
-    key: "learninglog"
-  },
-  {
-    path: "/blackjack",
-    exact: false,
-    main: () => <BasePage {...this.props}>{Pages.blackjack}></BasePage>,
-    key: "blackjack"
-  }
-];
+/* create array of routes that return page components */
+const routes2 = NavDefinition[0].links.map(item => (
+  <Route
+    key={`route-${item.key}`}
+    path={"/" + item.key}
+    exact
+    component={() => Pages[item.key]}
+  />
+));
 
 export class Page extends Component {
   render() {
@@ -101,16 +72,9 @@ export class Page extends Component {
             key="route-default"
             path="/"
             exact
-            component={routes[0].main}
+            component={() => Pages["home"]}
           />
-          {routes.map((route, index) => (
-            <Route
-              key={`route-${index}`}
-              path={route.path}
-              exact={route.exact}
-              component={route.main}
-            />
-          ))}
+          {routes2}
         </div>
       </div>
     );
