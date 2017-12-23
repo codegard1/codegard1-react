@@ -5,12 +5,12 @@ import { MessageBarType } from "office-ui-fabric-react/lib/MessageBar";
 
 /* Flux */
 import AppActions from "./actions/AppActions";
-import { DeckStore } from "./stores/DeckStore";
+// import { DeckStore } from "./stores/DeckStore";
 
 class ControlPanel extends Component {
   render() {
     /* selectedFlag is true when the player has selected cards in his hand */
-    let selectedFlag = this.props.selectedFlag;
+    // let selectedFlag = this.props.selectedFlag;
     /* Flag used by put / draw menu items */
     // let selectedCards = selectedFlag
     //   ? DeckStore.getSelected(this.props.playerId)
