@@ -10,7 +10,7 @@ class CardContainer extends BaseComponent {
     this.state = { isSelected: false };
 
     /* bind private methods */
-    this._bind('_toggleSelect');
+    this._bind("_toggleSelect");
   }
 
   static propTypes = {
@@ -21,7 +21,7 @@ class CardContainer extends BaseComponent {
     isDescVisible: T.bool,
     select: T.func,
     sort: T.number.isRequired,
-    suit: T.string.isRequired,
+    suit: T.string.isRequired
   };
 
   _toggleSelect() {
@@ -99,9 +99,19 @@ class CardContainer extends BaseComponent {
         className={cardClass}
         onClick={this.props.isSelectable && this._toggleSelect}
       >
-        <p className="ms-font-xl card-title top" data-cardTitle={cardTitle} data-cardIcon={cardIcon} />
-        {this.props.isDescVisible && <p className="ms-font-m card-description" data-p={description} />}
-        <p className="ms-font-xl card-title bottom" data-cardTitle={cardTitle} data-cardIcon={cardIcon} />
+        <p
+          className="ms-font-xl card-title top"
+          data-cardtitle={cardTitle}
+          data-cardicon={cardIcon}
+        />
+        {this.props.isDescVisible && (
+          <p className="ms-font-m card-description" data-p={description} />
+        )}
+        <p
+          className="ms-font-xl card-title bottom"
+          data-cardtitle={cardTitle}
+          data-cardicon={cardIcon}
+        />
         {this.props.isBackFacing && <div className="card-back" />}
       </div>
     );
