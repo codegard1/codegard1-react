@@ -97,7 +97,7 @@ class CardContainer extends BaseComponent {
     return (
       <div
         className={cardClass}
-        onClick={this.props.isSelectable && this._toggleSelect}
+        onClick={this.props.isSelectable ? this._toggleSelect : undefined}
       >
         <p
           className="ms-font-xl card-title top"
