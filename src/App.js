@@ -47,7 +47,7 @@ export default class App extends BaseComponent {
   render() {
     return (
       <HashRouter>
-        <Fabric id="App">
+        <Fabric>
           <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
             <Heading
               selectedKey={this.state.page}
