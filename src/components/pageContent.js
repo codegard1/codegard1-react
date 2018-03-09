@@ -16,21 +16,18 @@ export const home = (
       </li>
       <li>
         I make business applications in SharePoint with a heavy emphasis on
-        custom code and re-usable solutions
+        custom code and re-usable solutions.
       </li>
       <li>
         Some of my other interests include, but are not limited to:
         <ul>
           <li>PowerShell</li>
-          <li>InfoPath</li>
-          <li>SSDT</li>
+          <li>Knowledge Management</li>
           <li>
             <Link href="http://powerbi.microsoft.com">Power BI</Link>
           </li>
           <li>
             <Link href="https://nodejs.org/en/">NodeJS</Link>
-            {" & "}
-            <Link href="https://www.npmjs.com/">npm</Link>
           </li>
           <li>
             <Link href="https://facebook.github.io/react/">React</Link>
@@ -42,9 +39,6 @@ export const home = (
           </li>
           <li>
             <Link href="">SharePoint Framework</Link>
-          </li>
-          <li>
-            <Link href="https://powerbi.microsoft.com/en-us/">Power BI</Link>
           </li>
           <li>
             <Link href="https://www.nintex.com/">Nintex Workflows</Link>
@@ -83,9 +77,7 @@ export const identity = (
       </li>
       <li>
         I use <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link>{" "}
-        and sometimes{" "}
-        <Link href="http://plnkr.co/users/codegard1">Plunker</Link> to test
-        ideas
+        sometimes
       </li>
       <li>
         I used to make a lot of electronic music in college, and many of those
@@ -103,38 +95,23 @@ export const identity = (
 
 export const projects = (
   <div className="ms-font-xl">
-    <p>Here is a sampling of what I'm doing now:</p>
+    <p>Here is a sampling of what I'm doing now (3/8/2018):</p>
     <ul>
       <li>
-        Building{" "}
-        <Link href="https://github.com/codegard1/blackjack/">
-          my own version of blackjack
-        </Link>{" "}
-        using React, Fabric, Masonry, and{" "}
-        <Link href="https://github.com/troygoode/node-shuffle">
-          node-shuffle
-        </Link>
+        Building a pseudo-CRM in SharePoint, integrating data from Deltek with
+        BDCS
       </li>
       <li>
-        Working with Gatekeepers and business owners to migrate sites and
-        content from an older site collection (SP 2013) to the new one (SP 2016)
+        Learning the back-end of server management by building my own server at
+        home
       </li>
+      <li>Still trying to add pizzazz to this site</li>
       <li>
-        Getting used to the{" "}
-        <Link href="https://github.com/petehunt/react-howto">
-          React ecosystem
-        </Link>
-        , with the intention of using the framework to create modular forms
-        within SharePoint pages, obviating some of our dependence on
-        <Link href="http://www.nintex.com/">Nintex Forms</Link>
+        Writing PowerShell scripts to copy large amounts of data into the Term
+        Store
       </li>
-      <li>
-        Adding{" "}
-        <Link href="http://etymonline.com/index.php?allowed_in_frame=0&search=pizzazz">
-          pizzazz
-        </Link>{" "}
-        to this site
-      </li>
+      <li>Learning how to use the Sqlite3 npm package</li>
+      <li>Trying to learn TypeScript</li>
     </ul>
   </div>
 );
