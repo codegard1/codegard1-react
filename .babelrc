@@ -1,7 +1,7 @@
 {
     "presets": [
-        "react",
-        // "flow"
+        "react"
     ],
+    "plugins": ["add-module-exports"],
     "retainLines": true
 }
