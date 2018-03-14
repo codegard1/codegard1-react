@@ -1,4 +1,7 @@
 {
-  "presets": ["react"],
-  "retainLines": true
+    "presets": [
+        "react"
+    ],
+    "plugins": ["add-module-exports"],
+    "retainLines": true
 }
