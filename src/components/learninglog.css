@@ -1,13 +1,22 @@
 div#learning-log {
   overflow-x: hidden;
   overflow-y: auto;
-  max-height: 600px; 
+  height: auto;
   padding: 20px;
+  /* border: 1px solid purple; */
+}
+
+#learning-log .ms-Grid-row {
+  /* border: 1px solid orange; */
+}
+
+#learning-log .ms-Grid-col {
+  /* border: 1px solid green; */
 }
 
 div#learning-log .itemName {
   white-space: nowrap;
-  overflow: hidden;
+  /* overflow: hidden; */
   text-overflow: ellipsis;
   float: left;
 }
@@ -15,17 +24,16 @@ div#learning-log .itemName {
 div#learning-log .itemIndex {
   color: #a6a6a6;
   float: right;
+  /* border: 1px solid red; */
 }
 
 div#learning-log .itemCell {
-  display: flex;
-  position: relative;
   border-bottom: 1px solid #eaeaea;
 }
+div#learning-log .itemCell .ms-Grid-col {
+  border-left: 1px solid #eee;
+}
 
-div#learning-log .itemContent {
-  overflow: hidden;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  flex-grow: 1;
+div#learning-log .itemCell .ms-Grid-col ul li {
+  list-style: none;
 }
