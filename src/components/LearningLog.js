@@ -13,7 +13,8 @@ export class LearningLog extends BaseComponent {
 
     this.state = {
       filterText: "",
-      items: []
+      items: [],
+      filteredItems: []
     };
 
     /* bind private methods */
@@ -49,20 +50,20 @@ export class LearningLog extends BaseComponent {
   }
 
   componentWillMount() {
-    this.setState({ items: this.itemsArray });
+    this.setState({ items: this.itemsArray, filteredItems: this.itemsArray });
   }
 
   // called when the filter text changes
   _onFilterChanged(text) {
-    const items = text
+    const filteredItems = text
       ? this.state.items.filter(
-          item => item.date.toLowerCase().indexOf(text.toLowerCase()) >= 0
-        )
+        item => item.date.toLowerCase().indexOf(text.toLowerCase()) >= 0
+      )
       : this.state.items;
 
     this.setState({
       filterText: text,
-      items
+      filteredItems
     });
   }
 
@@ -98,7 +99,7 @@ export class LearningLog extends BaseComponent {
   render() {
     /* List filtering */
     let originalItems = this.itemsArray;
-    let items = this.state.items;
+    let items = this.state.filteredItems;
     let resultCountText =
       items.length === originalItems.length
         ? ""
