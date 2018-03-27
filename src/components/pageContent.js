@@ -6,6 +6,9 @@ import { Experiments } from "./Experiments";
 import { LearningLog } from "./LearningLog";
 import Table from "./blackjack/Table";
 
+/* react-markdown */
+import ReactMarkdown from "react-markdown";
+
 export const home = (
   <div className="ms-font-xl">
     <p>Hello, my name is Chris. Here are some facts about me:</p>
@@ -116,6 +119,8 @@ export const projects = (
   </div>
 );
 
+export const markdowntest = <ReactMarkdown source={"# Hello, World!"} />;
+
 export const experiments = <Experiments />;
 
 export const learninglog = <LearningLog />;
@@ -128,5 +133,11 @@ export const pages = {
   projects,
   experiments,
   learninglog,
-  blackjack
+  blackjack,
+  markdowntest
 };
+
+/* Adding a new page              */
+/* Step 1: Add content here       */
+/* Step 2: export in pages obj    */
+/* Step 3: ???                    */

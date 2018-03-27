@@ -4,9 +4,10 @@ import { Route } from "react-router-dom";
 import { Fabric } from "office-ui-fabric-react/lib/Fabric";
 
 /* custom stuff */
-import * as Pages from "./pageContent";
+import { pages } from "./pageContent";
 import "./Page.css";
 
+const Pages = pages;
 /* Wrapper for page content that passes props from Page to any children components */
 const BasePage = props => <Fabric id="BasePage">{props.children}</Fabric>;
 
@@ -48,6 +49,12 @@ export const NavDefinition = [
         iconProps: { iconName: "Blackjack" },
         key: "blackjack",
         name: "Blackjack"
+      },
+      {
+        category: "Pages",
+        iconProps: { iconName: "Yes" },
+        key: "markdowntest",
+        name: "Markdown Test"
       }
     ]
   }
