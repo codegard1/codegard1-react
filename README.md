@@ -1,23 +1,18 @@
 ## codegard1-react
+
 ---
 
 This is the source code for [codegard1.com](http://www.christopherodegard.com).
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app) and is hosted by [Netlify](https://www.netlify.com/).
 
-
 ### TODO
-* Add a blackjack page
-* Make the ColorBox component more interesting
-* Make Fabric UI color a prop
-* Implement Flux 
-  * But why? 
-* Implement React animations
-* Textured background image for <Heading>
+
+* Simplify page authoring workflow
+* Add blog-type content
 
 ### Wishes
-* Implement Masonry (6/1/17)
-* Implement [Chris's Blackjack](https://github.com/codegard1/blackjack) into this site (6/1/17)
+
 * Change site color via dropdown menu
 * Navigate pages without menus
 * New page about Gan
@@ -25,9 +20,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * New page: Learning Log
 * Implement Typescript globally
 * Update projects page with actual work stuff, including pictures
-* Simplify page authoring workflow  
 
 ## Done
+
 * Implement proper Routing (10.19.2017)
 * Check that imports and export syntax is consistent
 * Move Callout Example to a component class
@@ -35,3 +30,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * Use Fabric input component in Form Basic
 * Implement Fabric List component
 * Raise Page state to App
+* Add a blackjack page
+* Implement Masonry (6/1/17)
+* Implement [Chris's Blackjack](https://github.com/codegard1/blackjack) into this site (6/1/17)
