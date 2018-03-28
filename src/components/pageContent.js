@@ -9,7 +9,9 @@ import Table from "./blackjack/Table";
 /* react-markdown */
 import ReactMarkdown from "react-markdown";
 
-export const home = (
+const markdowntest = <ReactMarkdown source={"# Hello, World!"} />;
+
+const home = (
   <div className="ms-font-xl">
     <p>Hello, my name is Chris. Here are some facts about me:</p>
     <ul>
@@ -58,7 +60,7 @@ export const home = (
   </div>
 );
 
-export const identity = (
+const identity = (
   <div className="ms-font-xl">
     <p>
       Email:{" "}
@@ -96,7 +98,7 @@ export const identity = (
   </div>
 );
 
-export const projects = (
+const projects = (
   <div className="ms-font-xl">
     <p>Here is a sampling of what I'm doing now (3/8/2018):</p>
     <ul>
@@ -119,25 +121,64 @@ export const projects = (
   </div>
 );
 
-export const markdowntest = <ReactMarkdown source={"# Hello, World!"} />;
+const experiments = <Experiments />;
 
-export const experiments = <Experiments />;
+const learninglog = <LearningLog />;
 
-export const learninglog = <LearningLog />;
+const blackjack = <Table />;
 
-export const blackjack = <Table />;
-
-export const pages = {
-  home,
-  identity,
-  projects,
-  experiments,
-  learninglog,
-  blackjack,
-  markdowntest
-};
-
-/* Adding a new page              */
-/* Step 1: Add content here       */
-/* Step 2: export in pages obj    */
-/* Step 3: ???                    */
+export const NavDefinition = [
+  {
+    links: [
+      {
+        category: "Pages",
+        iconProps: { iconName: "Home" },
+        key: "home",
+        name: "Home",
+        content: home
+      },
+      {
+        category: "Pages",
+        iconProps: { iconName: "Identity" },
+        key: "identity",
+        name: "Identity",
+        content: identity
+      },
+      {
+        category: "Pages",
+        iconProps: { iconName: "Projects" },
+        key: "projects",
+        name: "Projects",
+        content: projects
+      },
+      {
+        category: "Pages",
+        iconProps: { iconName: "Experiments" },
+        key: "experiments",
+        name: "Experiments",
+        content: experiments
+      },
+      {
+        category: "Pages",
+        iconProps: { iconName: "Log" },
+        key: "learninglog",
+        name: "Learning Log",
+        content: learninglog
+      },
+      {
+        category: "Pages",
+        iconProps: { iconName: "Blackjack" },
+        key: "blackjack",
+        name: "Blackjack",
+        content: blackjack
+      },
+      {
+        category: "Pages",
+        iconProps: { iconName: "Yes" },
+        key: "markdowntest",
+        name: "Markdown Test",
+        content: markdowntest
+      }
+    ]
+  }
+];

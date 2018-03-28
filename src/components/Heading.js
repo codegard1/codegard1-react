@@ -8,8 +8,7 @@ import { withRouter } from "react-router-dom";
 import BaseComponent from "./BaseComponent";
 import * as fabric from "./fabricStyles";
 import "./Heading.css";
-import { NavDefinition } from "./Page";
-// import { routes } from "./Page";
+import { NavDefinition } from "./pageContent";
 
 class Heading extends BaseComponent {
   constructor(props) {

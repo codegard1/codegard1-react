@@ -1,7 +1,4 @@
 {
-    "presets": [
-        "react",
-        // "flow"
-    ],
-    "retainLines": true
+  "presets": ["react"],
+  "retainLines": true
 }
