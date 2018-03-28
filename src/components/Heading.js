@@ -2,6 +2,7 @@ import React from "react";
 import * as T from "prop-types";
 import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
 import { CommandButton } from "office-ui-fabric-react/lib/Button";
+import { Icon } from "office-ui-fabric-react/lib/Icon";
 import { withRouter } from "react-router-dom";
 
 /* custom stuff */
@@ -14,7 +15,7 @@ class Heading extends BaseComponent {
   constructor(props) {
     super(props);
 
-    this._bind("onChanged");
+    this._bind("onChanged", "_onRenderOption", "_onRenderPlaceHolder");
   }
 
   onChanged(option) {
@@ -23,17 +24,43 @@ class Heading extends BaseComponent {
     this.context.router.history.push(`/${option.key}`);
   }
 
+  _onRenderOption(option) {
+    return (
+      <div>
+        {option.icon && (
+          <Icon
+            style={{ marginRight: "8px" }}
+            iconName={option.icon}
+            aria-hidden="true"
+            title={option.icon}
+          />
+        )}
+        <span>{option.text}</span>
+      </div>
+    );
+  }
+
+  _onRenderPlaceHolder(props) {
+    return (
+      <div>
+        <Icon
+          style={{ marginRight: "8px" }}
+          iconName={"MessageFill"}
+          aria-hidden="true"
+        />
+        <span>{props}</span>
+      </div>
+    );
+  }
+
   render() {
     /* make NavDefinition more Dropdown-friendly */
-    const DropdownDefinition = NavDefinition[0].links.map(function(item) {
+    const DropdownDefinition = NavDefinition[0].links.map(item => {
       return {
         ariaLabel: item.name,
-        category: item.category,
-        disabled: false,
-        iconProps: item.iconProps,
         key: item.key,
-        name: item.name,
-        text: item.name
+        text: item.name,
+        icon: item.iconProps.iconName
       };
     });
 
@@ -47,9 +74,11 @@ class Heading extends BaseComponent {
         <div className="ms-Grid-col ms-sm3">
           <Dropdown
             onChanged={option => this.onChanged(option)}
+            onRenderOption={this._onRenderOption}
+            onRenderPlaceHolder={this._onRenderPlaceHolder}
             options={DropdownDefinition}
+            placeHolder="Select a page"
             selectedKey={this.props.selectedKey}
-            label="Pages"
           />
         </div>
       </div>
