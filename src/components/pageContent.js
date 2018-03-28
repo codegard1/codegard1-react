@@ -8,8 +8,16 @@ import Table from "./blackjack/Table";
 
 /* react-markdown */
 import ReactMarkdown from "react-markdown";
+import Document from "./../blog/2018-27-3";
 
-const markdowntest = <ReactMarkdown source={"# Hello, World!"} />;
+const blog = (
+  <ReactMarkdown
+    source={Document}
+    renderers={{
+      paragraph: props => <p className="ms-font-l">{props.children}</p>
+    }}
+  />
+);
 
 const home = (
   <div className="ms-font-xl">
@@ -139,45 +147,45 @@ export const NavDefinition = [
       },
       {
         category: "Pages",
-        iconProps: { iconName: "Identity" },
+        iconProps: { iconName: "Contact" },
         key: "identity",
         name: "Identity",
         content: identity
       },
       {
         category: "Pages",
-        iconProps: { iconName: "Projects" },
+        iconProps: { iconName: "ProjectCollection" },
         key: "projects",
         name: "Projects",
         content: projects
       },
       {
         category: "Pages",
-        iconProps: { iconName: "Experiments" },
+        iconProps: { iconName: "TestBeakerSolid" },
         key: "experiments",
         name: "Experiments",
         content: experiments
       },
       {
         category: "Pages",
-        iconProps: { iconName: "Log" },
+        iconProps: { iconName: "BulletedList" },
         key: "learninglog",
         name: "Learning Log",
         content: learninglog
       },
       {
         category: "Pages",
-        iconProps: { iconName: "Blackjack" },
+        iconProps: { iconName: "CrownSolid" },
         key: "blackjack",
         name: "Blackjack",
         content: blackjack
       },
       {
         category: "Pages",
-        iconProps: { iconName: "Yes" },
-        key: "markdowntest",
-        name: "Markdown Test",
-        content: markdowntest
+        iconProps: { iconName: "Articles" },
+        key: "blog",
+        name: "Web Log",
+        content: blog
       }
     ]
   }
