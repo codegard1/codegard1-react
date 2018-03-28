@@ -14,16 +14,16 @@
     "sourceType": "module"
   },
   "rules": {
+    "constructor-super": "warn",
+    "linebreak-style": "off",
     "no-const-assign": "warn",
     "no-this-before-super": "warn",
     "no-undef": "warn",
-    "no-unreachable": "warn",
-    "no-unused-vars": "warn",
-    "constructor-super": "warn",
-    "valid-typeof": "warn",
-    "linebreak-style": "off",
     "no-underscore-dangle": "off",
+    "no-unreachable": "warn",
+    "no-unused-vars": "off",
     "react/jsx-indent-props": "off",
-    "react/no-multi-comp": "off"
+    "react/no-multi-comp": "off",
+    "valid-typeof": "warn"
   }
 }
