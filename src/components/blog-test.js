@@ -13,7 +13,7 @@ const API = "https://api.graphcms.com/simple/v1/cjeyxohwk2djw0113vl4xr99p";
 
 const client = new ApolloClient({
     link: new HttpLink({uri: API}),
-    cache: new InMemoryCache();
+    cache: new InMemoryCache()
 });
 
 const Landing = ({
