@@ -3,15 +3,8 @@ div#learning-log {
   overflow-y: auto;
   height: auto;
   padding: 20px;
+  max-height: 500px;
   /* border: 1px solid purple; */
-}
-
-#learning-log .ms-Grid-row {
-  /* border: 1px solid orange; */
-}
-
-#learning-log .ms-Grid-col {
-  /* border: 1px solid green; */
 }
 
 div#learning-log .itemName {

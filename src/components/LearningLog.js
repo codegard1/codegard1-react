@@ -4,7 +4,7 @@ import { List } from "office-ui-fabric-react/lib/List";
 
 /* custom stuff */
 import BaseComponent from "./BaseComponent";
-import { learningLog2016 } from "./learningLog2016";
+import learningLogData from "./learningLogData";
 import "./learninglog.css";
 
 export class LearningLog extends BaseComponent {
@@ -21,7 +21,7 @@ export class LearningLog extends BaseComponent {
     this._bind("_onFilterChanged", "_onRenderCell");
 
     /* Prepare the learningLog2016 array for passing to FabricList */
-    this.itemsArray = learningLog2016.map(item => {
+    this.itemsArray = learningLogData.map(item => {
       let key = item.key || Math.round(Math.random() * 10000);
       let date = item.date || "no date";
       let work = item.work || [];
@@ -57,8 +57,8 @@ export class LearningLog extends BaseComponent {
   _onFilterChanged(text) {
     const filteredItems = text
       ? this.state.items.filter(
-        item => item.date.toLowerCase().indexOf(text.toLowerCase()) >= 0
-      )
+          item => item.date.toLowerCase().indexOf(text.toLowerCase()) >= 0
+        )
       : this.state.items;
 
     this.setState({
@@ -72,7 +72,7 @@ export class LearningLog extends BaseComponent {
       <div className="ms-Grid itemCell" data-is-focusable={true}>
         <div className="ms-Grid-row">
           <div className="ms-Grid-col ms-sm3">
-            <span className="itemName ms-font-xl">{item.date}</span>
+            <span className="itemName ms-font-lg">{item.date}</span>
             <span className="itemIndex ms-font-xs">{`#${index}`}</span>
           </div>
 
@@ -89,7 +89,9 @@ export class LearningLog extends BaseComponent {
             <p className="ms-font-s">
               <i className="ms-Icon ms-Icon--QuickNote" /> &nbsp; Notes
             </p>
-            <ul>{item.notes.length > 0 ? item.notes : "None"}</ul>
+            <ul className="ms-font-s">
+              {item.notes.length > 0 ? item.notes : "None"}
+            </ul>
           </div>
         </div>
       </div>
