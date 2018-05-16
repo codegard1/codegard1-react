@@ -23,7 +23,7 @@ const home = (
 
     <ul className="ms-font-xl">
       <li>
-        I'm a SharePoint Developer at 
+        I'm a SharePoint Developer at &nbsp;
         <Link href="http://ramsa.com">RAMSA</Link>.
       </li>
       <li>
@@ -34,17 +34,15 @@ const home = (
 
     <h1 className="ms-font-su">Contact Me</h1>
     <p className="ms-font-xl">
-      Email:{" "}
+      By Email:{" "}
       <Link href="mailto:c.odegard@gmail.com">c.odegard[at]gmail.com</Link>
-    </p>
-    <p className="ms-font-xl">
-      Or find me on these sites:
-
+      <br />
+      Or find me on these sites:&nbsp;&nbsp;
       <Link href="https://www.linkedin.com/in/codegard1">
-      <i class="ms-Icon ms-Icon--LinkedInLogo" aria-hidden="true"></i> LinkedIn
+      <i className="ms-Icon ms-Icon--LinkedInLogo" aria-hidden="true"></i>LinkedIn
       </Link>
       &nbsp;&nbsp;
-      <Link href="https://github.com/codegard1">GitHub</Link>&nbsp;&nbsp;
+      <Link href="https://github.com/codegard1"><i className="ms-Icon ms-Icon--GitFork"></i>GitHub</Link>&nbsp;&nbsp;
       <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link>&nbsp;&nbsp;
     </p>
 
