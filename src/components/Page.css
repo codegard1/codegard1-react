@@ -3,3 +3,7 @@ div#BasePage {
     text-align: justify;
     margin: calc(100vw / 25);
 }
+
+#Home ul li {
+    list-style: armenian;
+}

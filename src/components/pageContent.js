@@ -1,131 +1,102 @@
 import React from "react";
-import { Link } from "office-ui-fabric-react/lib/Link";
+import {Link} from "office-ui-fabric-react/lib/Link";
 
 /* custom stuff */
-import { Experiments } from "./Experiments";
-import { LearningLog } from "./LearningLog";
+import {Experiments} from "./Experiments";
+import {LearningLog} from "./LearningLog";
 import Table from "./blackjack/Table";
 
 /* react-markdown */
 import ReactMarkdown from "react-markdown";
 import Document from "./../blog/2018-27-3";
 
-const blog = (
-  <ReactMarkdown
-    source={Document}
-    renderers={{
-      paragraph: props => <p className="ms-font-l">{props.children}</p>
-    }}
-  />
-);
+const blog = (<ReactMarkdown
+  source={Document}
+  renderers={{
+  paragraph: props => <p className="ms-font-l">{props.children}</p>
+}}/>);
 
 const home = (
-  <div className="ms-font-xl">
-    <p>Hello, my name is Chris. Here are some facts about me:</p>
-    <ul>
+  <div id="Home">
+
+    <h1 className="ms-font-su">Hello, I'm Chris</h1>
+
+    <ul className="ms-font-xl">
       <li>
-        I work for <Link href="http://ramsa.com">RAMSA</Link> as a SharePoint
-        Developer
+        I'm a SharePoint Developer at 
+        <Link href="http://ramsa.com">RAMSA</Link>.
       </li>
       <li>
-        I make business applications in SharePoint with a heavy emphasis on
-        custom code and re-usable solutions.
-      </li>
-      <li>
-        Some of my other interests include, but are not limited to:
-        <ul>
-          <li>PowerShell</li>
-          <li>Knowledge Management</li>
-          <li>
-            <Link href="http://powerbi.microsoft.com">Power BI</Link>
-          </li>
-          <li>
-            <Link href="https://nodejs.org/en/">NodeJS</Link>
-          </li>
-          <li>
-            <Link href="https://facebook.github.io/react/">React</Link>
-          </li>
-          <li>
-            <Link href="http://dev.office.com/fabric#/components">
-              Fabric UI
-            </Link>
-          </li>
-          <li>
-            <Link href="">SharePoint Framework</Link>
-          </li>
-          <li>
-            <Link href="https://www.nintex.com/">Nintex Workflows</Link>
-          </li>
-          <li>
-            <Link href="http://jquery.com/">jQuery</Link>
-          </li>
-          <li>
-            <Link href="https://leanpub.com/understandinges6/read">ES6</Link>
-          </li>
-        </ul>
+        I make business applications in SharePoint with a heavy emphasis on custom code
+        and re-usable solutions.
       </li>
     </ul>
-  </div>
-);
 
-const identity = (
-  <div className="ms-font-xl">
-    <p>
+    <h1 className="ms-font-su">Contact Me</h1>
+    <p className="ms-font-xl">
       Email:{" "}
       <Link href="mailto:c.odegard@gmail.com">c.odegard[at]gmail.com</Link>
     </p>
-    <p>
-      Here are some links to other internet-based websites where I take
-      residence:
-    </p>
-    <ul>
-      <li>
-        I have a{" "}
-        <Link href="https://www.linkedin.com/in/codegard1">
-          LinkedIn profile
-        </Link>
-      </li>
-      <li>
-        I have a <Link href="https://github.com/codegard1">GitHub profile</Link>
-      </li>
-      <li>
-        I use <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link>{" "}
-        sometimes
-      </li>
-      <li>
-        I used to make a lot of electronic music in college, and many of those
-        songs can be found on my{" "}
-        <Link href="https://soundcloud.com/ciaervo">SoundCloud profile</Link>
-      </li>
-      <li>
-        As if that weren't enough, I also have a{" "}
-        <Link href="http://twitter.com/codegard1">Twitter</Link> account that I
-        don't use very often
-      </li>
-    </ul>
-  </div>
-);
+    <p className="ms-font-xl">
+      Or find me on these sites:
 
-const projects = (
-  <div className="ms-font-xl">
-    <p>Here is a sampling of what I'm doing now (3/8/2018):</p>
-    <ul>
+      <Link href="https://www.linkedin.com/in/codegard1">
+      <i class="ms-Icon ms-Icon--LinkedInLogo" aria-hidden="true"></i> LinkedIn
+      </Link>
+      &nbsp;&nbsp;
+      <Link href="https://github.com/codegard1">GitHub</Link>&nbsp;&nbsp;
+      <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link>&nbsp;&nbsp;
+    </p>
+
+    <h1 className="ms-font-su">Projects</h1>
+    <p className="ms-font-xl">This is what I'm doing currently:</p>
+    <ul className="ms-font-xl">
       <li>
-        Building a pseudo-CRM in SharePoint, integrating data from Deltek with
-        BDCS
+        Building a CRM system in SharePoint, integrating Deltek Vision with BDCS, and
+        making extensive use of the Term Store
       </li>
       <li>
-        Learning the back-end of server management by building my own server at
-        home
+        Learning server management by building my own server at home
       </li>
       <li>Still trying to add pizzazz to this site</li>
       <li>
-        Writing PowerShell scripts to copy large amounts of data into the Term
-        Store
+        Writing lots of PowerShell scripts to automate moving data in SharePoint
       </li>
-      <li>Learning how to use the Sqlite3 npm package</li>
-      <li>Trying to learn TypeScript</li>
+      <li>Still trying to
+        <em>try</em>
+        to learn TypeScript</li>
     </ul>
+    <p className="ms-font-xl">Some of my other interests include, but are not limited to:</p>
+      <ul className="ms-font-xl">
+        <li>PowerShell</li>
+        <li>Knowledge Management</li>
+        <li>
+          <Link href="http://powerbi.microsoft.com">Power BI</Link>
+        </li>
+        <li>
+          <Link href="https://nodejs.org/en/">NodeJS</Link>
+        </li>
+        <li>
+          <Link href="https://facebook.github.io/react/">React</Link>
+        </li>
+        <li>
+          <Link href="http://dev.office.com/fabric#/components">
+            Fabric UI
+          </Link>
+        </li>
+        <li>
+          <Link href="">SharePoint Framework</Link>
+        </li>
+        <li>
+          <Link href="https://www.nintex.com/">Nintex Workflows</Link>
+        </li>
+        <li>
+          <Link href="http://jquery.com/">jQuery</Link>
+        </li>
+        <li>
+          <Link href="https://leanpub.com/understandinges6/read">ES6</Link>
+        </li>
+      </ul>
   </div>
 );
 
@@ -134,32 +105,37 @@ export const NavDefinition = [
     links: [
       {
         category: "Pages",
-        iconProps: { iconName: "Home" },
+        iconProps: {
+          iconName: "Home"
+        },
         key: "home",
         name: "Home",
         content: home
-      },
-      {
+      }, {
         category: "Pages",
-        iconProps: { iconName: "BulletedList" },
+        iconProps: {
+          iconName: "BulletedList"
+        },
         key: "learninglog",
         name: "Learning Log",
         content: <LearningLog/>
-      },
-      {
+      }, {
         category: "Pages",
-        iconProps: { iconName: "Articles" },
+        iconProps: {
+          iconName: "Articles"
+        },
         key: "blog",
         name: "Web Log",
         content: blog
-      },
-      {
+      }, {
         category: "Pages",
-        iconProps: { iconName: "CrownSolid" },
+        iconProps: {
+          iconName: "CrownSolid"
+        },
         key: "blackjack",
         name: "Blackjack",
-        content: <Table />
+        content: <Table/>
       }
     ]
   }
-];
+]
