@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "office-ui-fabric-react/lib/Link";
-
+import {Icon} from "office-ui-fabric-react/lib/Icon";
 /* custom stuff */
-import {Experiments} from "./Experiments";
+// import {Experiments} from "./Experiments";
 import {LearningLog} from "./LearningLog";
 import Table from "./blackjack/Table";
 
@@ -36,13 +36,29 @@ const home = (
     <p className="ms-font-xl">
       By Email:{" "}
       <Link href="mailto:c.odegard@gmail.com">c.odegard[at]gmail.com</Link>
-      <br />
+      <br/>
       Or find me on these sites:&nbsp;&nbsp;
       <Link href="https://www.linkedin.com/in/codegard1">
-      <i className="ms-Icon ms-Icon--LinkedInLogo" aria-hidden="true"></i>LinkedIn
+        <Icon
+          style={{
+          marginRight: "8px"
+        }}
+          iconName="LinkedInLogo"
+          aria-hidden="true"
+          title="LinkedIn"/>
+        LinkedIn
       </Link>
       &nbsp;&nbsp;
-      <Link href="https://github.com/codegard1"><i className="ms-Icon ms-Icon--GitFork"></i>GitHub</Link>&nbsp;&nbsp;
+      <Link href="https://github.com/codegard1">
+        <Icon
+          style={{
+          marginRight: "8px"
+        }}
+          iconName="GitFork"
+          aria-hidden="true"
+          title="GitHub"/>
+          Github
+          </Link>&nbsp;&nbsp;
       <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link>&nbsp;&nbsp;
     </p>
 
@@ -65,36 +81,36 @@ const home = (
         to learn TypeScript</li>
     </ul>
     <p className="ms-font-xl">Some of my other interests include, but are not limited to:</p>
-      <ul className="ms-font-xl">
-        <li>PowerShell</li>
-        <li>Knowledge Management</li>
-        <li>
-          <Link href="http://powerbi.microsoft.com">Power BI</Link>
-        </li>
-        <li>
-          <Link href="https://nodejs.org/en/">NodeJS</Link>
-        </li>
-        <li>
-          <Link href="https://facebook.github.io/react/">React</Link>
-        </li>
-        <li>
-          <Link href="http://dev.office.com/fabric#/components">
-            Fabric UI
-          </Link>
-        </li>
-        <li>
-          <Link href="">SharePoint Framework</Link>
-        </li>
-        <li>
-          <Link href="https://www.nintex.com/">Nintex Workflows</Link>
-        </li>
-        <li>
-          <Link href="http://jquery.com/">jQuery</Link>
-        </li>
-        <li>
-          <Link href="https://leanpub.com/understandinges6/read">ES6</Link>
-        </li>
-      </ul>
+    <ul className="ms-font-xl">
+      <li>PowerShell</li>
+      <li>Knowledge Management</li>
+      <li>
+        <Link href="http://powerbi.microsoft.com">Power BI</Link>
+      </li>
+      <li>
+        <Link href="https://nodejs.org/en/">NodeJS</Link>
+      </li>
+      <li>
+        <Link href="https://facebook.github.io/react/">React</Link>
+      </li>
+      <li>
+        <Link href="http://dev.office.com/fabric#/components">
+          Fabric UI
+        </Link>
+      </li>
+      <li>
+        <Link href="">SharePoint Framework</Link>
+      </li>
+      <li>
+        <Link href="https://www.nintex.com/">Nintex Workflows</Link>
+      </li>
+      <li>
+        <Link href="http://jquery.com/">jQuery</Link>
+      </li>
+      <li>
+        <Link href="https://leanpub.com/understandinges6/read">ES6</Link>
+      </li>
+    </ul>
   </div>
 );
 

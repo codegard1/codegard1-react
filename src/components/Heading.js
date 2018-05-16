@@ -1,7 +1,6 @@
 import React from "react";
 import * as T from "prop-types";
 import { Dropdown } from "office-ui-fabric-react/lib/Dropdown";
-import { CommandButton } from "office-ui-fabric-react/lib/Button";
 import { Icon } from "office-ui-fabric-react/lib/Icon";
 import { withRouter } from "react-router-dom";
 
@@ -19,7 +18,7 @@ class Heading extends BaseComponent {
   }
 
   onChanged(option) {
-    console.log("option:", option.key);
+    // console.log("option:", option.key);
     this.props.onChange(option);
     this.context.router.history.push(`/${option.key}`);
   }
