@@ -109,9 +109,9 @@ export class LearningLog extends BaseComponent {
 
     return (
       <div id="learning-log">
-        <p className="ms-font-su">Learning Log</p>
-        <p>
-          This is a list of things I've read and done that are code-related.
+        <h1 className="ms-font-su">Learning Log</h1>
+        <p className="ms-font-l">
+          This is an inexhaustive list of things I've read and done that are code-related. 
         </p>
 
         <div className="ms-Grid">
