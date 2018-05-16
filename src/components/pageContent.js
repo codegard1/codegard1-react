@@ -129,12 +129,6 @@ const projects = (
   </div>
 );
 
-const experiments = <Experiments />;
-
-const learninglog = <LearningLog />;
-
-const blackjack = <Table />;
-
 export const NavDefinition = [
   {
     links: [
@@ -147,38 +141,10 @@ export const NavDefinition = [
       },
       {
         category: "Pages",
-        iconProps: { iconName: "Contact" },
-        key: "identity",
-        name: "Identity",
-        content: identity
-      },
-      {
-        category: "Pages",
-        iconProps: { iconName: "ProjectCollection" },
-        key: "projects",
-        name: "Projects",
-        content: projects
-      },
-      {
-        category: "Pages",
-        iconProps: { iconName: "TestBeakerSolid" },
-        key: "experiments",
-        name: "Experiments",
-        content: experiments
-      },
-      {
-        category: "Pages",
         iconProps: { iconName: "BulletedList" },
         key: "learninglog",
         name: "Learning Log",
-        content: learninglog
-      },
-      {
-        category: "Pages",
-        iconProps: { iconName: "CrownSolid" },
-        key: "blackjack",
-        name: "Blackjack",
-        content: blackjack
+        content: <LearningLog/>
       },
       {
         category: "Pages",
@@ -186,6 +152,13 @@ export const NavDefinition = [
         key: "blog",
         name: "Web Log",
         content: blog
+      },
+      {
+        category: "Pages",
+        iconProps: { iconName: "CrownSolid" },
+        key: "blackjack",
+        name: "Blackjack",
+        content: <Table />
       }
     ]
   }
