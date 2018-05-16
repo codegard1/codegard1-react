@@ -8,13 +8,16 @@ import Table from "./blackjack/Table";
 
 /* react-markdown */
 import ReactMarkdown from "react-markdown";
-import Document from "./../blog/2018-27-3";
+import posts from "./../blog/";
 
-const blog = (<ReactMarkdown
-  source={Document}
+const blogPosts = posts.forEach(post => 
+  <ReactMarkdown
+  source={post}
   renderers={{
   paragraph: props => <p className="ms-font-l">{props.children}</p>
-}}/>);
+}}/>)
+
+const Blog = props => <div>{props.children}{blogPosts}</div>
 
 const home = (
   <div id="Home">
@@ -57,8 +60,8 @@ const home = (
           iconName="GitFork"
           aria-hidden="true"
           title="GitHub"/>
-          Github
-          </Link>&nbsp;&nbsp;
+        Github
+      </Link>&nbsp;&nbsp;
       <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link>&nbsp;&nbsp;
     </p>
 
@@ -140,7 +143,7 @@ export const NavDefinition = [
         },
         key: "blog",
         name: "Web Log",
-        content: blog
+        content: <Blog/>
       }, {
         category: "Pages",
         iconProps: {
