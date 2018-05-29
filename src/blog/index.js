@@ -1,9 +1,6 @@
-import post001 from './2018-14-05';
-import  post002 from './2018-27-03';
+import p20181405 from "./2018-14-05";
+import p20182703 from "./2018-27-03";
 
-const posts = [
-    post001,
-    post002
-];
+const posts = [p20181405, p20182703];
 
 export default posts;

@@ -1,27 +1,25 @@
+import { Icon } from "office-ui-fabric-react/lib/Icon";
+import { Link } from "office-ui-fabric-react/lib/Link";
 import React from "react";
-import {Link} from "office-ui-fabric-react/lib/Link";
-import {Icon} from "office-ui-fabric-react/lib/Icon";
+import ReactMarkdown from "react-markdown";
+
 /* custom stuff */
-// import {Experiments} from "./Experiments";
-import {LearningLog} from "./LearningLog";
+import posts from "./../blog/index";
+import { LearningLog } from "./LearningLog";
 import Table from "./blackjack/Table";
 
-/* react-markdown */
-import ReactMarkdown from "react-markdown";
-import posts from "./../blog/";
-
-const blogPosts = posts.forEach(post => 
+const Blog = posts.map(post => (
   <ReactMarkdown
-  source={post}
-  renderers={{
-  paragraph: props => <p className="ms-font-l">{props.children}</p>
-}}/>)
-
-const Blog = props => <div>{props.children}{blogPosts}</div>
+    source={post}
+    renderers={{
+      paragraph: props => <p className="ms-font-l">{props.children}</p>,
+      listItem: props => <li className="ms-font-m">{props.children}</li>
+    }}
+  />
+));
 
 const home = (
   <div id="Home">
-
     <h1 className="ms-font-su">Hello, I'm Chris</h1>
 
     <ul className="ms-font-xl">
@@ -30,8 +28,8 @@ const home = (
         <Link href="http://ramsa.com">RAMSA</Link>.
       </li>
       <li>
-        I make business applications in SharePoint with a heavy emphasis on custom code
-        and re-usable solutions.
+        I make business applications in SharePoint with a heavy emphasis on
+        custom code and re-usable solutions.
       </li>
     </ul>
 
@@ -39,51 +37,57 @@ const home = (
     <p className="ms-font-xl">
       By Email:{" "}
       <Link href="mailto:c.odegard@gmail.com">c.odegard[at]gmail.com</Link>
-      <br/>
+      <br />
       Or find me on these sites:&nbsp;&nbsp;
       <Link href="https://www.linkedin.com/in/codegard1">
         <Icon
           style={{
-          marginRight: "8px"
-        }}
+            marginRight: "8px"
+          }}
           iconName="LinkedInLogo"
           aria-hidden="true"
-          title="LinkedIn"/>
+          title="LinkedIn"
+        />
         LinkedIn
       </Link>
       &nbsp;&nbsp;
       <Link href="https://github.com/codegard1">
         <Icon
           style={{
-          marginRight: "8px"
-        }}
+            marginRight: "8px"
+          }}
           iconName="GitFork"
           aria-hidden="true"
-          title="GitHub"/>
+          title="GitHub"
+        />
         Github
       </Link>&nbsp;&nbsp;
-      <Link href="https://jsfiddle.net/user/codegard1/">JSFiddle</Link>&nbsp;&nbsp;
+      <Link href="https://jsfiddle.net/user/codegard1/">
+        JSFiddle
+      </Link>&nbsp;&nbsp;
     </p>
 
     <h1 className="ms-font-su">Projects</h1>
     <p className="ms-font-xl">This is what I'm doing currently:</p>
     <ul className="ms-font-xl">
       <li>
-        Building a CRM system in SharePoint, integrating Deltek Vision with BDCS, and
-        making extensive use of the Term Store
+        Building a CRM system in SharePoint, integrating Deltek Vision with
+        BDCS, and making extensive use of the Term Store
       </li>
-      <li>
-        Learning server management by building my own server at home
-      </li>
+      <li>Learning server management by building my own server at home</li>
       <li>Still trying to add pizzazz to this site</li>
       <li>
         Writing lots of PowerShell scripts to automate moving data in SharePoint
       </li>
-      <li>Still trying to
+      <li>
+        Still trying to
         <em>try</em>
-        to learn TypeScript</li>
+        to learn TypeScript
+      </li>
     </ul>
-    <p className="ms-font-xl">Some of my other interests include, but are not limited to:</p>
+    <p className="ms-font-xl">
+      Some of my other interests include, but are not limited to:
+    </p>
     <ul className="ms-font-xl">
       <li>PowerShell</li>
       <li>Knowledge Management</li>
@@ -97,9 +101,7 @@ const home = (
         <Link href="https://facebook.github.io/react/">React</Link>
       </li>
       <li>
-        <Link href="http://dev.office.com/fabric#/components">
-          Fabric UI
-        </Link>
+        <Link href="http://dev.office.com/fabric#/components">Fabric UI</Link>
       </li>
       <li>
         <Link href="">SharePoint Framework</Link>
@@ -128,31 +130,34 @@ export const NavDefinition = [
         key: "home",
         name: "Home",
         content: home
-      }, {
+      },
+      {
         category: "Pages",
         iconProps: {
           iconName: "BulletedList"
         },
         key: "learninglog",
         name: "Learning Log",
-        content: <LearningLog/>
-      }, {
+        content: <LearningLog />
+      },
+      {
         category: "Pages",
         iconProps: {
           iconName: "Articles"
         },
         key: "blog",
         name: "Web Log",
-        content: <Blog/>
-      }, {
+        content: Blog
+      },
+      {
         category: "Pages",
         iconProps: {
           iconName: "CrownSolid"
         },
         key: "blackjack",
         name: "Blackjack",
-        content: <Table/>
+        content: <Table />
       }
     ]
   }
-]
+];

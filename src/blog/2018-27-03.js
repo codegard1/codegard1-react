@@ -1,4 +1,4 @@
-const content = `
+const p20182703 = `
 ## 3/27/2018
 
 This is my first blog post. I am trying to do it my own way, which means writing markdown and manually adding pages to an array before compiling the site. It's a shame I can't use a database to store my posts, but at this time I don't have a reliable service for that. 
@@ -11,4 +11,4 @@ _To Do_:
 
 `;
 
-export default content;
+export default p20182703;
