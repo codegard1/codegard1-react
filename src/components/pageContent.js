@@ -70,19 +70,16 @@ const home = (
     <h1 className="ms-font-su">Projects</h1>
     <p className="ms-font-xl">This is what I'm doing currently:</p>
     <ul className="ms-font-xl">
+      <li>Starting to learn <a href="https://opendylan.org/">Dylan</a> for fun and as a change of pace</li>
+      <li>Contributing to the <a href="https://github.com/dylan-lang/vscode-dylan">Dylan Extension for VS Code</a></li>
+      <li>Teaching myself computer science by reading textbooks</li>
       <li>
         Building a CRM system in SharePoint, integrating Deltek Vision with
         BDCS, and making extensive use of the Term Store
       </li>
-      <li>Learning server management by building my own server at home</li>
-      <li>Still trying to add pizzazz to this site</li>
+      <li>Learning server management by managing my own little server farm at home</li>
       <li>
         Writing lots of PowerShell scripts to automate moving data in SharePoint
-      </li>
-      <li>
-        Still trying to
-        <em>try</em>
-        to learn TypeScript
       </li>
     </ul>
     <p className="ms-font-xl">
@@ -104,7 +101,7 @@ const home = (
         <Link href="http://dev.office.com/fabric#/components">Fabric UI</Link>
       </li>
       <li>
-        <Link href="">SharePoint Framework</Link>
+        <Link href="https://docs.microsoft.com/en-us/sharepoint/dev/spfx/sharepoint-framework-overview">SharePoint Framework</Link>
       </li>
       <li>
         <Link href="https://www.nintex.com/">Nintex Workflows</Link>
