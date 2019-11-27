@@ -1,5 +1,8 @@
 /* wrapper element for Page content */
-div#BasePage {
-  text-align: justify;
+
+div.BasePage {
+  /* text-align: justify; */
   margin: calc(100vw / 25);
+  min-height:1024px; 
+  padding: 1em 0; 
 }

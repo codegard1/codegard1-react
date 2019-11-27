@@ -19,7 +19,7 @@ const routes = NavDefinition[0].links.map(item => (
 export class Page extends Component {
   render() {
     return (
-      <div className="ms-Grid-row">
+      <div className="ms-Grid-row BasePage">
         <div className="ms-Grid-col ms-sm12">
           <Route
             key="route-default"

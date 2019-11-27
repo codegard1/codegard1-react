@@ -31,6 +31,14 @@ const home = (
         I make business applications in SharePoint with a heavy emphasis on
         custom code and re-usable solutions.
       </li>
+      <li>
+        I'm beginning to move away from SharePoint <em>per se</em> and more 
+        towards Azure, the Power Platform, and Office 365. 
+      </li>
+      <li>
+        Unfortunately I can't update this site very often. Please forgive the 
+        lack of cutting-edge technology.
+      </li>
     </ul>
 
     <h1 className="ms-font-su">Contact Me</h1>
@@ -61,10 +69,7 @@ const home = (
           title="GitHub"
         />
         Github
-      </Link>&nbsp;&nbsp;
-      <Link href="https://jsfiddle.net/user/codegard1/">
-        JSFiddle
-      </Link>&nbsp;&nbsp;
+      </Link>
     </p>
 
     <h1 className="ms-font-su">Projects</h1>
