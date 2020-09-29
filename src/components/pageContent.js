@@ -32,11 +32,11 @@ const home = (
         custom code and re-usable solutions.
       </li>
       <li>
-        I'm beginning to move away from SharePoint <em>per se</em> and more 
-        towards Azure, the Power Platform, and Office 365. 
+        I'm beginning to move away from SharePoint <em>per se</em> and more
+        towards Azure, the Power Platform, and Office 365.
       </li>
       <li>
-        Unfortunately I can't update this site very often. Please forgive the 
+        Unfortunately I can't update this site very often. Please forgive the
         lack of cutting-edge technology.
       </li>
     </ul>
@@ -132,24 +132,6 @@ export const NavDefinition = [
         key: "home",
         name: "Home",
         content: home
-      },
-      {
-        category: "Pages",
-        iconProps: {
-          iconName: "BulletedList"
-        },
-        key: "learninglog",
-        name: "Learning Log",
-        content: <LearningLog />
-      },
-      {
-        category: "Pages",
-        iconProps: {
-          iconName: "Articles"
-        },
-        key: "blog",
-        name: "Web Log",
-        content: Blog
       },
       {
         category: "Pages",

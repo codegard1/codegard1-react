@@ -21,7 +21,7 @@ export default class App extends BaseComponent {
     super();
 
     this.state = {
-      page: "home",
+      page: "blackjack",
       color: "teal",
       isNavOpen: false,
       isMenuVisible: false,
@@ -60,7 +60,6 @@ export default class App extends BaseComponent {
             />
             <HorizontalBar color={this.state.color} />
           </div>
-          {/* <span className="ms-font-su">{this.props.history.location.url}</span> */}
         </Fabric>
       </HashRouter>
     );
