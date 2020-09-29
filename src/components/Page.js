@@ -23,7 +23,7 @@ export class Page extends Component {
         <div className="ms-Grid-col ms-sm12">
           <Route
             key="route-default"
-            path="/"
+            path="/blackjack"
             exact
             component={() => NavDefinition[0].links[0].content}
           />
