@@ -6,8 +6,6 @@ import { initializeIcons } from "@uifabric/icons";
 import React from "react";
 
 /* Custom Components */
-import "./components/Page.css";
-import HorizontalBar from "./components/HorizontalBar";
 import BaseComponent from "./components/BaseComponent";
 import Table from "./components/blackjack/Table";
 
@@ -19,8 +17,6 @@ export default class App extends BaseComponent {
     super();
 
     this.state = {
-      page: "blackjack",
-      color: "teal",
       isNavOpen: false,
       isMenuVisible: false,
       isCalloutVisible: false
@@ -46,9 +42,7 @@ export default class App extends BaseComponent {
     return (
       <Fabric>
         <div className="ms-Grid ms-fadeIn400" id="FirstDiv">
-          <HorizontalBar color={this.state.color} />
           <Table />
-          <HorizontalBar color={this.state.color} />
         </div>
       </Fabric>
     );
